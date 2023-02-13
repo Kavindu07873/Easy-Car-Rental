@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CustomerForm</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <style>
+    ul > li {
+      cursor: pointer;
+    }
+    main>div>img{
+      z-index: 0;
+      position: relative;
+      /*left: 0px;*/
+      /*bottom: 0;*/
+      /*right: 0;*/
+      top: 89px;
+      /*width: 100%;*/
+      /*height: 87%;*/
+      opacity: 50%;
+
+    }
+    main>aside{
+      /*display: inline-block;*/
+      position: relative;
+      left: 10%;
+      bottom: 0;
+      right: 0;
+      top: 60%;
+      /*width: 15%;*/
+      /*height: 11%;*/
+    }
+    main>aside>button{
+
+      width: 30%;
+      height: 20%;
+    }
+  </style>
+
+</head>
+<body style="width: 1524px">
+<header>
+  <!--  //logo-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="Assets/dKP.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        Dkp-Product  </a>
+    </div>
+
+    <!--/links-->
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav barNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a href="DashBord.html" class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="#">Orders</a>
+          <a class="nav-link active" aria-current="page" href="#">Items</a>
+          <a class="nav-link active" aria-current="page" href="#">Customers</a>
+
+        </div>
+      </div>
+      <!--  Search-->
+    </div>
+
+    <div class="container-fluid">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+</header>
+
+
+<main>
+  <section>
+    <div>
+      <h1>Date</h1>
+    </div>
+
+    <div>
+      <h1>Time</h1>
+    </div>
+  </section>
+
+  <br>
+  <section>
+    <!-- Button trigger modal -->
+    <button  style="position: absolute" type="button" class="btn btn-primary bg-danger float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Add New Customer
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add New Customers</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="ID" aria-label="ID">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Name" aria-label="Name">
+              </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="ContNo" aria-label="ContNo">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Address" aria-label="Address">
+              </div>
+
+            </div>
+            <br>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary"  >Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <br>
+  <br>
+<!--image-->
+  <div>
+    <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
+    <!--    <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg" class="img-fluid" alt="...">-->
+    <!--    <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg" class="img-fluid" alt="Responsive image">-->
+  </div>
+
+  <br>
+</main>
+
+
+
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery-3.6.1.min.js"></script>
+
+
+<script>
+
+
+
+  //  //validation Part eka regular expreshan walin
+  //var CusIdRegEx = /^(C)[0-9]{1,3}$/
+  //
+  //  //make Array for validation
+  //  var CusValidation = [];
+  //  //Add data to validation Arrray
+  //  //mekata data danne object vidiyata
+  //  CusValidation.push({
+  //    reg:CusIdRegEx,
+  //    field : $("#txtCustomerID"),
+  //    error : 'Customer id Paten Is Wrong'
+  //  })
+  //
+  //
+
+
+
+
+  // make arry called customer
+  var Customer = [];
+
+
+  $("#SaveCustomer").click(function (){
+
+    let  cusid = $("#txtCustomerID").val();
+    let  cusName = $("#txtCustomerName").val();
+    let  cusAddress = $("#txtCustomerAddress").val();
+    let  cusConNo = $("#txtCustomerContNo").val();
+    let  cusSalary = $("#txtCustomerSalary").val();
+
+    var CustomerObject = {
+      id : cusid,
+      Name : cusName,
+      Address : cusAddress,
+      ConNo : cusConNo,
+      Salary : cusSalary
+    }
+
+// put object to customer array
+    Customer.push(CustomerObject);
+
+    loadAllCustomerDetails()
+    EventBinding();
+
+  });
+
+  $("#LoadAllCustomer").click(function (){
+    loadAllCustomerDetails()
+    EventBinding();
+  });
+
+  //Enter Button use for textfield
+  $("#txtCustomerID").on('keydown',function (event){
+
+    if (event.key == "Enter"){
+      $("#txtCustomerName").focus();
+    }
+
+  });
+
+  $("#txtCustomerName").on('keydown',function (event){
+
+    if (event.key == "Enter"){
+      $("#txtCustomerContNo").focus();
+    }
+
+  });
+
+  $("#txtCustomerContNo").on('keydown',function (event){
+
+    if (event.key == "Enter"){
+      $("#txtCustomerAddress").focus();
+    }
+
+  });
+
+  $("#txtCustomerAddress").on('keydown',function (event){
+
+    if (event.key == "Enter"){
+      $("#txtCustomerSalary").focus();
+    }
+
+  });
+
+  $("#txtCustomerSalary").on('keydown',function (event){
+
+    if (event.key == "Enter"){
+      confirm("Do You Want To Add This Customer...?")
+      $("#SaveCustomer").focus();
+    }
+
+  });
+
+  // Tap Button Remove
+  $("#txtCustomerID,#txtCustomerName,#txtCustomerContNo,#txtCustomerAddress,#txtCustomerSalary").on('keydown' , function (event){
+
+    if (event.key == "Tab"){
+      event.preventDefault();
+    }
+  });
+
+
+  function loadAllCustomerDetails(){
+
+    // remove all data from the table
+    $("#tblCustomer").empty();
+
+    // get all customer records from the array
+    for (var customer of Customer) {
+      // Using String Literals to do the same thing as above
+      var row = `<tr><td>${customer.id}</td><td>${customer.Name}</td><td>${customer.ConNo}</td><td>${customer.Address}</td><td>${customer.Salary}</td></tr>`;
+
+      //then add it to the table body of customer table
+      $("#tblCustomer").append(row);
+
+    }
+
+  }
+
+
+  //  mehidi table eka click karama data print we
+  function EventBinding(){
+    $("#tblCustomer>tr").click(function (){
+      let id = $(this).children(":eq(0)").text();
+      let Name = $(this).children(":eq(1)").text();
+      let ConNo = $(this).children(":eq(2)").text();
+      let Address = $(this).children(":eq(3)").text();
+      let Salary = $(this).children(":eq(4)").text();
+
+      //  tble eke textfild walata data add karanawa
+      $("#txtCustomerID").val(id);
+      $("#txtCustomerName").val(Name);
+      $("#txtCustomerAddress").val(Address);
+      $("#txtCustomerContNo").val(ConNo);
+      $("#txtCustomerSalary").val(Salary);
+
+    });
+
+    //double click remove table colom
+    $("#tblCustomer>tr").on('dblclick',function (){
+      $(this).remove();
+    });
+
+  }
+
+
+
+</script>
+</body>
+</html>

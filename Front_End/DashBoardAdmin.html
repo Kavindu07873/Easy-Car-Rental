@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>DashBoardAdmin</title>
+    <meta content="width=device-width initial-scale=1" name="viewport">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+
+    <style>
+        ul > li {
+            cursor: pointer;
+        }
+
+        main > div > img {
+            position: absolute;
+            left: 0px;
+            bottom: 0;
+            right: 0;
+            top: 89px;
+            width: 100%;
+            height: 87%;
+            opacity: 50%;
+            z-index: 0;
+
+        }
+
+        main > aside {
+            display: inline-block;
+            left: 1%;
+            bottom: 0;
+            right: 0;
+            top: 29%;
+            width: 87%;
+            height: 48%;
+        }
+
+        main > aside > button {
+            width: 30%;
+            height: 20%;
+        }
+
+        main > section#tableDetails {
+            display: inline-block;
+            margin: auto;
+            position: absolute;
+            left: 35%;
+            right: 0;
+            top: 19%;
+            bottom: 0;
+            width: 50%;
+            height: 60%;
+
+        }
+
+        main > section#tableDetails > div {
+            display: inline-block;
+        }
+
+    </style>
+</head>
+
+<body>
+<header class="jumbotron bg-primary text-white p-3">
+    <!--  //logo-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/images%20(5).jpeg" alt="Logo" width="30" height="24"
+                     class="d-inline-block align-text-top">
+                Easy Car Rental Pvt Ltd </a>
+        </div>
+
+        <!--/links-->
+        <div class="container-fluid">
+            <!--            <a class="navbar-brand" href="#">Easy Car Rental Pvt Ltd</a>-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+
+        <div class="container-fluid">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+</header>
+
+<main>
+    <!--////////////////////////////////////////////////////////////////-->
+    <section>
+        <div>
+            <h1>Date</h1>
+        </div>
+
+        <div>
+            <h1>Time</h1>
+        </div>
+    </section>
+    <!////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////---->
+
+    <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <div>
+        <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
+    </div>
+
+    <aside style="position: absolute">
+
+        <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">Driver Manage
+        </button>
+        <br>
+        <br>
+
+        <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"
+                data-bs-target="#RegisterNewCustomer">Order Details
+        </button>
+        <br>
+        <br>
+        <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#Driver">
+            Car Details Manage
+        </button>
+        <br>
+        <br>
+        <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#Driver">
+            Payment Details Manage
+        </button>
+        <br>
+        <br>
+        <br>
+        <button type="button" class="btn  btn-danger btn-primary btn-lg" data-bs-toggle="modal"
+                data-bs-target="#Driver">Income
+        </button>
+    </aside>
+    <!--model tika-->
+    <section>
+        <section>
+            <!--         Button trigger modal-->
+            <!--          <button  style="position: absolute" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">-->
+            <!--            Launch demo modal-->
+            <!--          </button>-->
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                           aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text">We'll never share your email with anyone
+                                        else.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <!--         Button trigger modal-->
+            <!--          <button  style="position: absolute" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">-->
+            <!--            Launch demo modal-->
+            <!--          </button>-->
+
+            <!-- Modal -->
+            <div class="modal fade" id="RegisterNewCustomer" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel2">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="ID" aria-label="ID">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Name" aria-label="Name">
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="ContNo" aria-label="ContNo">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Address" aria-label="Address">
+                                </div>
+
+                            </div>
+                            <br></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+
+            <div class="modal fade" id="Driver" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel3">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </section>
+    <section id="tableDetails">
+        <div>
+            <button type="button" class="btn btn-success">Save</button>
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-danger">Delete</button>
+            <button type="button" class="btn btn-warning">Update</button>
+
+        </div>
+
+        <br>
+        <br>
+
+
+        <table border="2px solid red" class="col table table-bordered border-primary table-dark table-striped">
+            <thead>
+            <tr class="table-dark table-striped">
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">ContNo</th>
+                <th scope="col">Address</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Salary</th>
+
+            </tr>
+            </thead>
+            <tbody id="tblCustomer">
+            <tr>
+                <td scope="row">1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+
+            </tr>
+            <tr>
+                <td>2</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>3</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+
+            </tbody>
+        </table>
+
+    </section>
+
+</main>
+
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery-3.6.1.min.js"></script>
+</body>
+</html>
