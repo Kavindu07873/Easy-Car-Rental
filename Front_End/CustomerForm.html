@@ -13,9 +13,9 @@
   <!--  //logo-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="../Assets/dKP.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-        Dkp-Product  </a>
+<!--      <a class="navbar-brand" href="#">-->
+<!--        <img src="../Assets/dKP.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">-->
+<!--        Dkp-Product  </a>-->
     </div>
 
     <!--/links-->
@@ -28,7 +28,7 @@
 
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a href="../DashBord.html" class="nav-link active" aria-current="page" href="#">Home</a>
+<!--          <a href="../DashBord.html" class="nav-link active" aria-current="page" href="#">Home</a>-->
           <a class="nav-link active" aria-current="page" href="#">Orders</a>
           <a class="nav-link active" aria-current="page" href="#">Items</a>
           <a class="nav-link active" aria-current="page" href="#">Customers</a>
@@ -115,32 +115,41 @@
         <input type="text" id="txtCustomerID"  class="form-control d-inline-block" placeholder="C001" aria-label="ID">
       </div>
       <div class="col">
-        <label for="txtCustomerName">Customer Name</label>
+        <label for="txtCustomerName">Customer Address</label>
 
-        <input type="text" id="txtCustomerName" class="form-control d-inline-block" placeholder="Kamal" aria-label="Name">
+        <input type="text" id="txtCustomerAddress" class="form-control d-inline-block" placeholder="Kamal" aria-label="Name">
+      </div>
+      <div class="col">
+        <label for="txtCustomerName">Customer ConNo</label>
+
+        <input type="text" id="txtCustomerConNo" class="form-control d-inline-block" placeholder="Kamal" aria-label="Name">
       </div>
     </div>
 
     <br>
     <div class="row">
       <div class="col">
-        <label for="txtCustomerContNo">Customer ContNO</label>
+        <label for="txtCustomerEmail">Customer Email</label>
 
-        <input type="number" id="txtCustomerContNo" class="form-control" placeholder="+940771530632" aria-label="ContNo">
-      </div>
-      <div class="col">
-        <label for="txtCustomerAddress">Customer Address</label>
-
-        <input type="text" class="form-control" id="txtCustomerAddress" placeholder="Galle" aria-label="Address">
+        <input type="text" class="form-control" id="txtCustomerEmail" placeholder="Galle" aria-label="Address">
       </div>
 
 
       <div class="col">
-        <label for="txtCustomerSalary">Customer Salary</label>
+        <label for="txtCustomerName">Customer Name</label>
 
-        <input type="number" class="form-control" id="txtCustomerSalary" placeholder="20000.00" aria-label="Salary">
+        <input type="text" class="form-control" id="txtCustomerName" placeholder="20000.00" aria-label="Salary">
       </div>
+      <div class="col">
+        <label for="txtCustomerNic">Customer Nic</label>
 
+        <input type="text" class="form-control" id="txtCustomerNic" placeholder="20000.00" aria-label="Salary">
+      </div>
+      <div class="col">
+        <label for="txtCustomerPassword">Customer Password</label>
+
+        <input type="text" id="txtCustomerPassword" class="form-control" placeholder="+940771530632" aria-label="ContNo">
+      </div>
     </div>
     </form>
     <br><br>
@@ -150,6 +159,9 @@
     <button type="button" class="btn btn-danger">Delete</button>
     <button type="button" class="btn btn-warning">Clearall</button>
     <button type="button" id="LoadAllCustomer" class="btn btn-info">getall</button>
+
+
+    </form>
   </section>
   <br>
   <br>
@@ -158,10 +170,13 @@
       <thead>
       <tr class="table-dark table-striped">
         <th scope="col">Id</th>
-        <th scope="col">Name</th>
-        <th scope="col">ContNo</th>
         <th scope="col">Address</th>
-        <th scope="col">Salary</th>
+        <th scope="col">ConNo</th>
+        <th scope="col">Email</th>
+        <th scope="col">Name</th>
+        <th scope="col">Nic</th>
+        <th scope="col">Email</th>
+
       </tr>
       </thead>
       <tbody id="tblCustomer" >
@@ -171,7 +186,8 @@
         <td></td>
         <td></td>
         <td></td>
-
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td>2</td>
@@ -179,7 +195,8 @@
         <td></td>
         <td></td>
         <td></td>
-
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td>3</td>
@@ -187,7 +204,8 @@
         <td></td>
         <td></td>
         <td></td>
-
+        <td></td>
+        <td></td>
       </tr>
 
       </tbody>
@@ -205,38 +223,21 @@
 <script>
 
 
-
-  //  //validation Part eka regular expreshan walin
-  //var CusIdRegEx = /^(C)[0-9]{1,3}$/
-  //
-  //  //make Array for validation
-  //  var CusValidation = [];
-  //  //Add data to validation Arrray
-  //  //mekata data danne object vidiyata
-  //  CusValidation.push({
-  //    reg:CusIdRegEx,
-  //    field : $("#txtCustomerID"),
-  //    error : 'Customer id Paten Is Wrong'
-  //  })
-  //
-  //
-
-
-
   let baseURL="http://localhost:8080/Back_End_war/";
 
 
+loadAllCustomerDetails();
 
   $("#SaveCustomer").click(function (){
     var formData = $("#customerForm").serialize();
 
     $.ajax({
-      url:baseURL+"customer",
+      url:baseURL+"Customer",
       method:"post",
       data:formData,
       dataType:"json",
 
-      success:function (res){
+        success:function (res){
         alert(res.message);
         loadAllCustomerDetails();
       },
@@ -251,6 +252,77 @@
     loadAllCustomerDetails()
     EventBinding();
   });
+
+
+  function loadAllCustomerDetails() {
+
+    // remove all data from the table
+    $("#tblCustomer").empty();
+
+    $.ajax({
+      url: baseURL+"Customer",
+      dataType: "json",
+      success: function (resp) {
+        console.log(resp);
+
+        for (let cus of resp.data) {
+          var row = '<tr><td>' + cus.id +'<tr><td>' + cus.Address+'<tr><td>' + cus.ConNo+'<tr><td>' + cus.Email+'</td><td>' + cus.Name + '</td><td>' + cus.Nic+'</td><td>' + cus.Password+'</td></tr>';
+          $("#tblCustomer").append(row);
+          console.log(row);
+        }
+        // EventBinding();
+        setTextFieldValues("","","","","","","")
+        $("#txtCustomerID").focus();
+      }
+
+    });
+  }
+  function setTextFieldValues(id, Name, Address,Email,Password,ConNo,Nic) {
+    $("#txtCustomerID").val(id);
+    $("#txtCustomerAddress").val(Address);
+    $("#txtCustomerConNo").val(ConNo);
+    $("#txtCustomerEmail").val(Email);
+    $("#txtCustomerName").val(Name);
+    $("#txtCustomerNic").val(Nic);
+    $("#txtCustomerPassword").val(Password);
+  }
+
+
+
+  //  mehidi table eka click karama data print we
+  function EventBinding(){
+    $("#tblCustomer>tr").click(function (){
+      let id = $(this).children(":eq(0)").text();
+      let Address = $(this).children(":eq(1)").text();
+      let ConNo = $(this).children(":eq(2)").text();
+      let Email = $(this).children(":eq(3)").text();
+      let Name = $(this).children(":eq(4)").text();
+      let Nic = $(this).children(":eq(5)").text();
+      let Password = $(this).children(":eq(6)").text();
+
+      //  tble eke textfild walata data add karanawa
+      $("#txtCustomerID").val(id);
+      $("#txtCustomerAddress").val(Address);
+      $("#txtCustomerConNo").val(ConNo);
+      $("#txtCustomerEmail").val(Email);
+      $("#txtCustomerName").val(Name);
+      $("#txtCustomerNic").val(Nic);
+      $("#txtCustomerPassword").val(Password);
+
+    });
+
+    //double click remove table colom
+    $("#tblCustomer>tr").on('dblclick',function (){
+      $(this).remove();
+    });
+
+  }
+
+
+
+
+
+
 
   //Enter Button use for textfield
   $("#txtCustomerID").on('keydown',function (event){
@@ -302,62 +374,6 @@
     }
   });
 
-
-  function loadAllCustomerDetails() {
-
-    // remove all data from the table
-    $("#tblCustomer").empty();
-
-    $.ajax({
-      url: baseURL + "customer",
-      dataType: "json",
-      success: function (resp) {
-        console.log(resp);
-
-        for (var cus of resp.data) {
-          var row = '<tr><td>' + cus.id + '</td><td>' + cus.name + '</td><td>' + cus.address + '</td><td>' + cus.salary + '</td></tr>';
-          $("#tblCustomer").append(row);
-        }
-        EventBinding();
-
-        $("#txtCustomerID").focus();
-      }
-
-    });
-  }
-  function setTextFieldValues(id, name, address, salary) {
-    $("#txtCustomerID").val(id);
-    $("#txtCustomerName").val(name);
-    $("#txtCustomerAddress").val(address);
-    $("#txtCustomerSalary").val(salary);
-  }
-
-
-
-  //  mehidi table eka click karama data print we
-  function EventBinding(){
-    $("#tblCustomer>tr").click(function (){
-      let id = $(this).children(":eq(0)").text();
-      let Name = $(this).children(":eq(1)").text();
-      let ConNo = $(this).children(":eq(2)").text();
-      let Address = $(this).children(":eq(3)").text();
-      let Salary = $(this).children(":eq(4)").text();
-
-      //  tble eke textfild walata data add karanawa
-      $("#txtCustomerID").val(id);
-      $("#txtCustomerName").val(Name);
-      $("#txtCustomerAddress").val(Address);
-      $("#txtCustomerContNo").val(ConNo);
-      $("#txtCustomerSalary").val(Salary);
-
-    });
-
-    //double click remove table colom
-    $("#tblCustomer>tr").on('dblclick',function (){
-      $(this).remove();
-    });
-
-  }
 
 
 
