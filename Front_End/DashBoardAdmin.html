@@ -9,6 +9,7 @@
           integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
 
 
+
     <style>
         ul > li {
             cursor: pointer;
@@ -35,6 +36,8 @@
             top: 29%;
             width: 87%;
             height: 48%;
+            /*overflow: hidden;*/
+            overflow-x: scroll;
         }
 
         main > aside > button {
@@ -42,7 +45,7 @@
             height: 20%;
         }
 
-        main > section#tableDetails {
+        main > section#tblajest {
             display: inline-block;
             margin: auto;
             position: absolute;
@@ -52,6 +55,7 @@
             bottom: 0;
             width: 50%;
             height: 60%;
+            overflow-x: scroll;
 
         }
 
@@ -107,37 +111,49 @@
     <!////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////---->
 
     <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
     <div>
         <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
     </div>
 
-    <aside style="position: absolute">
+    <aside>
 
-        <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"
-                data-bs-target="#exampleModal">Driver Manage
-        </button>
-        <br>
-        <br>
+        <div style="position: relative">
+            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Driver Manage
+            </button>
+            <br>
+            <br>
 
-        <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"
-                data-bs-target="#RegisterNewCustomer">Order Details
-        </button>
-        <br>
-        <br>
-        <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#Driver">
-            Car Details Manage
-        </button>
-        <br>
-        <br>
-        <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#Driver">
-            Payment Details Manage
-        </button>
-        <br>
-        <br>
-        <br>
-        <button type="button" class="btn  btn-danger btn-primary btn-lg" data-bs-toggle="modal"
-                data-bs-target="#Driver">Income
-        </button>
+            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Driver Manage
+            </button>
+            <br>
+            <br>
+
+            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"
+                    data-bs-target="#RegisterNewCustomer">Order Details
+            </button>
+            <br>
+            <br>
+            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"
+                    data-bs-target="#Driver">
+                Car Details Manage
+            </button>
+            <br>
+            <br>
+            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"
+                    data-bs-target="#Driver">
+                Payment Details Manage
+            </button>
+            <br>
+            <br>
+            <br>
+            <button type="button" class="btn  btn-danger btn-primary btn-lg" data-bs-toggle="modal"
+                    data-bs-target="#Driver">Income
+            </button>
+        </div>
+
     </aside>
     <!--model tika-->
     <section>
@@ -249,73 +265,90 @@
         </section>
 
     </section>
-    <section id="tableDetails">
-        <div>
-            <button type="button" class="btn btn-success">Save</button>
-            <button type="button" class="btn btn-primary">Primary</button>
-            <button type="button" class="btn btn-danger">Delete</button>
-            <button type="button" class="btn btn-warning">Update</button>
 
-        </div>
+    <section id="tblajest">
+        <section id="tableDetails">
+            <div>
+                <button type="button" id="BtnShowCustomer" class="btn btn-success">Customer</button>
+                <button type="button" id="BtnShowDriver" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-warning">Update</button>
 
-        <br>
-        <br>
+            </div>
 
-
-        <table border="2px solid red" class="col table table-bordered border-primary table-dark table-striped">
-            <thead>
-            <tr class="table-dark table-striped">
-                <th scope="col">Id</th>
-                <th scope="col">Name</th>
-                <th scope="col">ContNo</th>
-                <th scope="col">Address</th>
-                <th scope="col">Salary</th>
-                <th scope="col">Salary</th>
-                <th scope="col">Salary</th>
-
-            </tr>
-            </thead>
-            <tbody id="tblCustomer">
-            <tr>
-                <td scope="row">1</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+            <br>
+            <br>
 
 
-            </tr>
-            <tr>
-                <td>2</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+            <table border="2px solid red" class="col table table-bordered border-primary table-dark table-striped">
+                <thead>
+                <tr class="table-dark table-striped">
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">ContNo</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Salary</th>
 
-            </tr>
-            <tr>
-                <td>3</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                </tr>
+                </thead>
+                <tbody id="tblCustomer">
 
-            </tr>
+                </tbody>
+            </table>
+            <table border="2px solid red" class="col table table-bordered border-primary table-dark table-striped">
+                <thead>
+                <tr class="table-dark table-striped">
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">ContNo</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Salary</th>
 
-            </tbody>
-        </table>
+                </tr>
+                </thead>
+                <tbody id="tblDriver">
 
+                </tbody>
+            </table>
+
+        </section>
     </section>
 
 </main>
 
-<script src="../assets/js/bootstrap.min.js"></script>
-<script src="../assets/js/jquery-3.6.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery-3.6.1.min.js"></script>
+<script>
+
+    <!--customer table show-->
+    let baseURL = "http://localhost:8080/Back_End_war/";
+    $("#BtnShowCustomer").click(function () {
+        getAll();
+    });
+
+    function getAll() {
+        $("#tblCustomer").empty();
+
+        $.ajax({
+            url: baseURL + "Customer",
+            dataType: "json",
+            success: function (resp) {
+                for (let cus of resp.data) {
+                    var row = '<tr><td>' + cus.id + '</td><td>' + cus.name + '</td><td>' + cus.address + '</td><td>' + cus.email + '</td><td>' + cus.cont + '</td><td>' + cus.nic + '</td><td>' + cus.password + '</td></tr>';
+                    $("#tblCustomer").append(row);
+                }
+                EventBindingvalue();
+                setTextFieldValues("", "", "", "", "", "", "");
+                $("#txtCustomerID").focus();
+            }
+        });
+    }
+
+</script>
+
 </body>
 </html>

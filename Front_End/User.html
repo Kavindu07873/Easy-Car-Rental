@@ -12,7 +12,8 @@
         ul > li {
             cursor: pointer;
         }
-        main>div>img{
+
+        main > div > img {
             position: absolute;
             left: 0px;
             bottom: 0;
@@ -22,7 +23,8 @@
             height: 87%;
 
         }
-        main>aside{
+
+        main > aside {
             /*display: inline-block;*/
             position: absolute;
             display: inline-block;
@@ -41,33 +43,35 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="assets/img/images%20(5).jpeg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <img src="assets/img/images%20(5).jpeg" alt="Logo" width="30" height="24"
+                     class="d-inline-block align-text-top">
                 Easy Car Rental Pvt Ltd </a>
         </div>
 
         <!--/links-->
         <div class="container-fluid">
-<!--            <a class="navbar-brand" href="#">Easy Car Rental Pvt Ltd</a>-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <!--            <a class="navbar-brand" href="#">Easy Car Rental Pvt Ltd</a>-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-<!--            <ul class="list-group list-group-horizontal text-danger justify-content-end font-weight-bold">-->
-<!--                <li class="list-group-item bg-white" id="lnkHome"><a href="index.html">Car</a></li>-->
-<!--                <li class="list-group-item bg-danger text-white" id="lnkCustomer"><a class="text-white" href="customer.html">Customer</a></li>-->
-<!--                <li class="list-group-item bg-white" id="lnkItem"><a href="item.html">Item</a></li>-->
-<!--                <li class="list-group-item bg-white" id="lnkOrders"><a href="purchase-order.html">Orders</a></li>-->
-<!--            </ul>-->
+            <!--            <ul class="list-group list-group-horizontal text-danger justify-content-end font-weight-bold">-->
+            <!--                <li class="list-group-item bg-white" id="lnkHome"><a href="index.html">Car</a></li>-->
+            <!--                <li class="list-group-item bg-danger text-white" id="lnkCustomer"><a class="text-white" href="customer.html">Customer</a></li>-->
+            <!--                <li class="list-group-item bg-white" id="lnkItem"><a href="item.html">Item</a></li>-->
+            <!--                <li class="list-group-item bg-white" id="lnkOrders"><a href="purchase-order.html">Orders</a></li>-->
+            <!--            </ul>-->
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a id="HomeButton" class="nav-link active"  href="#">Home</a>
-                    <a  id="OrdersButton" class="nav-link active" aria-current="page" href="#">Customer</a>
-                    <a   id="ItemButton" class="nav-link active" aria-current="page" href="#">Driver</a>
-                    <a  id="CustomerButton" class="nav-link active" aria-current="page" href="#">Customers</a>
+                    <a id="HomeButton" class="nav-link active" href="#">Home</a>
+                    <a id="OrdersButton" class="nav-link active" aria-current="page" href="#">Customer</a>
+                    <a id="ItemButton" class="nav-link active" aria-current="page" href="#">Driver</a>
+                    <a id="CustomerButton" class="nav-link active" aria-current="page" href="#">Customers</a>
 
                 </div>
             </div>
-              Search
+            Search
         </div>
 
         <div class="container-fluid">
@@ -91,17 +95,29 @@
 <!--</header>-->
 
 <main class="container-fluid" id="customerContent">
-    <div >
-    <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
-<!--    <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg" class="img-fluid" alt="...">-->
-<!--    <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg" class="img-fluid" alt="Responsive image">-->
-</div>
+    <div>
+        <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
+        <!--    <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg" class="img-fluid" alt="...">-->
+        <!--    <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg" class="img-fluid" alt="Responsive image">-->
+    </div>
 
     <aside style="position: absolute">
-        <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Admin Login </button>
-       <br>
+
+
+            <li style="width: 20%;height: 15%;cursor: pointer  ; display: inline-block" class="list-group-item bg-dark">
+                <a class="list-group-item text-bg-dark" href="DashBoardAdmin.html">Admin Login</a>
+            </li>
+
         <br>
-        <button type="button" class="btn btn-dark btn-primary btn-lg">User  Login</button>
+        <br>
+            <li  style="width: 20%;height: 15%;cursor: pointer ; display: inline-block" class="list-group-item bg-dark">
+                <a class="list-group-item text-bg-dark " href="DashBoardUser.html">User Login</a>
+            </li>
+
+ <!--        <button type="submit" class="btn btn-dark btn-primary btn-lg" href="DashBoardAdmin.html">Admin Login</button>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <button type="button" class="btn btn-dark btn-primary btn-lg">User Login</button>-->
     </aside>
 
     <section>
@@ -120,6 +136,7 @@
                         <h1>Hello World</h1>
                     </div>
                     <div class="modal-footer">
+
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
@@ -130,6 +147,8 @@
 
 
 </main>
-<script src="../assets/js/bootstrap.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+
+
 </body>
 </html>
