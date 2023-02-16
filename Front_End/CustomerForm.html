@@ -135,7 +135,7 @@
             <div class="row">
                 <div class="col">
                     <label for="txtCustomerCon">Customer ConNo</label>
-                    <input type="text" class="is-invalid form-control" id="txtCustomerCon" placeholder="+9411111111" name="cont"
+                    <input type="text" class="is-invalid form-control" id="txtCustomerCon" placeholder="+9411111111" name="contact"
                            aria-label="Contact" required>
                 </div>
 
@@ -295,7 +295,7 @@
             dataType: "json",
             success: function (resp) {
                 for (let cus of resp.data) {
-                    var row = '<tr><td>' + cus.id + '</td><td>' + cus.name + '</td><td>' + cus.address + '</td><td>' + cus.email + '</td><td>' + cus.cont + '</td><td>' + cus.nic + '</td><td>' + cus.password + '</td></tr>';
+                    var row = '<tr><td>' + cus.id + '</td><td>' + cus.name + '</td><td>' + cus.address + '</td><td>' + cus.email + '</td><td>' + cus.contact + '</td><td>' + cus.nic + '</td><td>' + cus.password + '</td></tr>';
                     $("#tblCustomer").append(row);
                 }
                 EventBindingvalue();

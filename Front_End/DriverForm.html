@@ -58,23 +58,25 @@
         <form id="DriverForm" class="was-validated">
 
             <div class="row">
-                <div class="col">
-                    <label for="txtDrierID">Driver ID</label>
-                    <input type="text" id="txtDrierID" class="form-control d-inline-block is-invalid" placeholder="D001"
-                           name="Did"
-                           aria-label="ID" required>
-                </div>
+
                 <div class="col">
                     <label for="txtDriverName">Driver Name</label>
-                    <input type="text" class="form-control is-invalid" id="txtDriverName" placeholder="20000.00"
-                           name="Dname"
+                    <input type="text" class="form-control is-invalid" id="txtDriverName" placeholder=""
+                           name="name"
                            aria-label="Name" required>
+                </div>
+                <div class="col">
+                    <label for="txtDriverUser">Driver User ID</label>
+                    <input type="text" class="form-control is-invalid" id="txtDriverUser" placeholder=""
+                           name="user"
+                           aria-label="User" required>
                 </div>
                 <div class="col">
                     <label for="txtDriverLicNo">Driver LicNo</label>
                     <input type="text" id="txtDriverLicNo" class="is-invalid form-control d-inline-block"
-                           placeholder="yapagewaththa"
-                           name="DLic" aria-label="LicNo" required>
+                           placeholder=""
+                           name="licNo"
+                           aria-label="LicNo" required>
                 </div>
 
             </div>
@@ -84,15 +86,15 @@
 
                 <div class="col">
                     <label for="txtDriverAddress">Driver Address</label>
-                    <input type="text" class="is-invalid form-control" id="txtDriverAddress" placeholder="20000.00"
-                           name="Daddress"
+                    <input type="text" class="is-invalid form-control" id="txtDriverAddress" placeholder=""
+                           name="address"
                            aria-label="Address" required>
                 </div>
                 <div class="col">
                     <label for="txtDriverAvailable">Driver Availability</label>
                     <input type="text" id="txtDriverAvailable" class="is-invalid form-control"
-                           placeholder="+940771530632"
-                           name="Davailable" aria-label="Availability" required>
+                           placeholder=""
+                           name="availability" aria-label="Availability" required>
                 </div>
 
             </div>
@@ -133,11 +135,11 @@
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/jquery-3.6.1.min.js"></script>
 <script>
-    $("#BtnClearAll").click(function () {
-        setTextFieldValues();
-        // $("#txtCustomerNic").refresh();
-
-    });
+    // $("#BtnClearAll").click(function () {
+    //     setTextFieldValues();
+    //     // $("#txtCustomerNic").refresh();
+    //
+    // });
 
     let baseURL = "http://localhost:8080/Back_End_war/";
 
@@ -145,20 +147,23 @@
 
     $("#SaveDriver").click(function () {
 
-        var formData = $("#DriverForm").serialize();
-        console.log(formData);
+        let formData2 = $("#DriverForm").serialize();
+        // console.log(formData2);
         $.ajax({
             url: baseURL + "Driver",
             method: "post",
-            data: formData,
+            data: formData2,
             dataType: "json",
-            success: function (res) {
+            success: function (res){
+                // console.log(res);
                 alert(res.message);
                 getAll();
             },
             error: function (error) {
-                var jsObject = JSON.parse(error.responseText);
-                alert(jsObject.message);
+                console.log("Error Method Invoked");
+                console.log(error);
+                // var jsObject = JSON.parse(error.responseText);
+                // alert(jsObject.message);
             }
         });
     });
@@ -234,20 +239,25 @@
             url: baseURL + "Driver",
             dataType: "json",
             success: function (resp) {
-                for (let Dri of resp.data) {
-                    var row = '<tr><td>' + Dri.Did + '</td><td>' + Dri.Dname + '</td><td>' + Dri.DLic + '</td><td>' + Dri.Daddress + '</td><td>' + Dri.Davailable + '</td></tr>';
+                for (let cus of resp.data) {
+                    console.log("mkd : " + cus.id + cus.name);
+
+                    var row = '<tr><td>'+  cus.user + '</td><td>' +  cus.name+ '</td><td>'  + cus.licNo + '</td><td>' +cus.address + '</td><td>' + cus.availability + '</td></tr>';
+                    // console.log(row);
                     $("#tblDriver").append(row);
                 }
+                // console.log("Add " + row);
                 EventBindingvalue();
                 setTextFieldValues("", "", "", "", "");
                 $("#txtDrierID").focus();
             }
+
         });
     }
 
 
-    function setTextFieldValues(id, Name, Lic, Address, available) {
-        $("#txtDrierID").val(id);
+    function setTextFieldValues(user, Name, Lic, Address, available) {
+        $("#txtDriverUser").val(user);
         $("#txtDriverName").val(Name);
         $("#txtDriverLicNo").val(Lic);
         $("#txtDriverAddress").val(Address);
@@ -259,7 +269,7 @@
     function EventBindingvalue() {
         $("#tblCustomer>tr").click(function () {
 
-            let id = $(this).children(":eq(0)").text();
+            let user = $(this).children(":eq(2)").text();
             let Name = $(this).children(":eq(1)").text();
             let Lic = $(this).children(":eq(2)").text();
             let Address = $(this).children(":eq(3)").text();
@@ -267,7 +277,7 @@
 
 
             //  tble eke textfild walata data add karanawa
-            $("#txtDrierID").val(id);
+            $("#txtDriverUser").val(user);
             $("#txtDriverName").val(Name);
             $("#txtDriverLicNo").val(Lic);
             $("#txtDriverAddress").val(Address);
