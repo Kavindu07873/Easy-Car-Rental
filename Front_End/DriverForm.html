@@ -173,63 +173,60 @@
     });
 
 
-    // //update value
-    // $("#BtnUpdate").click(function () {
-    //
-    //     let customerID = $("#txtCustomerID").val();
-    //     let customerName = $("#txtCustomerName").val();
-    //     let customerAddress = $("#txtCustomerAddress").val();
-    //     let customerEmail = $("#txtCustomerEmail").val();
-    //     let customerContact = $("#txtCustomerCon").val();
-    //     let customerPassword = $("#txtCustomerPassword").val();
-    //     let customerNic = $("#txtCustomerNic").val();
-    //
-    //
-    //     var customer = {
-    //         id: customerID,
-    //         name: customerName,
-    //         address: customerAddress,
-    //         email : customerEmail,
-    //         conno:customerContact,
-    //         password:customerPassword,
-    //         nic:customerNic
-    //     }
-    //
-    //     $.ajax({
-    //         url: baseURL+'Customer',
-    //         method: 'put',
-    //         contentType:"application/json",
-    //         data:JSON.stringify(customer),
-    //         dataType:"json",
-    //         success: function (res) {
-    //             alert(res.message);
-    //             getAll();
-    //         },
-    //         error:function (error){
-    //             let cause= JSON.parse(error.responseText).message;
-    //             alert(cause);
-    //         }
-    //
-    //     });
-    // });
-    //
-    // //Delete Value
-    // $("#BtnDelete").click(function () {
-    //
-    //     let id = $("#txtCustomerID").val();
-    //     $.ajax({
-    //         url: baseURL+"Customer?id=" + id + "",
-    //         method: "delete",
-    //         dataType:"json",
-    //         success: function (resp) {
-    //             alert(resp.message);
-    //             getAll();
-    //         },
-    //         error:function (error){
-    //             alert(JSON.parse(error.responseText).message);
-    //         }
-    //     });
-    // });
+    //update value
+    $("#BtnUpdate").click(function () {
+
+        let User = $("#txtDriverUser").val();
+        let Name = $("#txtDriverName").val();
+        let Address = $("#txtDriverAddress").val();
+        let Lic = $("#txtDriverLicNo").val();
+        let Available = $("#txtDriverAvailable").val();
+
+
+
+        var driver = {
+            user: User,
+            name: Name,
+            address: Address,
+            licNo : Lic,
+            availability:Available,
+        }
+
+        $.ajax({
+            url: baseURL+'Driver',
+            method: 'put',
+            contentType:"application/json",
+            data:JSON.stringify(driver),
+            dataType:"json",
+            success: function (res) {
+                alert(res.message);
+                getAll();
+            },
+            error:function (error){
+                let cause= JSON.parse(error.responseText).message;
+                alert(cause);
+            }
+
+        });
+    });
+
+    //Delete Value
+    $("#BtnDelete").click(function () {
+
+        let id = $("#txtDriverUser").val();
+        $.ajax({
+            url: baseURL+"Driver?id=" + id + "",
+            method: "delete",
+            dataType:"json",
+            success: function (resp) {
+                alert(resp.message);
+                getAll();
+            },
+            error:function (error){
+                alert(JSON.parse(error.responseText).message);
+            }
+        });
+    });
 
 
     function getAll() {
@@ -267,9 +264,9 @@
 
     //  mehidi table eka click karama data print we
     function EventBindingvalue() {
-        $("#tblCustomer>tr").click(function () {
+        $("#tblDriver>tr").click(function () {
 
-            let user = $(this).children(":eq(2)").text();
+            let user = $(this).children(":eq(0)").text();
             let Name = $(this).children(":eq(1)").text();
             let Lic = $(this).children(":eq(2)").text();
             let Address = $(this).children(":eq(3)").text();
