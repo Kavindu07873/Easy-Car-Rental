@@ -9,6 +9,17 @@
           integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
 
 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <title>Document</title>
+
+
+<!--    <h1> Time is <span id="time"> </span></h1>-->
+<!--    <script src="index.js">   </script>-->
+
+
+
+
 
     <style>
         ul > li {
@@ -37,7 +48,7 @@
             width: 87%;
             height: 48%;
             /*overflow: hidden;*/
-            overflow-x: scroll;
+            /*overflow-x: scroll;*/
         }
 
         main > aside > button {
@@ -53,11 +64,16 @@
             right: 0;
             top: 19%;
             bottom: 0;
-            width: 50%;
-            height: 60%;
-            overflow-x: scroll;
+
 
         }
+
+        main > section#tblajest > section {
+            overflow-x: scroll;
+            width: 90%;
+            height: 80%;
+        }
+
 
         main > section#tableDetails > div {
             display: inline-block;
@@ -101,12 +117,9 @@
     <!--////////////////////////////////////////////////////////////////-->
     <section>
         <div>
-            <h1>Date</h1>
+            <p id="time"></p>
         </div>
 
-        <div>
-            <h1>Time</h1>
-        </div>
     </section>
     <!////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////---->
 
@@ -119,15 +132,19 @@
     <aside>
 
         <div style="position: relative">
-            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">Driver Manage
-            </button>
+<!--            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"-->
+<!--                    data-bs-target="#exampleModal">Driver Manage-->
+<!--            </button>-->
+            <a href="DriverForm.html" class="btn btn-dark btn-primary btn-lg" >Driver Manage</a>
+
             <br>
             <br>
 
-            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">Driver Manage
-            </button>
+<!--            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"-->
+<!--                    data-bs-target="#exampleModal">Driver Manage-->
+<!--            </button>-->
+            <a href="CustomerForm.html" class="btn btn-dark btn-primary btn-lg" >Customer Manage</a>
+
             <br>
             <br>
 
@@ -267,58 +284,68 @@
     </section>
 
     <section id="tblajest">
-        <section id="tableDetails">
-            <div>
-                <button type="button" id="BtnShowCustomer" class="btn btn-success">Customer</button>
-                <button type="button" id="BtnShowDriver" class="btn btn-primary">Primary</button>
-                <button type="button" class="btn btn-danger">Delete</button>
-                <button type="button" class="btn btn-warning">Update</button>
 
-            </div>
+        <div>
+            <button type="button" id="BtnShowCustomer" class="btn btn-success">Customer Details</button>
+            <button type="button" id="BtnShowDriver" class="btn btn-primary">Drivers Details</button>
+            <button type="button" class="btn btn-danger">Car Details</button>
+            <button type="button" class="btn btn-warning">Payment Details</button>
 
-            <br>
-            <br>
+        </div>
 
+        <br>
+        <br>
+            <section >
+                <table style="display:none" id="tableDetails" class="col table table-bordered border-primary table-dark table-striped">
+                    <thead>
+                    <tr class="table-dark table-striped">
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Password</th>
+                        <th>Nic</th>
 
-            <table border="2px solid red" class="col table table-bordered border-primary table-dark table-striped">
-                <thead>
-                <tr class="table-dark table-striped">
-                    <th scope="col">Id</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">ContNo</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Salary</th>
-                    <th scope="col">Salary</th>
-                    <th scope="col">Salary</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tblCustomer">
 
-                </tr>
-                </thead>
-                <tbody id="tblCustomer">
+                    </tbody>
+                </table>
+                <table id="tableDriverDetails" style="display:none;width: 95%" border="2px solid red"
+                       class="col table table-bordered border-primary table-dark table-striped">
+                    <thead class="bg-danger text-white">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>LicNo</th>
+                        <th>Address</th>
+                        <th>Availability</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tblDriver">
 
-                </tbody>
-            </table>
-            <table border="2px solid red" class="col table table-bordered border-primary table-dark table-striped">
-                <thead>
-                <tr class="table-dark table-striped">
-                    <th scope="col">Id</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">ContNo</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Salary</th>
-                    <th scope="col">Salary</th>
-                    <th scope="col">Salary</th>
+                    </tbody>
+                </table>
 
-                </tr>
-                </thead>
-                <tbody id="tblDriver">
-
-                </tbody>
-            </table>
+            </section>
 
         </section>
+
     </section>
 
 </main>
+<script>
+    var timeDisplay = document.getElementById("time");
+    function refreshTime() {
+        var dateString = new Date().toLocaleString("en-US", {timeZone: "America/Sao_Paulo"});
+        var formattedString = dateString.replace(", ", " - ");
+        timeDisplay.innerHTML = formattedString;
+    }
+
+    setInterval(refreshTime, 1000);
+</script>
 
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/jquery-3.6.1.min.js"></script>
@@ -326,11 +353,20 @@
 
     <!--customer table show-->
     let baseURL = "http://localhost:8080/Back_End_war/";
+
+
     $("#BtnShowCustomer").click(function () {
-        getAll();
+        $("#tableDriverDetails").css('display', 'none');
+        $("#tableDetails").css('display', 'block');
+        getAllCustomer();
+    });
+    $("#BtnShowDriver").click(function () {
+        $("#tableDetails").css('display', 'none');
+        $("#tableDriverDetails").css('display', 'block');
+        getAllDriver();
     });
 
-    function getAll() {
+    function getAllCustomer() {
         $("#tblCustomer").empty();
 
         $.ajax({
@@ -339,12 +375,34 @@
             success: function (resp) {
                 for (let cus of resp.data) {
                     var row = '<tr><td>' + cus.id + '</td><td>' + cus.name + '</td><td>' + cus.address + '</td><td>' + cus.email + '</td><td>' + cus.cont + '</td><td>' + cus.nic + '</td><td>' + cus.password + '</td></tr>';
+
                     $("#tblCustomer").append(row);
                 }
-                EventBindingvalue();
                 setTextFieldValues("", "", "", "", "", "", "");
-                $("#txtCustomerID").focus();
             }
+        });
+    }
+
+    function getAllDriver() {
+        $("#tblDriver").empty();
+
+        $.ajax({
+            url: baseURL + "Driver",
+            dataType: "json",
+            success: function (resp) {
+                for (let cus of resp.data) {
+                    console.log("mkd : " + cus.id + cus.name);
+
+                    var row = '<tr><td>' + cus.user + '</td><td>' + cus.name + '</td><td>' + cus.licNo + '</td><td>' + cus.address + '</td><td>' + cus.availability + '</td></tr>';
+                    // console.log(row);
+                    $("#tblDriver").append(row);
+                }
+                // console.log("Add " + row);
+                EventBindingvalue();
+                setTextFieldValues("", "", "", "", "");
+                $("#txtDrierID").focus();
+            }
+
         });
     }
 
