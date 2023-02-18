@@ -186,7 +186,6 @@
 <script>
     // $("#BtnClearAll").click(function () {
     //     setTextFieldValues();
-    //     // $("#txtCustomerNic").refresh();
     //
     // });
 
@@ -222,59 +221,69 @@
     });
 
 
-    // //update value
-    // $("#BtnUpdate").click(function () {
+    //update value
+    $("#BtnUpdate").click(function () {
+        let User =$("#txtCarUserId").val();
+        let Version =$("#txtVersion").val();
+        let Type =$("#txtCarType").val();
+        let Fuel =$("#txtFuel").val();
+        let Passengers =$("#txtPassengers").val();
+        let Transmission =$("#txtTransmission").val();
+        let Colour =$("#txtColour").val();
+        let Rent_duration =$("#txtRent_duration").val();
+        let Price =$("#txtPrice").val();
+        let Price_ExaraKm =$("#txtPrice_ExtraKm").val();
+
+
+        var cars = {
+            user: User,
+            version: Version,
+            type: Type,
+            fuel: Fuel,
+            transmission: Transmission,
+            passengers: Passengers,
+            colour: Colour,
+            rent_duration: Rent_duration,
+            price: Price,
+            price_ExtraKm: Price_ExaraKm,
+
+        }
+
+        $.ajax({
+            url: baseURL + 'Car',
+            method: 'put',
+            contentType: "application/json",
+            data: JSON.stringify(cars),
+            dataType: "json",
+            success: function (res) {
+                alert(res.message);
+                getAll();
+            },
+            error: function (error) {
+                let cause = JSON.parse(error.responseText).message;
+                alert(cause);
+            }
+
+        });
+    });
     //
-    //     let User = $("#txtDriverUser").val();
-    //     let Name = $("#txtDriverName").val();
-    //     let Address = $("#txtDriverAddress").val();
-    //     let Lic = $("#txtDriverLicNo").val();
-    //     let Available = $("#txtDriverAvailable").val();
-    //
-    //
-    //     var driver = {
-    //         user: User,
-    //         name: Name,
-    //         address: Address,
-    //         licNo: Lic,
-    //         availability: Available,
-    //     }
-    //
-    //     $.ajax({
-    //         url: baseURL + 'Driver',
-    //         method: 'put',
-    //         contentType: "application/json",
-    //         data: JSON.stringify(driver),
-    //         dataType: "json",
-    //         success: function (res) {
-    //             alert(res.message);
-    //             getAll();
-    //         },
-    //         error: function (error) {
-    //             let cause = JSON.parse(error.responseText).message;
-    //             alert(cause);
-    //         }
-    //
-    //     });
-    // });
-    //
-    // //Delete Value
-    // $("#BtnDelete").click(function () {
-    //
-    //     let id = $("#txtDriverUser").val();
-    //     $.ajax({
-    //         url: baseURL + "Driver?id=" + id + "",
-    //         method: "delete",
-    //         dataType: "json",
-    //         success: function (resp) {
-    //             alert(resp.message);
-    //             getAll();
-    //         },
-    //         error: function (error) {
-    //             alert(JSON.parse(error.responseText).message);
-    //         }
-    //     });
-    // });
+    //Delete Value
+    $("#BtnDelete").click(function () {
+
+        let id = $("#txtUser").val();
+        $.ajax({
+            url: baseURL + "Car?id=" + id + "",
+            method: "delete",
+            dataType: "json",
+            success: function (resp) {
+                alert(resp.message);
+                getAll();
+            },
+            error: function (error) {
+                alert(JSON.parse(error.responseText).message);
+            }
+        });
+    });
 
 
     function getAll() {
@@ -302,19 +311,19 @@
                     $("#tblCar").append(row);
                 }
                 // console.log("Add " + row);
-                // EventBindingvalue();
-                // setTextFieldValues("", "", "", "", "", "", "", "", "","");
-                $("#txtCarUserId").focus();
+                EventBindingvalue();
+                setTextFieldValues("", "", "", "", "", "", "", "", "","");
+                $("#txtCustomerID").focus();
             }
 
         });
     }
 
 
-    function setTextFieldValues(user,Brand,Type,Fuel,Passengers,Transmission,Colour,Rent_duration,Price,Price_ExtraKm) {
-        $("#txtCarUserId").val(user);
-        $("#txtCarBrand").val(Brand);
-        $("#txtCarType").val(Type);
+    function setTextFieldValues(user,Version,Type,Fuel,Passengers,Transmission,Colour,Rent_duration,Price,Price_ExtraKm) {
+        $("#txtUser").val(user);
+        $("#txtVersion").val(Version);
+        $("#txtType").val(Type);
         $("#txtFuel").val(Fuel);
         $("#txtPassengers").val(Passengers);
         $("#txtTransmission").val(Transmission);
@@ -330,7 +339,7 @@
         $("#tblCar>tr").click(function () {
 
             let user = $(this).children(":eq(0)").text();
-            let Brand = $(this).children(":eq(1)").text();
+            let Version = $(this).children(":eq(1)").text();
             let Type = $(this).children(":eq(2)").text();
             let Fuel = $(this).children(":eq(3)").text();
             let Passengers = $(this).children(":eq(4)").text();
@@ -342,9 +351,9 @@
 
 
             //  tble eke textfild walata data add karanawa
-            $("#txtCarUserId").val(user);
-            $("#txtCarBrand").val(Brand);
-            $("#txtCarType").val(Type);
+            $("#txtUser").val(user);
+            $("#txtVersion").val(Version);
+            $("#txtType").val(Type);
             $("#txtFuel").val(Fuel);
             $("#txtPassengers").val(Passengers);
             $("#txtTransmission").val(Transmission);
