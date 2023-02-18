@@ -59,23 +59,31 @@
 
             <div class="row">
 
+<!--                <div class="col">-->
+<!--                    <label for="txtCarUserId">Car User Id</label>-->
+<!--                    <input type="text" class="form-control is-invalid" id="txtCarUserId" placeholder=""-->
+<!--                           name="user"-->
+<!--                           aria-label="User" required>-->
+<!--                </div>-->
                 <div class="col">
-                    <label for="txtCarUserId">Car User Id</label>
-                    <input type="text" class="form-control is-invalid" id="txtCarUserId" placeholder=""
+                    <label for="txtUser">Car_Id</label>
+                    <input type="text" class="form-control is-invalid" id="txtUser" placeholder=""
                            name="user"
-                           aria-label="User" required>
+                           aria-label="user" required>
+                </div>
+
+
+                <div class="col">
+                    <label for="txtVersion">Version</label>
+                    <input type="text" class="form-control is-invalid" id="txtVersion" placeholder=""
+                           name="version"
+                           aria-label="version" required>
                 </div>
                 <div class="col">
-                    <label for="txtCarBrand">Car Brand</label>
-                    <input type="text" class="form-control is-invalid" id="txtCarBrand" placeholder=""
-                           name="brand"
-                           aria-label="Brand" required>
-                </div>
-                <div class="col">
-                    <label for="txtCarType">Car Type</label>
-                    <input type="text" class="form-control is-invalid" id="txtCarType" placeholder=""
+                    <label for="txtType">Type</label>
+                    <input type="text" class="form-control is-invalid" id="txtType" placeholder=""
                            name="type"
-                           aria-label="Type" required>
+                           aria-label="type" required>
                 </div>
                 <div class="col">
                     <label for="txtFuel">Fuel_type</label>
@@ -188,12 +196,12 @@
 
     $("#SaveCar").click(function () {
 
-        let formData2 = $("#CarForm").serialize();
+        let formData3 = $("#CarForm").serialize();
         // console.log(formData2);
         $.ajax({
             url: baseURL + "Car",
             method: "post",
-            data: formData2,
+            data: formData3,
             dataType: "json",
             success: function (res) {
                 // console.log(res);
@@ -270,7 +278,7 @@
 
 
     function getAll() {
-        $("#tblDriver").empty();
+        $("#tblCar").empty();
 
         $.ajax({
             url: baseURL + "Car",
@@ -278,13 +286,24 @@
             success: function (resp) {
                 for (let car of resp.data) {
 
-                    var row = '<tr><td>' + car.user + '</td><td>' +  car.brand+ '</td><td>' + car.type + '</td><td>' + car.fuel + '</td><td>' + car.passengers + + '</td><td>' + car.transmission + '</td><td>' + car.colour+ '</td><td>' + car.rent_duration + '</td><td>' +car.price + '</td><td>' + car.price_ExtraKm +'</td></tr>';
+                    var row = '<tr><td>' + car.user+
+                        '</td><td>' + car.version  + '</td><td>' + car.type +
+
+                        '</td><td>' + car.fuel + '</td><td>' + car.passengers
+
+                        + '</td><td>' + car.transmission + '</td><td>' +
+
+                        car.colour+ '</td><td>' + car.rent_duration +
+
+                        '</td><td>' +car.price + '</td><td>' +
+
+                        car.price_ExtraKm +'</td></tr>';
                     // console.log(row);
                     $("#tblCar").append(row);
                 }
                 // console.log("Add " + row);
-                EventBindingvalue();
-                setTextFieldValues("", "", "", "", "", "", "", "", "","");
+                // EventBindingvalue();
+                // setTextFieldValues("", "", "", "", "", "", "", "", "","");
                 $("#txtCarUserId").focus();
             }
 
