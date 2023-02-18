@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body style="width: 1524px">
+<header>
+    <!--  //logo-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!--      <a class="navbar-brand" href="#">-->
+            <!--        <img src="../Assets/dKP.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">-->
+            <!--        Dkp-Product  </a>-->
+        </div>
+        <!--/links-->
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <!--          <a href="../DashBord.html" class="nav-link active" aria-current="page" href="#">Home</a>-->
+                    <a class="nav-link active" aria-current="page" href="#">Orders</a>
+                    <a class="nav-link active" aria-current="page" href="#">Items</a>
+                    <a class="nav-link active" aria-current="page" href="#">Customers</a>
+
+                </div>
+            </div>
+            <!--  Search-->
+        </div>
+
+        <div class="container-fluid">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</header>
+
+
+<main>
+    <section>
+        <h1 class="bg-success p-2 text-white bg-opacity-75">Payment Details</h1>
+    </section>
+    <br>
+    <br>
+
+    <section>
+        <form id="PaymentForm" class="was-validated">
+
+            <div class="row">
+
+<!--                <div class="col">-->
+<!--                    <label for="txtP_Id">Payment_Id</label>-->
+<!--                    <input type="text" class="form-control is-invalid" id="txtP_Id" placeholder=""-->
+<!--                           name="pid"-->
+<!--                           aria-label="pid" required>-->
+<!--                </div>-->
+
+
+
+                <div class="col">
+                    <label for="txtPId">Payment_Id</label>
+                    <input type="text" class="form-control is-invalid" id="txtPId" placeholder=""
+                           name="pid"
+                           aria-label="pid" required>
+                </div>
+                <div class="col">
+                    <label for="txtRent_Free">Rent_Free</label>
+                    <input type="text" class="form-control is-invalid" id="txtRent_Free" placeholder=""
+                           name="rent"
+                           aria-label="rent" required>
+                </div>
+                <div class="col">
+                    <label for="txtDriver_Free">Driver_Free</label>
+                    <input type="text" class="form-control is-invalid" id="txtDriver_Free" placeholder=""
+                           name="driver"
+                           aria-label="driver" required>
+                </div>
+                <div class="col">
+                    <label for="txtTravel_Distance">Travel_Distance</label>
+                    <input type="text" id="txtTravel_Distance" class="is-invalid form-control d-inline-block"
+                           placeholder=""
+                           name="distance"
+                           aria-label="distance" required>
+                </div>
+
+            </div>
+            <br>
+            <div class="row">
+
+                <div class="col">
+                    <label for="txtLoss_Damage">Loss_Damage</label>
+                    <input type="text" class="form-control is-invalid" id="txtLoss_Damage" placeholder=""
+                           name="damege"
+                           aria-label="damege" required>
+                </div>
+                <div class="col">
+                    <label for="txtcalc_LossDamage">calc_LossDamage</label>
+                    <input type="text" class="form-control is-invalid" id="txtcalc_LossDamage" placeholder=""
+                           name="l0ssDamage"
+                           aria-label="l0ssDamage" required>
+                </div>
+                <div class="col">
+                    <label for="txtPayment_Date">Payment_Date</label>
+                    <input type="text" id="txtPayment_Date" class="is-invalid form-control d-inline-block"
+                           placeholder=""
+                           name="date"
+                           aria-label="date" required>
+                </div>
+
+            </div>
+
+            <br>
+            <div class="row">
+
+                <div class="col">
+                    <label for="txtExtra_Km">Extra_Km</label>
+                    <input type="text" class="is-invalid form-control" id="txtExtra_Km" placeholder=""
+                           name="extra"
+                           aria-label="extra" required>
+                </div>
+                <div class="col">
+                    <label for="txtExtra_Km_Price">Extra_Km_Price</label>
+                    <input type="text" id="txtExtra_Km_Price" class="is-invalid form-control"
+                           placeholder=""
+                           name="exteraprice" aria-label="exteraprice" required>
+                </div>
+                <div class="col">
+                    <label for="txtFull_Payment">Full_Payment</label>
+                    <input type="text" id="txtFull_Payment" class="is-invalid form-control"
+                           placeholder=""
+                           name="full" aria-label="full" required>
+                </div>
+
+            </div>
+        </form>
+        <br><br>
+        <button type="button" id="SavePayment" class="btn btn-primary">Save</button>
+        <!--        <button type="button" class="btn btn-secondary">Remove</button>-->
+        <button type="button" id="BtnUpdate" class="btn btn-success">Update</button>
+        <button type="button" id="BtnDelete" class="btn btn-danger">Delete</button>
+        <button type="button" id="BtnClearAll" class="btn btn-warning">Clearall</button>
+        <button type="button" id="btnLoadAll" class="btn btn-info">getall</button>
+
+
+    </section>
+    <br>
+    <br>
+    <section>
+        <table style="width: 95%" border="2px solid red"
+               class="col table table-bordered border-primary table-dark table-striped">
+            <thead class="bg-danger text-white">
+            <tr>
+                <th>P_Id</th>
+                <th>Rent_Free</th>
+                <th>Driver_Free</th>
+                <th>Travel_Distance</th>
+                <th>Loss_Damage</th>
+                <th>calc_LossDamage</th>
+                <th>Payment_Date</th>
+                <th>Extra_Km</th>
+                <th>Extra_Km_Price</th>
+                <th>Full_Payment</th>
+            </tr>
+            </thead>
+            <tbody id="tblPayment">
+
+            </tbody>
+        </table>
+
+    </section>
+</main>
+
+
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery-3.6.1.min.js"></script>
+<script>
+    // $("#BtnClearAll").click(function () {
+    //     setTextFieldValues();
+    //
+    // });
+
+    let baseURL = "http://localhost:8080/Back_End_war/";
+
+    getAll();
+
+    $("#SavePayment").click(function () {
+
+        let formData3 = $("#PaymentForm").serialize();
+        // console.log(formData2);
+        $.ajax({
+            url: baseURL + "Payment",
+            method: "post",
+            data: formData3,
+            dataType: "json",
+            success: function (res) {
+                // console.log(res);
+                alert(res.message);
+                getAll();
+            },
+            error: function (error) {
+                console.log("Error Method Invoked");
+                console.log(error);
+                // var jsObject = JSON.parse(error.responseText);
+                // alert(jsObject.message);
+            }
+        });
+    });
+
+    $("#btnLoadAll").click(function () {
+        getAll()
+    });
+
+
+    //update value
+    $("#BtnUpdate").click(function () {
+        let User = $("#txtCarUserId").val();
+        let Version = $("#txtVersion").val();
+        let Type = $("#txtCarType").val();
+        let Fuel = $("#txtFuel").val();
+        let Passengers = $("#txtPassengers").val();
+        let Transmission = $("#txtTransmission").val();
+        let Colour = $("#txtColour").val();
+        let Rent_duration = $("#txtRent_duration").val();
+        let Price = $("#txtPrice").val();
+        let Price_ExaraKm = $("#txtPrice_ExtraKm").val();
+
+
+        var cars = {
+            user: User,
+            version: Version,
+            type: Type,
+            fuel: Fuel,
+            transmission: Transmission,
+            passengers: Passengers,
+            colour: Colour,
+            rent_duration: Rent_duration,
+            price: Price,
+            price_ExtraKm: Price_ExaraKm,
+
+        }
+
+        $.ajax({
+            url: baseURL + 'Car',
+            method: 'put',
+            contentType: "application/json",
+            data: JSON.stringify(cars),
+            dataType: "json",
+            success: function (res) {
+                alert(res.message);
+                getAll();
+            },
+            error: function (error) {
+                let cause = JSON.parse(error.responseText).message;
+                alert(cause);
+            }
+
+        });
+    });
+    //
+    //Delete Value
+    $("#BtnDelete").click(function () {
+
+        let id = $("#txtUser").val();
+        $.ajax({
+            url: baseURL + "Car?id=" + id + "",
+            method: "delete",
+            dataType: "json",
+            success: function (resp) {
+                alert(resp.message);
+                getAll();
+            },
+            error: function (error) {
+                alert(JSON.parse(error.responseText).message);
+            }
+        });
+    });
+
+
+    function getAll() {
+        $("#tblPayment").empty();
+
+        $.ajax({
+            url: baseURL + "Payment",
+            dataType: "json",
+            success: function (resp) {
+                for (let pay of resp.data) {
+
+                    var row = '<tr><td>' + pay.pid +
+                        '</td><td>' + pay.rent +  '</td><td>' + pay.driver +
+
+                         '</td><td>' + pay.distance + '</td><td>' +
+
+                        pay.damege + '</td><td>' + pay.l0ssDamage +
+
+                        '</td><td>' + pay.date + '</td><td>' + pay.extra
+
+                  +  '</td><td>' +pay.exteraprice + '</td><td>' +
+
+                        pay.full + '</td></tr>';
+                    // console.log(row);
+                    $("#tblPayment").append(row);
+                }
+                // console.log("Add " + row);
+                // EventBindingvalue();
+                // setTextFieldValues("", "", "", "", "", "", "", "", "", "");
+                $("#txtP_Id").focus();
+            }
+
+        });
+    }
+
+
+    function setTextFieldValues(pid, rent, driver, distance, damege,
+                                l0ssDamage, date, extra, exteraprice, full) {
+        $("#txtPId").val(pid);
+        $("#txtRent_Free").val(rent);
+        $("#txtDriver_Free").val(driver);
+        $("#txtTravel_Distance").val(distance);
+        $("#txtLoss_Damage").val(damege);
+        $("#txtcalc_LossDamage").val(l0ssDamage);
+        $("#txtPayment_Date").val(date);
+        $("#txtExtra_Km").val(extra);
+        $("#txtExtra_Km_Price").val(exteraprice);
+        $("#txtFull_Payment").val(full);
+
+    }
+
+    //  mehidi table eka click karama data print we
+    function EventBindingvalue() {
+        $("#tblCar>tr").click(function () {
+
+            let pid = $(this).children(":eq(0)").text();
+            let rent = $(this).children(":eq(1)").text();
+            let driver = $(this).children(":eq(2)").text();
+            let distance = $(this).children(":eq(3)").text();
+            let damege = $(this).children(":eq(4)").text();
+            let l0ssDamage = $(this).children(":eq(5)").text();
+            let date = $(this).children(":eq(6)").text();
+            let extra = $(this).children(":eq(7)").text();
+            let exteraprice = $(this).children(":eq(8)").text();
+            let full = $(this).children(":eq(9)").text();
+
+
+            //  tble eke textfild walata data add karanawa
+            $("#txtPId").val(pid);
+            $("#txtRent_Free").val(rent);
+            $("#txtDriver_Free").val(driver);
+            $("#txtTravel_Distance").val(distance);
+            $("#txtLoss_Damage").val(damege);
+            $("#txtcalc_LossDamage").val(l0ssDamage);
+            $("#txtPayment_Date").val(date);
+            $("#txtExtra_Km").val(extra);
+            $("#txtExtra_Km_Price").val(exteraprice);
+            $("#txtFull_Payment").val(full);
+        });
+
+        // //double click remove table colom
+        // $("#tblCustomer>tr").on('dblclick', function () {
+        //     $(this).remove();
+        // });
+
+    }
+
+    // //Enter Button use for textfield
+    // $("#txtCustomerID").on('keydown', function (event) {
+    //
+    //     if (event.key == "Enter") {
+    //         $("#txtCustomerName").focus();
+    //     }
+    //
+    // });
+    //
+    // $("#txtCustomerName").on('keydown', function (event) {
+    //
+    //     if (event.key == "Enter") {
+    //         $("#txtCustomerContNo").focus();
+    //     }
+    //
+    // });
+    //
+    // $("#txtCustomerContNo").on('keydown', function (event) {
+    //
+    //     if (event.key == "Enter") {
+    //         $("#txtCustomerAddress").focus();
+    //     }
+    //
+    // });
+
+    // $("#txtCustomerAddress").on('keydown', function (event) {
+    //
+    //     if (event.key == "Enter") {
+    //         $("#txtCustomerSalary").focus();
+    //     }
+    //
+    // });
+    //
+    // $("#txtCustomerSalary").on('keydown', function (event) {
+    //
+    //     if (event.key == "Enter") {
+    //         confirm("Do You Want To Add This Customer...?")
+    //         $("#SaveCustomer").focus();
+    //     }
+    //
+    // });
+
+    // Tap Button Remove
+    // $("#txtCustomerID,#txtCustomerName,#txtCustomerCon,#txtCustomerAddress,#txtCustomerSalary").on('keydown', function (event) {
+    //
+    //     if (event.key == "Tab") {
+    //         event.preventDefault();
+    //     }
+    // });
+
+
+</script>
+
+
+</body>
+</html>
