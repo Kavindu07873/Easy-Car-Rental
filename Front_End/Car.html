@@ -7,7 +7,7 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
-<body style="width: 1524px">
+<body style="width: 1450px">
 <header>
     <!--  //logo-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -48,10 +48,41 @@
 
 
 <main>
+    <div class="container overflow-hidden text-center"  style="z-index: 6;position: absolute">
+        <div class="row gx-5" style="z-index: 4">
+            <div class="col">
+                <div class="p-3" style="z-index: 4">
+
+                    <p style="z-index: 4" class="fw-bold fs-3 text-danger">Date: <span id="datetime1"></span></p>
+
+                    <script>
+                        var dt = new Date();
+                        document.getElementById("datetime1").innerHTML = dt.toLocaleDateString();
+                    </script>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3">
+                    <p class="fw-bold fs-4 text-danger">Time: <span id="datetime"></span></p>
+
+                    <script>
+                        var dt = new Date();
+                        document.getElementById("datetime").innerHTML = dt.toLocaleTimeString();
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <section>
         <h1 class="bg-success p-2 text-white bg-opacity-75">Car Details</h1>
     </section>
     <br>
+
     <br>
 
     <section>

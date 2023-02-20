@@ -35,6 +35,12 @@
             width: 96%;
             height: 36%;
         }
+
+        #realTime {
+            width: 100px;
+            height: 200px;
+            border: 2px solid red;
+        }
     </style>
 </head>
 <body>
@@ -95,6 +101,36 @@
 <!--</header>-->
 
 <main class="container-fluid" id="customerContent">
+
+    <div class="container overflow-hidden text-center"  style="z-index: 6;position: absolute">
+        <div class="row gx-5" style="z-index: 4">
+            <div class="col">
+                <div class="p-3" style="z-index: 4">
+
+                    <p style="z-index: 4" class="fw-bold fs-3 text-danger">Date: <span id="datetime1"></span></p>
+
+                    <script>
+                        var dt = new Date();
+                        document.getElementById("datetime1").innerHTML = dt.toLocaleDateString();
+                    </script>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3">
+                    <p class="fw-bold fs-4 text-danger">Time: <span id="datetime"></span></p>
+
+                    <script>
+                        var dt = new Date();
+                        document.getElementById("datetime").innerHTML = dt.toLocaleTimeString();
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <div>
         <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
         <!--    <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg" class="img-fluid" alt="...">-->
@@ -104,20 +140,20 @@
     <aside style="position: absolute">
 
 
-            <li style="width: 20%;height: 15%;cursor: pointer  ; display: inline-block" class="list-group-item bg-dark">
-                <a class="list-group-item text-bg-dark" href="DashBoardAdmin.html">Admin Login</a>
-            </li>
+        <li style="width: 20%;height: 15%;cursor: pointer  ; display: inline-block" class="list-group-item bg-dark">
+            <a class="list-group-item text-bg-dark" href="DashBoardAdmin.html">Admin Login</a>
+        </li>
 
         <br>
         <br>
-            <li  style="width: 20%;height: 15%;cursor: pointer ; display: inline-block" class="list-group-item bg-dark">
-                <a class="list-group-item text-bg-dark " href="DashBoardUser.html">User Login</a>
-            </li>
+        <li style="width: 20%;height: 15%;cursor: pointer ; display: inline-block" class="list-group-item bg-dark">
+            <a class="list-group-item text-bg-dark " href="DashBoardUser.html">User Login</a>
+        </li>
 
- <!--        <button type="submit" class="btn btn-dark btn-primary btn-lg" href="DashBoardAdmin.html">Admin Login</button>-->
-<!--        <br>-->
-<!--        <br>-->
-<!--        <button type="button" class="btn btn-dark btn-primary btn-lg">User Login</button>-->
+        <!--        <button type="submit" class="btn btn-dark btn-primary btn-lg" href="DashBoardAdmin.html">Admin Login</button>-->
+        <!--        <br>-->
+        <!--        <br>-->
+        <!--        <button type="button" class="btn btn-dark btn-primary btn-lg">User Login</button>-->
     </aside>
 
     <section>

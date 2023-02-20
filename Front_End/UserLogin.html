@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>User Login</title>
     <meta content="width=device-width initial-scale=1" name="viewport">
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
           integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
 
@@ -38,6 +38,9 @@
             width: 30%;
             height: 20%;
         }
+        #realTime{
+            border: black;
+          }
     </style>
 </head>
 
@@ -88,15 +91,32 @@
 
 <main>
     <!--////////////////////////////////////////////////////////////////-->
-    <section>
-        <div>
-            <h1>Date</h1>
-        </div>
+    <div class="container overflow-hidden text-center"  style="z-index: 6;position: absolute">
+        <div class="row gx-5" style="z-index: 4">
+            <div class="col">
+                <div class="p-3" style="z-index: 4">
 
-        <div>
-            <h1>Time</h1>
+                    <p style="z-index: 4" class="fw-bold fs-3 text-danger">Date: <span id="datetime1"></span></p>
+
+                    <script>
+                        var dt = new Date();
+                        document.getElementById("datetime1").innerHTML = dt.toLocaleDateString();
+                    </script>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3">
+                    <p class="fw-bold fs-4 text-danger">Time: <span id="datetime"></span></p>
+
+                    <script>
+                        var dt = new Date();
+                        document.getElementById("datetime").innerHTML = dt.toLocaleTimeString();
+                    </script>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
     <!////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////---->
 
     <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
@@ -228,7 +248,7 @@
     </section>
 </main>
 
-<script src="../assets/js/bootstrap.min.js"></script>
-<script src="../assets/js/jquery-3.6.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery-3.6.1.min.js"></script>
 </body>
 </html>

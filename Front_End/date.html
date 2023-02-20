@@ -9,25 +9,28 @@
 
 </head>
 
-<body onload="startTime()">
-<div id="txt"></div>
-<script>
-  function startTime() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
-    document.getElementById('txt').innerHTML =
-            h + ":" + m + ":" + s;
-    var t = setTimeout(startTime, 500);
-  }
-  function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-    return i;
-  }
-</script>
+<body>
+<main>
+
+<!--  <p>Current Date and Time is <span id='date-time'></span>.</p>-->
+<!--  <script>-->
+<!--    var dt = new Date();-->
+<!--    document.getElementById('date-time').innerHTML=dt;-->
+<!--  </script>-->
+<!--  <p>Date/Time: <span id="datetime"></span></p>-->
+
+<!--  <script>-->
+<!--    var dt = new Date();-->
+<!--    document.getElementById("datetime").innerHTML = dt.toLocaleTimeString();-->
+<!--  </script>-->
+<!--  <p>Date/Time: <span id="datetime"></span></p>-->
+
+<!--  <script>-->
+<!--    var dt = new Date();-->
+<!--    document.getElementById("datetime").innerHTML = (("0"+(dt.getMonth()+1)).slice(-2)) +"/"+ (("0"+dt.getDate()).slice(-2)) +"/"+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()+1).slice(-2)) +":"+ (("0"+dt.getMinutes()+1).slice(-2));-->
+<!--  </script>-->
+
+</main>
 
 </body>
 </html>
