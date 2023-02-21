@@ -1,289 +1,596 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
-  <meta charset="UTF-8">
-  <title>DashBoardUser</title>
-  <meta content="width=device-width initial-scale=1" name="viewport">
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>DashBoardUser</title>
+    <meta content="width=device-width initial-scale=1" name="viewport">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
 
 
-  <style>
-    ul > li {
-      cursor: pointer;
-    }
-    main>div>img{
-      position: absolute;
-      left: 0px;
-      bottom: 0;
-      right: 0;
-      top: 89px;
-      width: 100%;
-      height: 87%;
-      opacity: 50%;
-      z-index: 0;
+    <style>
 
-    }
-    main>aside{
-      display: inline-block;
-      left: 1%;
-      bottom: 0;
-      right: 0;
-      top: 29%;
-      width: 87%;
-      height: 48%;
-    }
-    main>aside>button{
-      width: 30%;
-      height: 20%;
-    }
+        header {
+            position: fixed;
+            /*width: 1520px;*/
+            width: 100vw;
+            /*border: 6px solid white;*/
+            /*height: 9vh;*/
+            z-index: 6;
+            /*left: 0;*/
+            /*top: 0;*/
+            /*background:linear-gradient(100deg,black,gray,black);*/
+        }
 
-    main>section#tableDetails{
-     display: inline-block;
-      margin: auto;
-    position: absolute;
-    left: 35%;
-    right: 0;
-    top: 19%;
-  bottom: 0;
-      width: 50%;
-      height: 60%;
 
-  }
+        ul > li {
+            cursor: pointer;
+        }
 
-  </style>
+        main {
+            /*background:linear-gradient(100deg,black,gray,black);*/
+            position: relative;
+            left: 0;
+            right: 0;
+            top: 95px;
+            bottom: 0;
+        }
+
+        main > div {
+            position: absolute;
+            left: 0;
+            top: -90px;
+            bottom: 0;
+            right: 0;
+        }
+
+        main > div > img {
+            position: relative;
+            /*left: 0px;*/
+            /*bottom: 0;*/
+            /*right: 0;*/
+            top: 89px;
+            width: 100%;
+            /*height: 87%;*/
+            opacity: 50%;
+            z-index: 0;
+
+        }
+
+        main > aside {
+            position: absolute;
+            display: inline-block;
+            left: 1%;
+            bottom: 0;
+            right: 0;
+            top: 29%;
+            width: 87%;
+            height: 48%;
+        }
+
+        main > aside > button {
+            width: 30%;
+            height: 20%;
+        }
+
+        main > section:nth-child(2) {
+            border: 5px solid red;
+            position: relative;
+            /*display: inline-block;*/
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        main > section:nth-child(2) > div > div > div:hover {
+
+            /*width: 200px;*/
+            /*height: 400px;*/
+
+            background-color: #1d1db4;
+            transition-property: background-color, font-size;
+            transition-duration: 4s;
+            /*font-size: 30px;*/
+            position: relative;
+            /*left: -40px;*/
+        }
+
+        main > section:nth-child(3) {
+            border: 5px solid red;
+            position: relative;
+            /*display: inline-block;*/
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        main > section:nth-child(3) > div > div > div:hover {
+
+            /*width: 200px;*/
+            /*height: 400px;*/
+
+            background-color: #e21167;
+            transition-property: background-color, font-size;
+            transition-duration: 4s;
+            /*font-size: 30px;*/
+            position: relative;
+            /*left: -40px;*/
+        }
+
+        main > section:nth-child(4) {
+            border: 5px solid red;
+            position: relative;
+            /*display: inline-block;*/
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        main > section:nth-child(4) > div > div > div:hover {
+
+            /*width: 200px;*/
+            /*height: 400px;*/
+
+            background-color: #1d1db4;
+            transition-property: background-color, font-size;
+            transition-duration: 4s;
+            /*font-size: 30px;*/
+            position: relative;
+            /*left: -40px;*/
+        }
+        main > section:nth-child(5){
+            z-index: 6;
+        }
+        /*main > section#tableDetails {*/
+        /*    display: inline-block;*/
+        /*    margin: auto;*/
+        /*    position: absolute;*/
+        /*    left: 35%;*/
+        /*    right: 0;*/
+        /*    top: 19%;*/
+        /*    bottom: 0;*/
+        /*    width: 50%;*/
+        /*    height: 60%;*/
+
+        /*}*/
+
+    </style>
 </head>
 
 <body>
 <header class="jumbotron bg-primary text-white p-3">
-  <!--  //logo-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="assets/img/images%20(5).jpeg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-        Easy Car Rental Pvt Ltd </a>
-    </div>
+    <!--  //logo-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/images%20(5).jpeg" alt="Logo" width="30" height="24"
+                     class="d-inline-block align-text-top">
+                Easy Car Rental Pvt Ltd </a>
+        </div>
 
-    <!--/links-->
-    <div class="container-fluid">
-      <!--            <a class="navbar-brand" href="#">Easy Car Rental Pvt Ltd</a>-->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <!--/links-->
+        <div class="container-fluid">
+            <!--            <a class="navbar-brand" href="#">Easy Car Rental Pvt Ltd</a>-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <button class="btn btn-outline-warning" type="submit">Car</button>
+                <button class="btn btn-outline-warning" type="submit">Driver</button>
+                <button class="btn btn-outline-warning" type="submit">Payment</button>
 
-    </div>
 
-    <div class="container-fluid">
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
+            </button>
+
+        </div>
+
+        <div class="container-fluid">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+        <div class="container-fluid">
+
+            <button class="btn btn-dark btn-primary btn-lg btn-outline-danger" type="button">Admin Login</button>
+            <button class="btn btn-dark btn-primary btn-lg btn-outline-danger" type="button">Customer Login</button>
+        </div>
+
+    </nav>
 
 </header>
 
 <main>
-  <!--////////////////////////////////////////////////////////////////-->
-  <section>
-    <div>
-      <h1>Date</h1>
-    </div>
 
     <div>
-      <h1>Time</h1>
+        <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
+        <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
+        <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
+
     </div>
-  </section>
-  <!////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////---->
 
-  <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-  <div>
-    <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
-  </div>
-
-  <aside style="position: absolute">
-
-    <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Driver List</button>
-    <br>
-    <br>
-
-    <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#RegisterNewCustomer">Order Details</button>
-    <br>
-    <br>
-    <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#Driver">Car Details</button>
-    <br>
-    <br>
-    <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#Driver">Payment Details</button>
-    <br>
-    <br>
-    <br>
-    <button type="button" class="btn  btn-danger btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#Driver">Place Order</button>
-  </aside>
-  <!--model tika-->
-  <section>
     <section>
-      <!--         Button trigger modal-->
-      <!--          <button  style="position: absolute" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">-->
-      <!--            Launch demo modal-->
-      <!--          </button>-->
+        <h1>General Car </h1>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/img/Cars/18.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/Cars/35.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/Cars/36.jpg" class="d-block w-100" alt="...">
+                            </div>
 
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <h1>Alto_Auto</h1>
+                    </div>
                 </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-            </div>
+                <div class="col-md-4">
+                    <div id="carouselExampleSlidesOnly1" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/img/Cars/alto-k10-exterior-right-front-three-quarter-57.webp"
+                                     class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/Cars/alto-k10-exterior-right-rear-three-quarter.webp"
+                                     class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/Cars/alto-k10-interior-dashboard.webp" class="d-block w-100"
+                                     alt="...">
+                            </div>
 
-          </div>
+                        </div>
+                        <h1>Alto Manuel</h1>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div>
+                        <div id="carouselExampleSlidesOnly3" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="assets/img/Cars/celerio-exterior-rear-view.webp" class="d-block w-100"
+                                         alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/Cars/celerio-exterior-left-rear-three-quarter.webp"
+                                         class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/Cars/celerio-exterior-right-side-view.webp"
+                                         class="d-block w-100" alt="...">
+                                </div>
+
+                            </div>
+                            <h1>Celerio Auto</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div>
+                        <div id="carouselExampleSlidesOnly4" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="assets/img/Cars/Perodua_Axia_2014_360_720_50-23.jpg" class="d-block w-100"
+                                         alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/Cars/Perodua_Axia_2014_360_720_50-30.jpg" class="d-block w-100"
+                                         alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/Cars/Perodua_Axia_2014_360_720_50-47.jpg" class="d-block w-100"
+                                         alt="...">
+                                </div>
+
+                            </div>
+                            <h1>Perodua-Axia-Auto</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div>
+                        <div id="carouselExampleSlidesOnly5" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="assets/img/Cars/aqua.jpeg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/Cars/images.jpeg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/Cars/images%20(1).jpeg" class="d-block w-100" alt="...">
+                                </div>
+
+                            </div>
+                            <h1>Prius_Aqua_Auto</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
     <section>
-      <!--         Button trigger modal-->
-      <!--          <button  style="position: absolute" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">-->
-      <!--            Launch demo modal-->
-      <!--          </button>-->
+        <h1>Premium Car </h1>
 
-      <!-- Modal -->
-      <div class="modal fade" id="RegisterNewCustomer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel2">Modal title</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div class="row">
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="ID" aria-label="ID">
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="Name" aria-label="Name">
-                </div>
-              </div>
-              <br>
-              <br>
-              <div class="row">
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="ContNo" aria-label="ContNo">
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="Address" aria-label="Address">
-                </div>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <div id="carouselExampleSlidesOnly6" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/img/Cars/download.jpeg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/Cars/download%20(1).jpeg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/Cars/11.jpeg" class="d-block w-100" alt="...">
+                            </div>
 
-              </div>
-              <br>                        </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                        <h1>Corolla_axio</h1>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="carouselExampleSlidesOnly7" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/img/images%20(1).jpeg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/Cars/images%20(2).jpeg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/Cars/png-transparent-perodua-bezza-car-perodua-myvi-perodua-axia-car-compact-car-sedan-car.png"
+                                     class="d-block w-100" alt="...">
+                            </div>
+
+                        </div>
+                        <h1>Perodua Bezza Prime Sedan</h1>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="carouselExampleSlidesOnly8" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/img/Cars/download%20(2).jpeg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/Cars/download%20(3).jpeg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/Cars/download%20(4).jpeg" class="d-block w-100" alt="...">
+                            </div>
+
+                        </div>
+                        <h1>Toyota Allion NZT 260</h1>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="carouselExampleSlidesOnly9" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/img/Cars/download.jpeg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/download%20(1).jpeg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/Cars/11.jpeg" class="d-block w-100" alt="...">
+                            </div>
+
+                        </div>
+                        <h1>Toyota Axio NKR 165</h1>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
     <section>
+        <h1>Luxury Car </h1>
 
-      <div class="modal fade" id="Driver" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel3">Modal title</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <div id="carouselExampleSlidesOnly10" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/img/Cars/download.jpeg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/Cars/download%20(1).jpeg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/Cars/11.jpeg" class="d-block w-100" alt="...">
+                            </div>
+
+                        </div>
+                        <h1>Toyota_Premio</h1>
+                        <h1>Luxury Car Available</h1>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="carouselExampleSlidesOnly11" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/img/Cars/beaimages.jpeg" class="d-block w-100" alt="...">
+
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/Cars/benimages.jpeg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/Cars/2017-C-CabrioCarSlide.gif" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <h1>Mercedes</h1>
+                        <h1>Luxury Car Available</h1>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="carouselExampleSlidesOnly12" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/img/Cars/i8download%20(3).jpeg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/Cars/188images.jpeg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/Cars/12download%20(3).jpeg" class="d-block w-100" alt="...">
+                            </div>
+
+                        </div>
+                        <h1>BMW i8</h1>
+                        <h1>Luxury Car Available</h1>
+
+                    </div>
+                </div>
+
             </div>
-            <div class="modal-body">
-
-
-
-
-
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
-  </section>
-  <section id="tableDetails">
-    <table border="2px solid red"   class="col table table-bordered border-primary table-dark table-striped">
-      <thead>
-      <tr class="table-dark table-striped">
-        <th scope="col">Id</th>
-        <th scope="col">Name</th>
-        <th scope="col">ContNo</th>
-        <th scope="col">Address</th>
-        <th scope="col">Salary</th>
-        <th scope="col">Salary</th>
-        <th scope="col">Salary</th>
+<!--    <aside>-->
+<!--        <section id="tblajest">-->
 
-      </tr>
-      </thead>
-      <tbody id="tblCustomer" >
-      <tr >
-        <td scope="row">1</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+<!--        <div>-->
+<!--            <button type="button" id="BtnShowCustomer" class="btn btn-success">Customer Details</button>-->
+<!--            <button type="button" id="BtnShowDriver" class="btn btn-primary">Drivers Details</button>-->
+<!--            <button type="button" class="btn btn-danger">Car Details</button>-->
+<!--            <button type="button" class="btn btn-warning">Payment Details</button>-->
 
+<!--        </div>-->
 
-      </tr>
-      <tr>
-        <td>2</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+<!--        <br>-->
+<!--        <br>-->
+<!--        <section>-->
+<!--            <table style="display:none" id="tableDetails"-->
+<!--                   class="col table table-bordered border-primary table-dark table-striped">-->
+<!--                <thead>-->
+<!--                <tr class="table-dark table-striped">-->
+<!--                    <th>Id</th>-->
+<!--                    <th>Name</th>-->
+<!--                    <th>Address</th>-->
+<!--                    <th>Email</th>-->
+<!--                    <th>Contact</th>-->
+<!--                    <th>Password</th>-->
+<!--                    <th>Nic</th>-->
 
-      </tr>
-      <tr>
-        <td>3</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody id="tblCustomer">-->
 
-      </tr>
+<!--                </tbody>-->
+<!--            </table>-->
+<!--            <table id="tableDriverDetails" style="display:none;width: 95%" border="2px solid red"-->
+<!--                   class="col table table-bordered border-primary table-dark table-striped">-->
+<!--                <thead class="bg-danger text-white">-->
+<!--                <tr>-->
+<!--                    <th>Id</th>-->
+<!--                    <th>Name</th>-->
+<!--                    <th>LicNo</th>-->
+<!--                    <th>Address</th>-->
+<!--                    <th>Availability</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody id="tblDriver">-->
 
-      </tbody>
-    </table>
+<!--                </tbody>-->
+<!--            </table>-->
 
-  </section>
+<!--        </section>-->
 
+<!--    </section>-->
+<!--    </aside>-->
+
+    <!--    <aside>-->
+    <!--        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button>-->
+
+    <!--        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">-->
+    <!--            <div class="offcanvas-header">-->
+    <!--                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>-->
+    <!--                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>-->
+    <!--            </div>-->
+    <!--            <div class="offcanvas-body">-->
+    <!--                <p>Try scrolling the rest of the page to see this option in action.</p>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        </aside>-->
 </main>
 
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/jquery-3.6.1.min.js"></script>
+<script>
+
+    <!--customer table show-->
+    let baseURL = "http://localhost:8080/Back_End_war/";
+
+
+    $("#BtnShowCustomer").click(function () {
+        $("#tableDriverDetails").css('display', 'none');
+        $("#tableDetails").css('display', 'block');
+        getAllCustomer();
+    });
+    $("#BtnShowDriver").click(function () {
+        $("#tableDetails").css('display', 'none');
+        $("#tableDriverDetails").css('display', 'block');
+        getAllDriver();
+    });
+
+    function getAllCustomer() {
+        $("#tblCustomer").empty();
+
+        $.ajax({
+            url: baseURL + "Customer",
+            dataType: "json",
+            success: function (resp) {
+                for (let cus of resp.data) {
+                    var row = '<tr><td>' + cus.id + '</td><td>' + cus.name + '</td><td>' + cus.address + '</td><td>' + cus.email + '</td><td>' + cus.cont + '</td><td>' + cus.nic + '</td><td>' + cus.password + '</td></tr>';
+
+                    $("#tblCustomer").append(row);
+                }
+                setTextFieldValues("", "", "", "", "", "", "");
+            }
+        });
+    }
+
+    function getAllDriver() {
+        $("#tblDriver").empty();
+
+        $.ajax({
+            url: baseURL + "Driver",
+            dataType: "json",
+            success: function (resp) {
+                for (let cus of resp.data) {
+                    console.log("mkd : " + cus.id + cus.name);
+
+                    var row = '<tr><td>' + cus.user + '</td><td>' + cus.name + '</td><td>' + cus.licNo + '</td><td>' + cus.address + '</td><td>' + cus.availability + '</td></tr>';
+                    // console.log(row);
+                    $("#tblDriver").append(row);
+                }
+                // console.log("Add " + row);
+                EventBindingvalue();
+                setTextFieldValues("", "", "", "", "");
+                $("#txtDrierID").focus();
+            }
+
+        });
+    }
+
+</script>
+
 </body>
 </html>

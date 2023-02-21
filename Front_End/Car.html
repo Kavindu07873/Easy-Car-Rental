@@ -240,9 +240,10 @@
             },
             error: function (error) {
                 console.log("Error Method Invoked");
-                console.log(error);
-                // var jsObject = JSON.parse(error.responseText);
-                // alert(jsObject.message);
+                // console.log(error.message);
+                // alert(error.message)
+                var jsObject = JSON.parse(error.responseText);
+                alert(jsObject.message);
             }
         });
     });

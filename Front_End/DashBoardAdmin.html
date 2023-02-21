@@ -14,11 +14,8 @@
     <title>Document</title>
 
 
-<!--    <h1> Time is <span id="time"> </span></h1>-->
-<!--    <script src="index.js">   </script>-->
-
-
-
+    <!--    <h1> Time is <span id="time"> </span></h1>-->
+    <!--    <script src="index.js">   </script>-->
 
 
     <style>
@@ -132,18 +129,18 @@
     <aside>
 
         <div style="position: relative">
-<!--            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"-->
-<!--                    data-bs-target="#exampleModal">Driver Manage-->
-<!--            </button>-->
-            <a href="DriverForm.html" class="btn btn-dark btn-primary btn-lg" >Driver Manage</a>
+            <!--            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"-->
+            <!--                    data-bs-target="#exampleModal">Driver Manage-->
+            <!--            </button>-->
+            <a href="DriverForm.html" class="btn btn-dark btn-primary btn-lg">Driver Manage</a>
 
             <br>
             <br>
 
-<!--            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"-->
-<!--                    data-bs-target="#exampleModal">Driver Manage-->
-<!--            </button>-->
-            <a href="CustomerForm.html" class="btn btn-dark btn-primary btn-lg" >Customer Manage</a>
+            <!--            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"-->
+            <!--                    data-bs-target="#exampleModal">Driver Manage-->
+            <!--            </button>-->
+            <a href="CustomerForm.html" class="btn btn-dark btn-primary btn-lg">Customer Manage</a>
 
             <br>
             <br>
@@ -295,49 +292,50 @@
 
         <br>
         <br>
-            <section >
-                <table style="display:none" id="tableDetails" class="col table table-bordered border-primary table-dark table-striped">
-                    <thead>
-                    <tr class="table-dark table-striped">
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Address</th>
-                        <th>Email</th>
-                        <th>Contact</th>
-                        <th>Password</th>
-                        <th>Nic</th>
+        <section>
+            <table style="display:none" id="tableDetails"
+                   class="col table table-bordered border-primary table-dark table-striped">
+                <thead>
+                <tr class="table-dark table-striped">
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Password</th>
+                    <th>Nic</th>
 
-                    </tr>
-                    </thead>
-                    <tbody id="tblCustomer">
+                </tr>
+                </thead>
+                <tbody id="tblCustomer">
 
-                    </tbody>
-                </table>
-                <table id="tableDriverDetails" style="display:none;width: 95%" border="2px solid red"
-                       class="col table table-bordered border-primary table-dark table-striped">
-                    <thead class="bg-danger text-white">
-                    <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>LicNo</th>
-                        <th>Address</th>
-                        <th>Availability</th>
-                    </tr>
-                    </thead>
-                    <tbody id="tblDriver">
+                </tbody>
+            </table>
+            <table id="tableDriverDetails" style="display:none;width: 95%" border="2px solid red"
+                   class="col table table-bordered border-primary table-dark table-striped">
+                <thead class="bg-danger text-white">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>LicNo</th>
+                    <th>Address</th>
+                    <th>Availability</th>
+                </tr>
+                </thead>
+                <tbody id="tblDriver">
 
-                    </tbody>
-                </table>
-
-            </section>
+                </tbody>
+            </table>
 
         </section>
 
     </section>
 
+
 </main>
 <script>
     var timeDisplay = document.getElementById("time");
+
     function refreshTime() {
         var dateString = new Date().toLocaleString("en-US", {timeZone: "America/Sao_Paulo"});
         var formattedString = dateString.replace(", ", " - ");
