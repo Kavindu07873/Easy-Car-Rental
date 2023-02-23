@@ -175,9 +175,26 @@
                         <div class="d-flex justify-content-evenly">
 
                             <div class="mb-3">
-                                <label for="Type" class="form-label text-black">Car Type</label>
-                                <input type="text" class="form-control" id="Type" placeholder="General">
+                                <label for="selecType" class="form-label text-black">Car Type</label>
+                                <input type="text" class="form-control" id="selecType" placeholder="General">
                             </div>
+
+
+
+
+
+                            <div class="mb-3">
+                                <div class="form-group">
+                                    <label>Type :</label>
+                                    <select class="form-control" id="selectCarType">
+                                    </select>
+                                    <span class="control-error"
+                                          id="Cars-empty-error"></span>
+                                </div>
+
+                            </div>
+
+
 
 
                             <div class="mb-3">
@@ -371,6 +388,7 @@
     let baseURL = "http://localhost:8080/Back_End_war/";
     getAllCustomer();
     getAllCar();
+    searchCar();
     function getAllCustomer() {
         $("#selectCusID").empty();
         $.ajax({
@@ -378,7 +396,6 @@
             dataType: "json",
             success: function (resp) {
                 console.log(resp);
-
                 for (let cus of resp.data) {
                     $("#selectCusID").append(`<option value="${cus.id}">${cus.id}</option>`);
 
@@ -399,6 +416,7 @@
                 });
             }
         });
+        console.log(response);
         return response;
     }
 
@@ -419,6 +437,8 @@
     });
 
     function getAllCar() {
+        $("#selectCarType").empty();
+
         $("#selectCarID").empty();
         $.ajax({
             url: baseURL + "Car",
@@ -427,13 +447,73 @@
                 console.log(resp);
 
                 for (let cus of resp.data) {
-                    $("#selectCarID").append(`<option value="${cus.user}">${cus.user}</option>`);
+                    $("#selectCarType").append(`<option value="${cus.type}">${cus.type}</option>`);
+
+
+                    // if( cus.type ==$("#selecType")) {
+
+                        $("#selectCarID").append(`<option value="${cus.user}">${cus.user}</option>`);
+                    // }
+                    // if( cus.type == "Premium" ){
+                    //     $("#selectCarID").append(`<option value="${cus.user}">${cus.user}</option>`);
+                    //     // $("#selectCarType").val().refresh();
+                    // }
+                    //
+                    // if( cus.type == "luxury" ){
+                    //     $("#selectCarID").append(`<option value="${cus.user}">${cus.user}</option>`);
+                    //     // $("#selectCarType").val().refresh();
+                    // }
+
 
                 }
             }
         });
 
     }
+    function searchCarType(carType) {
+        let response = "";
+        $.ajax({
+            url: baseURL + "Car",
+            dataType: "json",
+            async: false,
+            success: function (resp) {
+                response = resp.data.filter((c) => {
+
+                    return c.type == carType;
+                });
+            }
+        });
+        return response;
+    }
+
+      $("#selectCarType").change(function () {
+
+        let carType = $("#selectCarType").val();
+        $("#selectCarType").val(carType);
+        let res = searchCarType(carType);
+        if (res.length > 0) {
+            // $("#selectCarID").val(res[0].user);
+
+            //
+            $("#selecType").val(res[0].type);
+            // $("#Version").val(res[0].version);
+            // $("#Fuel").val(res[0].fuel);
+            // $("#Passengers").val(res[0].passengers);
+            // $("#Transmission").val(res[0].transmission);
+            // $("#Colour").val(res[0].colour);
+            // $("#Rent_duration").val(res[0].rent_duration);
+            // $("#Price_ExtraKm").val(res[0].price_ExtraKm);
+            // $("#Price").val(res[0].price);
+
+        }
+        searchCar();
+
+    });
+
+
+
+
+
 
     function searchCar(carId) {
         let response = "";
@@ -443,7 +523,9 @@
             async: false,
             success: function (resp) {
                 response = resp.data.filter((c) => {
-                    return c.user == carId;
+
+
+                        return (c.user == carId  && c.type ==$("#selecType").val() );
                 });
             }
         });
@@ -451,12 +533,15 @@
     }
 
     $("#selectCarID").change(function () {
+
+
+
         let carId = $("#selectCarID").val();
         $("#selectCarID").val(carId);
         let res = searchCar(carId);
         if (res.length > 0) {
 
-            $("#Type").val(res[0].type);
+            // $("#selecType").val(res[0].type);
             $("#Version").val(res[0].version);
             $("#Fuel").val(res[0].fuel);
             $("#Passengers").val(res[0].passengers);
