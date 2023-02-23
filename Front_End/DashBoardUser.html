@@ -59,9 +59,7 @@
         }
 
 
-
-
-        #para{
+        #para {
             position: relative;
             z-index: 6;
             display: inline-block;
@@ -84,19 +82,21 @@
             width: 73%;
             height: 850px;
         }
-        main>aside > section > section {
+
+        main > aside > section > section {
             overflow-x: scroll;
             /*width: 90%;*/
             /*height: 70%;*/
         }
 
 
-            main>section:nth-child(2){
-                position: relative;
-                height: 2172px;
-                border: 2px solid black;
-            }
-        main> section> section:nth-child(1) {
+        main > section:nth-child(2) {
+            position: relative;
+            height: 2172px;
+            border: 2px solid black;
+        }
+
+        main > section > section:nth-child(1) {
             border: 5px solid red;
             position: relative;
 
@@ -107,7 +107,7 @@
             right: 0;
         }
 
-        main section> section:nth-child(1) > div > div > div:hover {
+        main section > section:nth-child(1) > div > div > div:hover {
 
             /*width: 200px;*/
             /*height: 400px;*/
@@ -120,7 +120,7 @@
             /*left: -40px;*/
         }
 
-        main> section> section:nth-child(2) {
+        main > section > section:nth-child(2) {
             border: 5px solid red;
             position: relative;
             /*display: inline-block;*/
@@ -131,7 +131,7 @@
 
         }
 
-        main>section > section:nth-child(2) > div > div > div:hover {
+        main > section > section:nth-child(2) > div > div > div:hover {
 
             /*width: 200px;*/
             /*height: 400px;*/
@@ -144,7 +144,7 @@
             /*left: -40px;*/
         }
 
-        main>section > section:nth-child(3) {
+        main > section > section:nth-child(3) {
             border: 5px solid red;
             position: relative;
             /*display: inline-block;*/
@@ -171,10 +171,11 @@
         main > section:nth-child(5) {
             z-index: 6;
         }
-        #placeOrder{
+
+        #placeOrder {
             position: fixed;
             background: #0c0c0c;
-            width: 250px ;
+            width: 250px;
             height: 100px;
             left: 80%;
             right: 0;
@@ -183,7 +184,8 @@
             margin: auto;
             z-index: 9;
         }
-        #placeOrder>button {
+
+        #placeOrder > button {
             border-radius: 50px;
             width: 200px;
             height: 70px;
@@ -193,14 +195,24 @@
             bottom: 0;
             right: 0;
         }
-        #availability{
-            width: 35vw;
-            height: 30vh;
-            border: 2px solid black;
+
+        #availability {
+            width: 292px;
+            height: 360px;
+            /*border: 2px solid black;*/
             display: inline-block;
             position: absolute;
             left: 62%;
-            top: 5%;
+            top: 2%;
+            z-index: 6;
+
+        }
+
+        #availability > div {
+            width: 20vw;
+            height: 10vh;
+            border: 3px solid blue;
+            z-index: 6;
         }
     </style>
 </head>
@@ -253,13 +265,20 @@
     <div id="availability">
         <h1>Available</h1>
         <div>
-            <h1>Car</h1>
+            <label>Car</label>
+            <br>
+            <input>
         </div>
         <div>
-            <h1>Driver</h1>
+            <label>Drivers</label>
+            <br>
+            <input>
         </div>
         <div>
-            <h1>Order</h1>
+
+            <label>Orders</label>
+            <br>
+            <input>
         </div>
 
 
@@ -274,13 +293,14 @@
 
     <aside id="para">
         <blockquote class="blockquote">
-        <h1>    WELCOME TO
+            <h1> WELCOME TO
                 Easy RENT-A-CAR
-           </h1>
+            </h1>
             <p>
                 PREMIER CAR RENTAL SERVICES IN SRI LANKA
                 With over 30 years of experience in the industry,
-                we strive to offer the highest levels of customer service and a highly personalised service to all our customers who are on the lookout for Sri Lanka car rental opportunities.
+                we strive to offer the highest levels of customer service and a highly personalised service to all our
+                customers who are on the lookout for Sri Lanka car rental opportunities.
                 With one of the largest and most modern and varied fleets in Sri Lanka,
                 our service is backed by a networked front office,
                 fully-fledged mechanical servicing and valet servicing onsite.
@@ -343,7 +363,6 @@
     </aside>
 
 
-
     <div>
         <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
         <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
@@ -354,12 +373,16 @@
     <section>
 
         <section>
-        <h1><p><strong>General Car </strong></p></h1>
+            <h1><p><strong>General Car </strong></p></h1>
 
             <div class="container text-center">
-                <div class="row">
+
+                </div>
+            <div>
+
+                <div class="row" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="col-md-4">
-                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                        <div  id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <img src="assets/img/Cars/18.jpg" class="d-block w-100" alt="...">
@@ -372,9 +395,11 @@
                                 </div>
 
                             </div>
+
                             <h1>Alto_Auto</h1>
                         </div>
-                    </div>
+
+                </div>
                     <div class="col-md-4">
                         <div id="carouselExampleSlidesOnly1" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -470,7 +495,7 @@
             <h1><p><strong>Premium Car </strong></p></h1>
 
             <div class="container text-center">
-                <div class="row">
+                <div class="row" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                     <div class="col-md-4">
                         <div id="carouselExampleSlidesOnly6" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -547,7 +572,7 @@
             <h1><p><strong>Luxury Car </strong></p></h1>
 
             <div class="container text-center">
-                <div class="row">
+                <div class="row" data-bs-toggle="modal" data-bs-target="#exampleModal3">
                     <div class="col-md-4">
                         <div id="carouselExampleSlidesOnly10" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -610,6 +635,46 @@
                 </div>
             </div>
         </section>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        genaral
+                    </div>
+                </div>
+            </div>
+        </div>  </div>
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel2">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        premium
+                    </div>
+                </div>
+            </div>
+        </div>  </div>
+        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel3">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        luxry
+                    </div>
+                </div>
+            </div>
+        </div>  </div>
+
     </section>
 
 
