@@ -138,15 +138,24 @@
 
                         </div>
                         <div class="d-flex justify-content-evenly">
-
                             <div class="mb-3">
-                                <label for="Colour" class="form-label text-black">Id</label>
-                                <input type="text" class="form-control" id="Did" placeholder="D01">
+                                <div class="form-group">
+                                    <label>Driver :</label>
+                                    <select class="form-control" id="selectDriID">
+                                    </select>
+                                    <span class="control-error"
+                                          id="Dri-empty-error"></span>
+                                </div>
+
                             </div>
+                            <!--                            <div class="mb-3">-->
+                            <!--                                <label for="Did" class="form-label text-black">Id</label>-->
+                            <!--                                <input type="text" class="form-control" id="Did" placeholder="D01">-->
+                            <!--                            </div>-->
 
 
                             <div class="mb-3">
-                                <label for="Rent_duration" class="form-label text-black">Name</label>
+                                <label for="Dname" class="form-label text-black">Name</label>
                                 <input type="text" class="form-control" id="Dname" placeholder="Lal">
                             </div>
 
@@ -180,9 +189,6 @@
                             </div>
 
 
-
-
-
                             <div class="mb-3">
                                 <div class="form-group">
                                     <label>Type :</label>
@@ -195,8 +201,6 @@
                             </div>
 
 
-
-
                             <div class="mb-3">
                                 <div class="form-group">
                                     <label>Car :</label>
@@ -207,7 +211,6 @@
                                 </div>
 
                             </div>
-
 
 
                             <div class="mb-3">
@@ -260,20 +263,35 @@
 
                         <br>
 
-                        <div>
+                        <div class="d-flex justify-content-evenly">
+                            <div class=" mb-3">
+                                <label for="NoOfCar" class="form-label text-black">No Of Car</label>
+                                <input type="number" class="form-control" id="NoOfCar">
+                            </div>
                             <br>
 
-                            <div class="form-floating mb-3">
+
+                            <div class=" mb-3">
+                                <label for="Price" class="form-label text-black">Price per car</label>
                                 <input type="number" class="form-control" id="Price">
-                                <label for="Price" class="form-label text-black">Price</label>
                             </div>
 
-
+                            <div class=" mb-3">
+                                <label for="need" class="form-label text-black">Need Cars</label>
+                                <input type="number" class="form-control" id="Need">
+                            </div>
                         </div>
 
-                        <div class="text-end">
-                            <button type="button" class="btn btn-danger  btn-lg">Add Item</button>
+                        <div class="d-flex justify-content-evenly">
 
+                            <div class=" mb-3">
+                                <label for="TOTAL" class="form-label text-black">TOTAL</label>
+                                <input type="number" class="form-control" id="TOTAL">
+                            </div>
+                                <br>
+                            <div class="text-end">
+                                <button id="btnAddToTable" type="button" class="btn btn-danger  btn-lg">Add Item</button>
+                            </div>
                         </div>
                         <br>
                         <br>
@@ -284,49 +302,49 @@
 
 
             </div>
-                        <div style="border: 2px solid red" class="col">
+            <div style="border: 2px solid red" class="col">
 
-            <!--                <div class="form-floating">-->
-            <!--                    <h1 class="bg-dark p-2 text-white ">Total</h1>-->
-            <!--                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"-->
-            <!--                              style="height: 100px"></textarea>-->
-            <!--                </div>-->
+                <!--                <div class="form-floating">-->
+                <!--                    <h1 class="bg-dark p-2 text-white ">Total</h1>-->
+                <!--                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"-->
+                <!--                              style="height: 100px"></textarea>-->
+                <!--                </div>-->
 
-            <!--                <div class="d-flex justify-content-evenly">-->
+                <!--                <div class="d-flex justify-content-evenly">-->
 
-            <!--                    <div class="mb-3">-->
-            <!--                        <label for="Cash" class="form-label text-black">Cash</label>-->
-            <!--                        <input type="number" class="form-control" id="Cash" placeholder="1000.00">-->
-            <!--                    </div>-->
-            <!--                    <div class="mb-3">-->
-            <!--                        <label for="Cash" class="form-label text-black">Cash</label>-->
-            <!--                        <input type="number" class="form-control" id="Cash" placeholder="1000.00">-->
-            <!--                    </div>-->
-            <!--                    <div class="mb-3">-->
-            <!--                        <label for="Cash" class="form-label text-black">Cash</label>-->
-            <!--                        <input type="number" class="form-control" id="Cash" placeholder="1000.00">-->
-            <!--                    </div>-->
+                <!--                    <div class="mb-3">-->
+                <!--                        <label for="Cash" class="form-label text-black">Cash</label>-->
+                <!--                        <input type="number" class="form-control" id="Cash" placeholder="1000.00">-->
+                <!--                    </div>-->
+                <!--                    <div class="mb-3">-->
+                <!--                        <label for="Cash" class="form-label text-black">Cash</label>-->
+                <!--                        <input type="number" class="form-control" id="Cash" placeholder="1000.00">-->
+                <!--                    </div>-->
+                <!--                    <div class="mb-3">-->
+                <!--                        <label for="Cash" class="form-label text-black">Cash</label>-->
+                <!--                        <input type="number" class="form-control" id="Cash" placeholder="1000.00">-->
+                <!--                    </div>-->
 
-            <!--                    <div class="mb-3">-->
-            <!--                        <label for="Discount" class="form-label text-black">Discount</label>-->
-            <!--                        <input type="number" class="form-control" id="Discount" placeholder="10%">-->
-            <!--                    </div>-->
+                <!--                    <div class="mb-3">-->
+                <!--                        <label for="Discount" class="form-label text-black">Discount</label>-->
+                <!--                        <input type="number" class="form-control" id="Discount" placeholder="10%">-->
+                <!--                    </div>-->
 
-            <!--                </div>-->
-
-
-            <!--                <div class="mb-3 col-5 ">-->
-            <!--                    <label for="Balance" class="form-label text-black">Balance</label>-->
-            <!--                    <input type="number" class="form-control " id="Balance">-->
-            <!--                </div>-->
-
-            <!--                <div class="text-end">-->
-            <!--                    <button type="button" class="btn btn-success  btn-lg">Purchase</button>-->
-
-            <!--                </div>-->
+                <!--                </div>-->
 
 
-                        </div>
+                <!--                <div class="mb-3 col-5 ">-->
+                <!--                    <label for="Balance" class="form-label text-black">Balance</label>-->
+                <!--                    <input type="number" class="form-control " id="Balance">-->
+                <!--                </div>-->
+
+                <!--                <div class="text-end">-->
+                <!--                    <button type="button" class="btn btn-success  btn-lg">Purchase</button>-->
+
+                <!--                </div>-->
+
+
+            </div>
 
         </div>
     </section>
@@ -336,48 +354,80 @@
                class="col table table-bordered border-primary table-dark  table-striped">
             <thead>
             <tr class="table-dark table-striped">
-                <th scope="col">No</th>
-                <th scope="col">ItemCode</th>
-                <th scope="col">ItemName</th>
-                <th scope="col">Price</th>
-                <th scope="col">Qty</th>
+                <th scope="col">Order</th>
+                <th scope="col">Date</th>
+                <th scope="col">CusID</th>
+                <th scope="col">ContNo</th>
+                <th scope="col">DriID</th>
+                <th scope="col">CarType</th>
+                <th scope="col">CarID</th>
+                <th scope="col">Version</th>
+                <th scope="col">Need Cars</th>
+
                 <th scope="col">Total</th>
+
 
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <td scope="row">1</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-
-            </tr>
-            <tr>
-                <td>2</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-
-            </tr>
-            <tr>
-                <td>3</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-
-            </tr>
+            <tbody id="orderTable">
 
             </tbody>
-        </table>
-    </section>
 
+        </table>
+
+        <div class="text-end">
+            <button type="button" id="PlaceOrder" class="btn btn-success  btn-lg">Rent Car</button>
+
+        </div>
+
+    </section>
+    <br>
+    <section style="display:none">
+        <div style="border: 2px solid red" class="col">
+
+            <div class="form-floating">
+                <h1 class="bg-dark p-2 text-white ">Total</h1>
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                          style="height: 100px"></textarea>
+            </div>
+
+            <div class="d-flex justify-content-evenly">
+
+                <div class="mb-3">
+                    <label for="Cash" class="form-label text-black">Cash</label>
+                    <input type="number" class="form-control" id="Cash" placeholder="1000.00">
+                </div>
+                <div class="mb-3">
+                    <label for="Cash" class="form-label text-black">Cash</label>
+                    <input type="number" class="form-control" id="Cash1" placeholder="1000.00">
+                </div>
+                <div class="mb-3">
+                    <label for="Cash" class="form-label text-black">Cash</label>
+                    <input type="number" class="form-control" id="Cash2" placeholder="1000.00">
+                </div>
+
+                <div class="mb-3">
+                    <label for="Discount" class="form-label text-black">Discount</label>
+                    <input type="number" class="form-control" id="Discount" placeholder="10%">
+                </div>
+
+            </div>
+
+
+            <div class="mb-3 col-5 ">
+                <label for="Balance" class="form-label text-black">Balance</label>
+                <input type="number" class="form-control " id="Balance">
+            </div>
+
+            <div class="text-end">
+                <button type="button" class="btn btn-success  btn-lg">Purchase</button>
+
+            </div>
+
+
+        </div>
+
+    </section>
 
 </main>
 
@@ -389,6 +439,8 @@
     getAllCustomer();
     getAllCar();
     searchCar();
+    getAllDriver();
+
     function getAllCustomer() {
         $("#selectCusID").empty();
         $.ajax({
@@ -452,7 +504,7 @@
 
                     // if( cus.type ==$("#selecType")) {
 
-                        $("#selectCarID").append(`<option value="${cus.user}">${cus.user}</option>`);
+                    $("#selectCarID").append(`<option value="${cus.user}">${cus.user}</option>`);
                     // }
                     // if( cus.type == "Premium" ){
                     //     $("#selectCarID").append(`<option value="${cus.user}">${cus.user}</option>`);
@@ -470,6 +522,7 @@
         });
 
     }
+
     function searchCarType(carType) {
         let response = "";
         $.ajax({
@@ -486,7 +539,7 @@
         return response;
     }
 
-      $("#selectCarType").change(function () {
+    $("#selectCarType").change(function () {
 
         let carType = $("#selectCarType").val();
         $("#selectCarType").val(carType);
@@ -510,11 +563,6 @@
 
     });
 
-
-
-
-
-
     function searchCar(carId) {
         let response = "";
         $.ajax({
@@ -525,7 +573,7 @@
                 response = resp.data.filter((c) => {
 
 
-                        return (c.user == carId  && c.type ==$("#selecType").val() );
+                    return (c.user == carId && c.type == $("#selecType").val());
                 });
             }
         });
@@ -533,7 +581,6 @@
     }
 
     $("#selectCarID").change(function () {
-
 
 
         let carId = $("#selectCarID").val();
@@ -549,9 +596,84 @@
             $("#Colour").val(res[0].colour);
             $("#Rent_duration").val(res[0].rent_duration);
             $("#Price_ExtraKm").val(res[0].price_ExtraKm);
+            $("#NoOfCar").val(res[0].amount);
+
             $("#Price").val(res[0].price);
 
         }
+
+    });
+
+    function getAllDriver() {
+        $("#selectDriID").empty();
+        $.ajax({
+            url: baseURL + "Driver",
+            dataType: "json",
+            success: function (resp) {
+                console.log(resp);
+                for (let cus of resp.data) {
+                    $("#selectDriID").append(`<option value="${cus.user}">${cus.user}</option>`);
+
+                }
+            }
+        });
+    }
+
+    function searchDriver(cusID) {
+        let response = "";
+        $.ajax({
+            url: baseURL + "Driver",
+            dataType: "json",
+            async: false,
+            success: function (resp) {
+                response = resp.data.filter((c) => {
+                    return c.user == cusID;
+                });
+            }
+        });
+        console.log(response);
+        return response;
+    }
+
+    $("#selectDriID").change(function () {
+        let cusID = $("#selectDriID").val();
+        $("#selectDriID").val(cusID);
+        let res = searchDriver(cusID);
+        if (res.length > 0) {
+
+            $("#Dname").val(res[0].name);
+            $("#LicNo").val(res[0].licNo);
+
+
+        }
+
+    });
+
+    ////////////////////////////////////////////////////////
+
+
+    $("#btnAddToTable").click(function () {
+        let Order = $("#OrderId").val();
+        let Date = $("#Date").val();
+        let CusID = $("#selectCusID").val();
+        let ContNo = $("#ContNo").val();
+        let DriID = $("#selectDriID").val();
+        let CarType = $("#selectCarType").val();
+        let CarID = $("#selectCarID").val();
+        let Version = $("#Version").val();
+        let need = $("#Need").val();
+        let Price = $("#Price").val() *  $("#Need").val();
+
+        $("#orderTable").append(`<tr><td>${Order}</td><td>${Date}</td><td>${CusID}
+                </td><td>${ContNo}</td><td>${DriID}</td><td>${CarType}
+                </td><td>${CarID}</td><td>${Version}</td><td>${need}</td><td>
+                    ${Price}</td></tr>`);
+    });
+
+    $("#PlaceOrder").click(function () {
+
+
+
 
     });
 

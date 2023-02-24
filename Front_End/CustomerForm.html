@@ -135,8 +135,8 @@
             <div class="row">
                 <div class="col">
                     <label for="txtCustomerCon">Customer ConNo</label>
-                    <input type="text" class="is-invalid form-control" id="txtCustomerCon" placeholder="+9411111111" name="contact"
-                           aria-label="Contact" required>
+                    <input type="text" class="is-invalid form-control" id="txtCustomerCon" placeholder="+9411111111" name="conNo"
+                           aria-label="ConNo" required>
                 </div>
 
                 <div class="col">
@@ -295,7 +295,7 @@
             dataType: "json",
             success: function (resp) {
                 for (let cus of resp.data) {
-                    var row = '<tr><td>' + cus.id + '</td><td>' + cus.name + '</td><td>' + cus.address + '</td><td>' + cus.email + '</td><td>' + cus.contact + '</td><td>' + cus.nic + '</td><td>' + cus.password + '</td></tr>';
+                    var row = '<tr><td>' + cus.id + '</td><td>' + cus.name + '</td><td>' + cus.address + '</td><td>' + cus.email + '</td><td>' + cus.conno + '</td><td>' + cus.nic + '</td><td>' + cus.password + '</td></tr>';
                     $("#tblCustomer").append(row);
                 }
                 EventBindingvalue();
@@ -306,12 +306,12 @@
     }
 
 
-    function setTextFieldValues(id, Name, Address, Email, Contact, Nic, Password) {
+    function setTextFieldValues(id, Name, Address, Email, conno, Nic, Password) {
         $("#txtCustomerID").val(id);
         $("#txtCustomerName").val(Name);
         $("#txtCustomerAddress").val(Address);
         $("#txtCustomerEmail").val(Email);
-        $("#txtCustomerCon").val(Contact);
+        $("#txtCustomerCon").val(conno);
         $("#txtCustomerPassword").val(Password);
         $("#txtCustomerNic").val(Nic);
     }
@@ -324,7 +324,7 @@
             let Name = $(this).children(":eq(1)").text();
             let Address = $(this).children(":eq(2)").text();
             let Email = $(this).children(":eq(3)").text();
-            let Contact = $(this).children(":eq(4)").text();
+            let conno = $(this).children(":eq(4)").text();
             let Password = $(this).children(":eq(5)").text();
             let Nic = $(this).children(":eq(6)").text();
 
@@ -333,7 +333,7 @@
             $("#txtCustomerName").val(Name);
             $("#txtCustomerAddress").val(Address);
             $("#txtCustomerEmail").val(Email);
-            $("#txtCustomerCon").val(Contact);
+            $("#txtCustomerCon").val(conno);
             $("#txtCustomerPassword").val(Password);
             $("#txtCustomerNic").val(Nic);
 

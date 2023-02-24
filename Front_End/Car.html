@@ -90,12 +90,6 @@
 
             <div class="row">
 
-<!--                <div class="col">-->
-<!--                    <label for="txtCarUserId">Car User Id</label>-->
-<!--                    <input type="text" class="form-control is-invalid" id="txtCarUserId" placeholder=""-->
-<!--                           name="user"-->
-<!--                           aria-label="User" required>-->
-<!--                </div>-->
                 <div class="col">
                     <label for="txtUser">Car_Id</label>
                     <input type="text" class="form-control is-invalid" id="txtUser" placeholder=""
@@ -142,7 +136,7 @@
                 </div>
                 <div class="col">
                     <label for="txtColour">Colour</label>
-                    <input type="text" id="txtColour" class="is-invalid form-control d-inline-block"
+                    <input type="color" id="txtColour" class="is-invalid form-control d-inline-block"
                            placeholder=""
                            name="colour"
                            aria-label="Colour" required>
@@ -159,6 +153,16 @@
                            name="rent_duration"
                            aria-label="Rent_duration" required>
                 </div>
+
+                <div class="col">
+                    <label for="txtAmount">No Of Car</label>
+                    <input type="text" id="txtAmount" class="is-invalid form-control"
+                           placeholder=""
+                           name="amount" aria-label="Amount" required>
+                </div>
+
+
+
                 <div class="col">
                     <label for="txtPrice">Price</label>
                     <input type="text" id="txtPrice" class="is-invalid form-control"
@@ -199,6 +203,7 @@
                 <th>Transmission</th>
                 <th>Colour</th>
                 <th>Rent_duration</th>
+                <th>Amount</th>
                 <th>Price</th>
                 <th>Price_ExtraKm</th>
             </tr>
@@ -262,6 +267,8 @@
         let Passengers =$("#txtPassengers").val();
         let Transmission =$("#txtTransmission").val();
         let Colour =$("#txtColour").val();
+        let Amount =$("#txtAmount").val();
+
         let Rent_duration =$("#txtRent_duration").val();
         let Price =$("#txtPrice").val();
         let Price_ExaraKm =$("#txtPrice_ExtraKm").val();
@@ -275,6 +282,7 @@
             transmission: Transmission,
             passengers: Passengers,
             colour: Colour,
+            amount :Amount,
             rent_duration: Rent_duration,
             price: Price,
             price_ExtraKm: Price_ExaraKm,
@@ -327,24 +335,24 @@
             success: function (resp) {
                 for (let car of resp.data) {
 
-                    var row = '<tr><td>' + car.user+
-                        '</td><td>' + car.version  + '</td><td>' + car.type +
-
-                        '</td><td>' + car.fuel + '</td><td>' + car.passengers
-
-                        + '</td><td>' + car.transmission + '</td><td>' +
-
-                        car.colour+ '</td><td>' + car.rent_duration +
-
-                        '</td><td>' +car.price + '</td><td>' +
-
+                    var row = '<tr><td>' +
+                        car.user+ '</td><td>' +
+                        car.version  + '</td><td>' +
+                        car.type + '</td><td>' +
+                        car.fuel + '</td><td>' +
+                        car.passengers + '</td><td>' +
+                        car.transmission + '</td><td>' +
+                        car.colour+ '</td><td>' +
+                        car.rent_duration + '</td><td>' +
+                        car.amount + '</td><td>' +
+                        car.price + '</td><td>' +
                         car.price_ExtraKm +'</td></tr>';
                     // console.log(row);
                     $("#tblCar").append(row);
                 }
                 // console.log("Add " + row);
                 EventBindingvalue();
-                setTextFieldValues("", "", "", "", "", "", "", "", "","");
+                setTextFieldValues("", "", "", "", "", "", "","", "", "","");
                 $("#txtCustomerID").focus();
             }
 
@@ -352,7 +360,7 @@
     }
 
 
-    function setTextFieldValues(user,Version,Type,Fuel,Passengers,Transmission,Colour,Rent_duration,Price,Price_ExtraKm) {
+    function setTextFieldValues(user,Version,Type,Fuel,Passengers,Transmission,Colour,Rent_duration,Amount,Price,Price_ExtraKm) {
         $("#txtUser").val(user);
         $("#txtVersion").val(Version);
         $("#txtType").val(Type);
@@ -361,6 +369,7 @@
         $("#txtTransmission").val(Transmission);
         $("#txtColour").val(Colour);
         $("#txtRent_duration").val(Rent_duration);
+        $("#txtAmount").val(Amount);
         $("#txtPrice").val(Price);
         $("#txtPrice_ExtraKm").val(Price_ExtraKm);
 
@@ -378,8 +387,9 @@
             let Transmission = $(this).children(":eq(5)").text();
             let Colour = $(this).children(":eq(6)").text();
             let Rent_duration = $(this).children(":eq(7)").text();
-            let Price = $(this).children(":eq(8)").text();
-            let Price_ExtraKm = $(this).children(":eq(9)").text();
+            let Amount = $(this).children(":eq(8)").text();
+            let Price = $(this).children(":eq(9)").text();
+            let Price_ExtraKm = $(this).children(":eq(10)").text();
 
 
             //  tble eke textfild walata data add karanawa
@@ -391,6 +401,8 @@
             $("#txtTransmission").val(Transmission);
             $("#txtColour").val(Colour);
             $("#txtRent_duration").val(Rent_duration);
+            $("#txtAmount").val(Amount);
+
             $("#txtPrice").val(Price);
             $("#txtPrice_ExtraKm").val(Price_ExtraKm);
         });
