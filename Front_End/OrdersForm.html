@@ -53,7 +53,7 @@
     </section>
 
     <section>
-
+        <form id="OrderForm">
         <div class="container-fluid text-start ">
             <div class="row ">
 
@@ -65,14 +65,14 @@
 
                             <div class="mb-3">
                                 <label for="OrderId" class="form-label text-black">OrderID</label>
-                                <input type="text" class="form-control" id="OrderId" placeholder="D001">
+                                <input type="text" class="form-control" name="orderId" aria-label="oid" id="OrderId" placeholder="D001">
 
                             </div>
 
 
                             <div class="mb-3">
                                 <label for="Date" class="form-label text-black">Date</label>
-                                <input type="date" class="form-control" id="Date">
+                                <input type="date" class="form-control" id="Date" name="date" aria-label="date">
                             </div>
                         </div>
 
@@ -86,8 +86,13 @@
                                     <span class="control-error"
                                           id="cus-empty-error"></span>
                                 </div>
-
                             </div>
+
+                            <div class="mb-3">
+                                <label for="CusId" class="form-label text-black">Cus Id</label>
+                                <input type="text" class="form-control" id="CusId" name="cusId" aria-label="cusID">
+                            </div>
+
 
                             <!--                            <div class="mb-3">-->
                             <!--                                <div class="form-group">-->
@@ -347,6 +352,7 @@
             </div>
 
         </div>
+        </form>
     </section>
     <br>
     <section>
@@ -355,21 +361,20 @@
             <thead>
             <tr class="table-dark table-striped">
                 <th scope="col">Order</th>
-                <th scope="col">Date</th>
-                <th scope="col">CusID</th>
-                <th scope="col">ContNo</th>
+<!--                <th scope="col">Date</th>-->
+<!--                <th scope="col">CusID</th>-->
+<!--                <th scope="col">ContNo</th>-->
                 <th scope="col">DriID</th>
                 <th scope="col">CarType</th>
                 <th scope="col">CarID</th>
                 <th scope="col">Version</th>
                 <th scope="col">Need Cars</th>
-
                 <th scope="col">Total</th>
 
 
             </tr>
             </thead>
-            <tbody id="orderTable">
+            <tbody id="orderTable2">
 
             </tbody>
 
@@ -477,7 +482,7 @@
         $("#orderCustomerID").val(cusID);
         let res = searchCustomer(cusID);
         if (res.length > 0) {
-
+            $("#CusId").val(res[0].id);
             $("#CusName").val(res[0].name);
             $("#CusAddress").val(res[0].address);
             $("#CusEmail").val(res[0].email);
@@ -504,7 +509,7 @@
 
                     // if( cus.type ==$("#selecType")) {
 
-                    $("#selectCarID").append(`<option value="${cus.user}">${cus.user}</option>`);
+                    $("#selectCarID").append(`<option value="${cus.car}">${cus.car}</option>`);
                     // }
                     // if( cus.type == "Premium" ){
                     //     $("#selectCarID").append(`<option value="${cus.user}">${cus.user}</option>`);
@@ -532,7 +537,7 @@
             success: function (resp) {
                 response = resp.data.filter((c) => {
 
-                    return c.type == carType;
+                    return c.car == carType;
                 });
             }
         });
@@ -573,7 +578,7 @@
                 response = resp.data.filter((c) => {
 
 
-                    return (c.user == carId && c.type == $("#selecType").val());
+                    return (c.car == carId && c.type == $("#selecType").val());
                 });
             }
         });
@@ -651,12 +656,9 @@
 
     ////////////////////////////////////////////////////////
 
-
     $("#btnAddToTable").click(function () {
-        let Order = $("#OrderId").val();
-        let Date = $("#Date").val();
-        let CusID = $("#selectCusID").val();
-        let ContNo = $("#ContNo").val();
+
+        let OrderId = $("#OrderId").val();
         let DriID = $("#selectDriID").val();
         let CarType = $("#selectCarType").val();
         let CarID = $("#selectCarID").val();
@@ -664,19 +666,56 @@
         let need = $("#Need").val();
         let Price = $("#Price").val() *  $("#Need").val();
 
-        $("#orderTable").append(`<tr><td>${Order}</td><td>${Date}</td><td>${CusID}
-                </td><td>${ContNo}</td><td>${DriID}</td><td>${CarType}
-                </td><td>${CarID}</td><td>${Version}</td><td>${need}</td><td>
-                    ${Price}</td></tr>`);
+        $("#orderTable2").append(`<tr><td>${OrderId}</td><td>${DriID}</td><td>
+                                ${CarType}</td><td>${CarID}</td><td>${Version}
+                                </td><td>${need}</td><td>${Price}</td></tr>`);
     });
 
     $("#PlaceOrder").click(function () {
 
+        let orderID = $("#OrderId").val();
+        let customerID = $("#CusId").val();
+        let orderDate = $("#Date").val();
+        let orderD = getOrdersDetails();
 
+        let ob={
+            oid:orderID,
+            date:orderDate,
+            cusID:customerID,
+            orderDetails:orderD
+        }
 
-
+        $.ajax({
+            url: baseURL + "purchase",
+            method:"post",
+            dataType: "json",
+            data:JSON.stringify(ob),
+            contentType:"application/json",
+            success: function (resp) {
+                alert(resp.message);
+            },
+            error:function (error){
+                alert(JSON.parse(error.responseText).message);
+            }
+        });
     });
-
+  function  getOrdersDetails(){
+      let rows = $("#orderTable2").children().length;
+      var array = [];
+      for (let i = 0; i < rows; i++) {
+          let Order = $("#orderTable2").children().eq(i).children(":eq(0)").text();
+          // let DriID = $("#orderTable2").children().eq(i).children(":eq(1)").text();
+          let CarType1 = $("#orderTable2").children().eq(i).children(":eq(2)").text();
+          let CarID1 = $("#orderTable2").children().eq(i).children(":eq(3)").text();
+          let Version1 = $("#orderTable2").children().eq(i).children(":eq(4)").text();
+          let NeedC1 = $("#orderTable2").children().eq(i).children(":eq(5)").text();
+          let Total1 = $("#orderTable2").children().eq(i).children(":eq(6)").text();
+                    console.log(Order + ""+CarID1+""+CarType1+""+CarID1+""+Version1+""+NeedC1+""+Total1);
+          array.push({oid:Order,CarId:CarID1,CarType:CarType1,Version:Version1,Need:NeedC1,Total:Total1});
+                // console.log("Array  " +array[oid.val()]);
+      }
+      return array;
+  }
 </script>
 </body>
 </html>

@@ -50,10 +50,105 @@
         <h1 class="bg-success p-2 text-white bg-opacity-75">Payment Details</h1>
     </section>
     <br>
-
-    <br>
-
     <section>
+
+        <form id="PaymentForm3" class="was-validated">
+
+            <div class="row">
+
+                <div class="col">
+                    <div class="form-group">
+                        <label>Orders :</label>
+                        <select class="form-control" id="OrderId">
+                        </select>
+                        <span class="control-error"
+                              id="OrderId-empty-error"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>Order Details :</label>
+                        <select class="form-control" id="OrderDetailsId">
+                        </select>
+                        <span class="control-error"
+                              id="OrderDetailsId-empty-error"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <br>
+            <div class="row">
+
+                <div class="col">
+                    <label for="txtOrderId">Order Id</label>
+                    <input type="text" class="is-invalid form-control" id="txtOrderId" placeholder=""
+                           name="orderId"
+                           aria-label="OrderId" required>
+                </div>
+                <div class="col">
+                    <label for="txtDate">Date</label>
+                    <input type="date" class="is-invalid form-control" id="txtDate" placeholder=""
+                           name="date"
+                           aria-label="Date" required>
+                </div>
+
+
+                <div class="col">
+                    <label for="txtCustomerId">CustomerId</label>
+                    <input type="text" id="txtCustomerId" class="is-invalid form-control"
+                           placeholder=""
+                           name="customerId" aria-label="customerId" required>
+                </div>
+
+            </div>
+        </form>
+
+
+        <form id="PaymentForm2" class="was-validated">
+
+            <div class="row">
+
+                <div class="col">
+                    <label for="txtCarId">Car_Id</label>
+                    <input type="text" class="form-control is-invalid" id="txtCarId" placeholder=""
+                           name="CarId"
+                           aria-label="CarId" required>
+                </div>
+                <div class="col">
+                    <label for="txtCarType">CarTye</label>
+                    <input type="text" class="form-control is-invalid" id="txtCarType" placeholder=""
+                           name="carType"
+                           aria-label="carType" required>
+                </div>
+                <div class="col">
+                    <label for="txtCarVersion">Version</label>
+                    <input type="text" class="form-control is-invalid" id="txtCarVersion" placeholder=""
+                           name="carVersion"
+                           aria-label="CarVersion" required>
+                </div>
+                <div class="col">
+                    <label for="txtNeed">Need Car</label>
+                    <input type="text" class="form-control is-invalid" id="txtNeed" placeholder=""
+                           name="need"
+                           aria-label="Need" required>
+                </div>
+                <div class="col">
+                    <label for="txtTotalMoney">TotalMoney</label>
+                    <input type="text" id="txtTotalMoney" class="is-invalid form-control d-inline-block"
+                           placeholder=""
+                           name="totalMoney"
+                           aria-label="TotalMoney" required>
+                </div>
+
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+
+        </form>
+
         <form id="PaymentForm" class="was-validated">
 
             <div class="row">

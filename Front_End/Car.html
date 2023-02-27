@@ -90,13 +90,18 @@
 
             <div class="row">
 
+<!--                <div class="col">-->
+<!--                    <label for="txtCarID">Car_Id</label>-->
+<!--                    <input type="text" class="form-control is-invalid" id="txtCarID" placeholder=""-->
+<!--                           name="cId"-->
+<!--                           aria-label="cId" required>-->
+<!--                </div>-->
                 <div class="col">
                     <label for="txtUser">Car_Id</label>
                     <input type="text" class="form-control is-invalid" id="txtUser" placeholder=""
-                           name="user"
-                           aria-label="user" required>
+                           name="car"
+                           aria-label="cId" required>
                 </div>
-
 
                 <div class="col">
                     <label for="txtVersion">Version</label>
@@ -260,7 +265,7 @@
 
     //update value
     $("#BtnUpdate").click(function () {
-        let User =$("#txtCarUserId").val();
+        let car =$("#txtCarUserId").val();
         let Version =$("#txtVersion").val();
         let Type =$("#txtCarType").val();
         let Fuel =$("#txtFuel").val();
@@ -268,14 +273,13 @@
         let Transmission =$("#txtTransmission").val();
         let Colour =$("#txtColour").val();
         let Amount =$("#txtAmount").val();
-
         let Rent_duration =$("#txtRent_duration").val();
         let Price =$("#txtPrice").val();
         let Price_ExaraKm =$("#txtPrice_ExtraKm").val();
 
 
         var cars = {
-            user: User,
+            car: car,
             version: Version,
             type: Type,
             fuel: Fuel,
@@ -335,33 +339,34 @@
             success: function (resp) {
                 for (let car of resp.data) {
 
-                    var row = '<tr><td>' +
-                        car.user+ '</td><td>' +
-                        car.version  + '</td><td>' +
-                        car.type + '</td><td>' +
-                        car.fuel + '</td><td>' +
-                        car.passengers + '</td><td>' +
-                        car.transmission + '</td><td>' +
+                    var row = '<tr>' +
+                        '<td>' + car.car+ '</td>' +
+                        '<td>' + car.version  + '</td>' +
+                        '<td>' + car.type + '</td>' +
+                        '<td>' + car.fuel + '</td>' +
+                        '<td>' + car.passengers + '</td>' +
+                        '<td>' + car.transmission + '</td><td>' +
                         car.colour+ '</td><td>' +
                         car.rent_duration + '</td><td>' +
                         car.amount + '</td><td>' +
                         car.price + '</td><td>' +
                         car.price_ExtraKm +'</td></tr>';
-                    // console.log(row);
+
+                    console.log(car.car);
                     $("#tblCar").append(row);
                 }
-                // console.log("Add " + row);
+                console.log("Add " + row);
                 EventBindingvalue();
                 setTextFieldValues("", "", "", "", "", "", "","", "", "","");
-                $("#txtCustomerID").focus();
+                $("#txtUser").focus();
             }
 
         });
     }
 
 
-    function setTextFieldValues(user,Version,Type,Fuel,Passengers,Transmission,Colour,Rent_duration,Amount,Price,Price_ExtraKm) {
-        $("#txtUser").val(user);
+    function setTextFieldValues(car,Version,Type,Fuel,Passengers,Transmission,Colour,Rent_duration,Amount,Price,Price_ExtraKm) {
+        $("#txtUser").val(car);
         $("#txtVersion").val(Version);
         $("#txtType").val(Type);
         $("#txtFuel").val(Fuel);
@@ -379,7 +384,7 @@
     function EventBindingvalue() {
         $("#tblCar>tr").click(function () {
 
-            let user = $(this).children(":eq(0)").text();
+            let cId = $(this).children(":eq(0)").text();
             let Version = $(this).children(":eq(1)").text();
             let Type = $(this).children(":eq(2)").text();
             let Fuel = $(this).children(":eq(3)").text();
@@ -393,7 +398,7 @@
 
 
             //  tble eke textfild walata data add karanawa
-            $("#txtUser").val(user);
+            $("#txtUser").val(cId);
             $("#txtVersion").val(Version);
             $("#txtType").val(Type);
             $("#txtFuel").val(Fuel);
