@@ -671,18 +671,17 @@
 
     $("#PlaceOrder").click(function () {
 
-        let orderID = $("#OrderId").val();
+        let Order = $("#OrderId").val();
         let customerID = $("#CusId").val();
         let orderDate = $("#Date").val();
-        let orderD = getOrdersDetails();
+        let orderD = getOrdersDetails(Order);
 
         let ob={
-            oid:orderID,
+            oid:Order,
             date:orderDate,
             cusID:customerID,
             orderDetails:orderD
         }
-
         $.ajax({
             url: baseURL + "purchase",
             method:"post",
@@ -701,6 +700,7 @@
       let rows = $("#orderTable2").children().length;
       var array = [];
       for (let i = 0; i < rows; i++) {
+
           let Order = $("#orderTable2").children().eq(i).children(":eq(0)").text();
           let DriID = $("#orderTable2").children().eq(i).children(":eq(1)").text();
           let CarType1 = $("#orderTable2").children().eq(i).children(":eq(2)").text();
@@ -708,10 +708,18 @@
           let Version1 = $("#orderTable2").children().eq(i).children(":eq(4)").text();
           let NeedC1 = $("#orderTable2").children().eq(i).children(":eq(5)").text();
           let Total1 = $("#orderTable2").children().eq(i).children(":eq(6)").text();
-                    console.log("order"+Order + "  carid"+CarID1+"    cartype"+CarType1+"   carversion"+Version1+"   need"+NeedC1+"    totol"+Total1);
-          array.push({oid:Order,carId:CarID1,CarType:CarType1,Version:Version1,Need:NeedC1,Total:Total1});
-                console.log(array);
+          console.log("order" + Order + "  carid" + CarID1 + "    cartype" + CarType1 + "   carversion" + Version1 + "   need" + NeedC1 + "    totol" + Total1);
+          array.push({
+              oid: Order,
+              carId: CarID1,
+              CarType: CarType1,
+              Version: Version1,
+              Need: NeedC1,
+              Total: Total1
+          });
       }
+                console.log(array);
+
       return array;
   }
 </script>
