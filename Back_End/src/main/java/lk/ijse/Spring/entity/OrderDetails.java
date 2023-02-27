@@ -17,7 +17,7 @@ import java.math.BigDecimal;
 public class OrderDetails {
     @Id
     private String oid;
-//    @Id
+    @Id
     private String carId;
     private String CarType;
     private String Version;
@@ -29,7 +29,7 @@ public class OrderDetails {
     @JoinColumn(name = "oid",referencedColumnName = "oid",insertable = false,updatable = false)
     private Orders orders;
 
-//    @ManyToOne
-//    @JoinColumn(name = "carId",referencedColumnName = "carId",insertable = false,updatable = false)
-//    private Car car;
+    @ManyToOne
+    @JoinColumn(name = "carId",referencedColumnName = "carId",insertable = false,updatable = false)
+    private Car car;
 }
