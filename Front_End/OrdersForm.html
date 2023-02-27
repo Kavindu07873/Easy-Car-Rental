@@ -509,7 +509,7 @@
 
                     // if( cus.type ==$("#selecType")) {
 
-                    $("#selectCarID").append(`<option value="${cus.car}">${cus.car}</option>`);
+                    $("#selectCarID").append(`<option value="${cus.carId}">${cus.carId}</option>`);
                     // }
                     // if( cus.type == "Premium" ){
                     //     $("#selectCarID").append(`<option value="${cus.user}">${cus.user}</option>`);
@@ -537,7 +537,7 @@
             success: function (resp) {
                 response = resp.data.filter((c) => {
 
-                    return c.car == carType;
+                    return c.type == carType;
                 });
             }
         });
@@ -578,7 +578,7 @@
                 response = resp.data.filter((c) => {
 
 
-                    return (c.car == carId && c.type == $("#selecType").val());
+                    return (c.carId == carId && c.type == $("#selecType").val());
                 });
             }
         });

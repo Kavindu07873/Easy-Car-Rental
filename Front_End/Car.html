@@ -99,8 +99,8 @@
                 <div class="col">
                     <label for="txtUser">Car_Id</label>
                     <input type="text" class="form-control is-invalid" id="txtUser" placeholder=""
-                           name="car"
-                           aria-label="cId" required>
+                           name="carId"
+                           aria-label="carId" required>
                 </div>
 
                 <div class="col">
@@ -340,7 +340,7 @@
                 for (let car of resp.data) {
 
                     var row = '<tr>' +
-                        '<td>' + car.car+ '</td>' +
+                        '<td>' + car.carId+ '</td>' +
                         '<td>' + car.version  + '</td>' +
                         '<td>' + car.type + '</td>' +
                         '<td>' + car.fuel + '</td>' +
@@ -365,8 +365,8 @@
     }
 
 
-    function setTextFieldValues(car,Version,Type,Fuel,Passengers,Transmission,Colour,Rent_duration,Amount,Price,Price_ExtraKm) {
-        $("#txtUser").val(car);
+    function setTextFieldValues(carId,Version,Type,Fuel,Passengers,Transmission,Colour,Rent_duration,Amount,Price,Price_ExtraKm) {
+        $("#txtUser").val(carId);
         $("#txtVersion").val(Version);
         $("#txtType").val(Type);
         $("#txtFuel").val(Fuel);
@@ -384,7 +384,7 @@
     function EventBindingvalue() {
         $("#tblCar>tr").click(function () {
 
-            let cId = $(this).children(":eq(0)").text();
+            let carId = $(this).children(":eq(0)").text();
             let Version = $(this).children(":eq(1)").text();
             let Type = $(this).children(":eq(2)").text();
             let Fuel = $(this).children(":eq(3)").text();
@@ -398,7 +398,7 @@
 
 
             //  tble eke textfild walata data add karanawa
-            $("#txtUser").val(cId);
+            $("#txtUser").val(carId);
             $("#txtVersion").val(Version);
             $("#txtType").val(Type);
             $("#txtFuel").val(Fuel);
