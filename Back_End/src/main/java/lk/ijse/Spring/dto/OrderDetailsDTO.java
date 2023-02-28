@@ -13,7 +13,8 @@ import java.math.BigDecimal;
 @ToString
 public class OrderDetailsDTO {
 
-//    private String oid;
+    private String Vehicle;
+//    private Long id;
     private String cId;
     private String scheduleId;
     private String Type;

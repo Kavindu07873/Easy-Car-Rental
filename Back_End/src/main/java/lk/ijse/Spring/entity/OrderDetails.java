@@ -13,11 +13,17 @@ import java.math.BigDecimal;
 @Data
 @Entity
 @ToString
-@IdClass(OrderItem_PK.class)
+//@IdClass(OrderItem_PK.class)
 public class OrderDetails {
 //    @Id
 //    private String oid;
+
+//    @Id
+//    @GeneratedValue
+//    private Long id;
+//    @Id
     @Id
+    private String Vehicle;
     private String carId;
     private String scheduleId;
     private String Type;
@@ -29,8 +35,8 @@ public class OrderDetails {
 //    @ManyToOne
 //    @JoinColumn(name = "oid",referencedColumnName = "oid",insertable = false,updatable = false)
 //    private Orders orders;
-
-    @ManyToOne
-    @JoinColumn(name = "carId",referencedColumnName = "carId",insertable = false,updatable = false)
-    private Car car;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "carId",referencedColumnName = "carId",insertable = false,updatable = false)
+//    private Car car;
 }
