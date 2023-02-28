@@ -43,9 +43,11 @@ public class PurchaseOrderServiceImpl implements PurchaseOrderService {
 
         ordersRepo.save(orders);
 
-
-
-
+    }
+    @Override
+    public void purchaseOrderDetails(OrderDetails details) {
+        OrderDetails orderDetails = mapper.map(details,OrderDetails.class);
+        orderDetailsRepo.save(orderDetails);
     }
 
     @Override

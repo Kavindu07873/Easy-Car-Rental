@@ -15,19 +15,20 @@ import java.math.BigDecimal;
 @ToString
 @IdClass(OrderItem_PK.class)
 public class OrderDetails {
-    @Id
-    private String oid;
+//    @Id
+//    private String oid;
     @Id
     private String carId;
-    private String CarType;
+    private String scheduleId;
+    private String Type;
     private String Version;
-    private String Need;
-    private String Total;
+    private int Need;
+    private double Total;
 
 
-    @ManyToOne
-    @JoinColumn(name = "oid",referencedColumnName = "oid",insertable = false,updatable = false)
-    private Orders orders;
+//    @ManyToOne
+//    @JoinColumn(name = "oid",referencedColumnName = "oid",insertable = false,updatable = false)
+//    private Orders orders;
 
     @ManyToOne
     @JoinColumn(name = "carId",referencedColumnName = "carId",insertable = false,updatable = false)

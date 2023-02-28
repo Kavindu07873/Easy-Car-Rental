@@ -21,11 +21,11 @@ public class Orders {
     private Customer cusID;
 
 
-
+    private String scheduleId;
 
     private LocalDate date;
-
-    //Inverse
-    @OneToMany(mappedBy = "orders",cascade = CascadeType.ALL)
-    private List<OrderDetails> orderDetails;
+//
+//    //Inverse
+//    @OneToMany(mappedBy = "orders",cascade = CascadeType.ALL)
+//    private List<OrderDetails> orderDetails;
 }

@@ -68,7 +68,11 @@
                                 <input type="text" class="form-control" name="orderId" aria-label="oid" id="OrderId" placeholder="D001">
 
                             </div>
+                            <div class="mb-3">
+                                <label for="scheduleId" class="form-label text-black">SheduleId</label>
+                                <input type="text" class="form-control" name="scheduleId" aria-label="scheduleId" id="scheduleId" placeholder="D001">
 
+                            </div>
 
                             <div class="mb-3">
                                 <label for="Date" class="form-label text-black">Date</label>
@@ -283,15 +287,18 @@
 
                             <div class=" mb-3">
                                 <label for="need" class="form-label text-black">Need Cars</label>
-                                <input type="number" class="form-control" id="Need">
+                                <input type="number" class="form-control"
+                                       name="need"
+                                       aria-label="Need"   id="Need">
                             </div>
                         </div>
 
                         <div class="d-flex justify-content-evenly">
 
                             <div class=" mb-3">
-                                <label for="TOTAL" class="form-label text-black">TOTAL</label>
-                                <input type="number" class="form-control" id="TOTAL">
+                                <label for="Total" class="form-label text-black">TOTAL</label>
+                                <input type="number" class="form-control"  name="total"
+                                       aria-label="Total" id="Total">
                             </div>
                                 <br>
                             <div class="text-end">
@@ -673,16 +680,18 @@
 
         let Order = $("#OrderId").val();
         let customerID = $("#CusId").val();
+        let  scheduleId = $("#scheduleId").val();
         let orderDate = $("#Date").val();
-        let orderD = getOrdersDetails();
+        // let orderD = getOrdersDetails();
 
         // console.log(orderD)
 
         let ob={
             oid:Order,
             date:orderDate,
+            scheduleId:scheduleId,
             cusID:customerID,
-            orderDetails:orderD
+            // orderDetails:orderD
         }
         console.log(ob)
         //send request
@@ -700,34 +709,55 @@
             }
         });
 
-    });
-  function  getOrdersDetails(){
       let rows = $("#orderTable2").children().length;
-      var array = [];
-      for (let i = 0; i < rows; i++) {
 
-          let Order = $("#orderTable2").children().eq(i).children(":eq(0)").text();
-          let DriID = $("#orderTable2").children().eq(i).children(":eq(1)").text();
-          let CarType1 = $("#orderTable2").children().eq(i).children(":eq(2)").text();
-          let carId = $("#orderTable2").children().eq(i).children(":eq(3)").text();
-          let Version1 = $("#orderTable2").children().eq(i).children(":eq(4)").text();
-          let NeedC1 = $("#orderTable2").children().eq(i).children(":eq(5)").text();
-          let Total1 = $("#orderTable2").children().eq(i).children(":eq(6)").text();
-          // console.log("order" + Order + "  carid" + CarID1 + "    cartype" + CarType1 + "   carversion" + Version1 + "   need" + NeedC1 + "    totol" + Total1);
-          array.push({
-              type: CarType1,
+      // for (let i = 0; i < rows; i++) {
+      //     let scheduleId = $("#scheduleId").val();
+          let DriID = $("#orderTable2").children().eq(0).children(":eq(1)").text();
+          let CarType = $("#orderTable2").children().eq(0).children(":eq(2)").text();
+          let carId = $("#orderTable2").children().eq(0).children(":eq(3)").text();
+          let Version = $("#orderTable2").children().eq(0).children(":eq(4)").text();
+          let Need = $("#orderTable2").children().eq(0).children(":eq(5)").text();
+          let Total = $("#orderTable2").children().eq(0).children(":eq(6)").text();
+
+          // console.log(i);
+
+          console.log(CarType,Version)
+
+
+          let ob2={
+              scheduleId:scheduleId,
+              // date:DriID,
+              type:CarType,
               carId: carId,
-              Version: Version1,
-              Need: NeedC1,
-              Total: Total1
+              version:Version,
+              need: Need,
+              total: Total,
+          }
+
+
+
+          console.log(ob2);
+          $.ajax({
+              url: baseURL + "purchaseDetails",
+              method:"post",
+              dataType: "json",
+              data:JSON.stringify(ob2),
+              contentType:"application/json",
+              success: function (resp) {
+                  alert(resp.message);
+              },
+              error:function (error){
+                  alert(JSON.parse(error.responseText).message);
+              }
           });
-          // console.log(typeof array.values());
 
-      }
-                // console.log(array);
+          // }
 
-      return array;
-  }
+
+    });
+
+
 </script>
 </body>
 </html>
