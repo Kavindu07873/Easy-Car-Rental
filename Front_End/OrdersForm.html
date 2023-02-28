@@ -456,7 +456,7 @@
     getAllCar();
     searchCar();
     getAllDriver();
-
+    Autogenaraeorderid();
     function getAllCustomer() {
         $("#selectCusID").empty();
         $.ajax({
@@ -668,8 +668,6 @@
     ////////////////////////////////////////////////////////
 
     $("#btnAddToTable").click(function () {
-
-        let OrderId = $("#OrderId").val();
         let DriID = $("#selectDriID").val();
         let CarType = $("#selectCarType").val();
         let CarID = $("#selectCarID").val();
@@ -678,6 +676,8 @@
         let Price = $("#Price").val() *  $("#Need").val();
 
         $("#orderTable2").append(`<tr><td>${OrderId}</td><td>${DriID}</td><td>${CarType}</td><td>${CarID}</td><td>${Version}</td><td>${need}</td><td>${Price}</td></tr>`);
+
+        setTextFieldValues("","","","","")
     });
 
     $("#PlaceOrder").click(function () {
@@ -762,7 +762,27 @@
 
 
     });
+    function setTextFieldValues(id, name, address, salary,vehicle) {
+        $("#selectCarType").val(id);
+        $("#selectCarID").val(name);
+        $("#Version").val(address);
+        $("#NeedNeed").val(salary);
+        $("#VehicleId").val(salary);
 
+    }
+    function Autogenaraeorderid(){
+        let id ="1";
+        let i = 0;
+        while(i<100){
+            id = (i)
+            i++;
+        }
+        if(i<100){
+
+        }
+        $("#VehicleId").val(id);
+        // $("#OrderId").val().remove();
+    }
 
 </script>
 </body>
