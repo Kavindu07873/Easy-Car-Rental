@@ -251,15 +251,145 @@
         </div>
         <div class="container-fluid">
 
-            <button class="btn btn-dark btn-primary btn-lg btn-outline-danger" type="button">Admin Login</button>
-            <button class="btn btn-dark btn-primary btn-lg btn-outline-danger" type="button">Customer Login</button>
+            <button class="btn btn-dark btn-primary btn-lg btn-outline-danger" type="button" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal111">Admin Login
+            </button>
+            <button class="btn btn-dark btn-primary btn-lg btn-outline-danger" type="button" data-bs-toggle="modal"
+                    data-bs-target="#exampleModalc">Customer Login
+            </button>
+
         </div>
 
     </nav>
 
+
 </header>
 
 <main>
+    <div class="modal fade" id="exampleModalc" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmaic" class="form-label">User</label>
+                            <input type="text" class="form-control" id="exampleInputEmaic" aria-describedby="emailHelp">
+                            <!--                            <div id="emailH" class="form-text">We'll never share your email with anyone else.</div>-->
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1c" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1c">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <label for="exampleInputPassword1c" class="form-label">If You are Not Register</label>
+                            <label for="exampleInputPassword1c" class="form-label">Please Register</label>
+
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button data-bs-toggle="offcanvas"  data-bs-target="#offcanvasWithBothOptions"
+                                aria-controls="offcanvasWithBothOptions" type="button" class="btn btn-outline-warning btn-lg">Register</button>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+<!--    <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button>-->
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Register New Customer</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+
+
+            <form id="customerForm" class="was-validated">
+
+<!--                <div class="row">-->
+                    <div class="col">
+                        <label for="txtCustomerID">Customer ID</label>
+                        <input type="text" id="txtCustomerID" class="form-control d-inline-block is-invalid"  placeholder="C001"
+                               name="id"
+                               aria-label="ID" required>
+                    </div>
+                    <div class="col">
+                        <label for="txtCustomerName">Customer Name</label>
+                        <input type="text" class="form-control is-invalid" id="txtCustomerName" placeholder="20000.00" name="name"
+                               aria-label="Name" required>
+                    </div>
+                    <div class="col">
+                        <label for="txtCustomerAddress">Customer Address</label>
+                        <input type="text" id="txtCustomerAddress" class="is-invalid form-control d-inline-block"
+                               placeholder="yapagewaththa"
+                               name="address" aria-label="Address" required>
+                    </div>
+                    <div class="col">
+                        <label for="txtCustomerEmail">Customer Email</label>
+                        <input type="text" class="form-control is-invalid" id="txtCustomerEmail" placeholder="Galle" name="email"
+                               aria-label="Email" required>
+                    </div>
+<!--                </div>-->
+
+                    <div class="col">
+                        <label for="txtCustomerCon">Customer ConNo</label>
+                        <input type="text" class="is-invalid form-control" id="txtCustomerCon" placeholder="+9411111111" name="conNo"
+                               aria-label="ConNo" required>
+                    </div>
+
+                    <div class="col">
+                        <label for="txtCustomerNic">Customer Nic</label>
+                        <input type="text" class="is-invalid form-control" id="txtCustomerNic" placeholder="20000.00" name="nic"
+                               aria-label="Nic" required>
+                    </div>
+                    <div class="col">
+                        <label for="txtCustomerPassword">Customer Password</label>
+                        <input type="text" id="txtCustomerPassword" class="is-invalid form-control" placeholder="+940771530632"
+                               name="password" aria-label="Password" required>
+                    </div>
+                    <br>
+                <br>
+                <button id="SaveCustomer" type="button" class="btn btn-danger btn-lg">Save Customer</button>
+            </form>
+
+
+
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal22" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
     <br>
     <br>
     <div id="availability">
@@ -286,7 +416,14 @@
 
 
     <div id="placeOrder">
-        <button class="btn btn-danger" type="submit">Place Order</button>
+        <button class="btn btn-danger" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal22">Place
+            Order
+        </button>
+
+        <!--        <aside style="position: absolute;border: 2px solid red ; height: 50vh ;display: inline-block"  >    &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+        <!--    <button style="z-index: 8" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal22">-->
+        <!--        Launch demo modal-->
+        <!--    </button>-->
 
     </div>
 
@@ -376,13 +513,12 @@
             <h1><p><strong>General Car </strong></p></h1>
 
             <div class="container text-center">
-
-                </div>
+            </div>
             <div>
 
                 <div class="row" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="col-md-4">
-                        <div  id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <img src="assets/img/Cars/18.jpg" class="d-block w-100" alt="...">
@@ -399,7 +535,7 @@
                             <h1>Alto_Auto</h1>
                         </div>
 
-                </div>
+                    </div>
                     <div class="col-md-4">
                         <div id="carouselExampleSlidesOnly1" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -420,6 +556,7 @@
                             <h1>Alto Manuel</h1>
                         </div>
                     </div>
+
                     <div class="col-md-4">
                         <div>
                             <div id="carouselExampleSlidesOnly3" class="carousel slide" data-bs-ride="carousel">
@@ -647,7 +784,8 @@
                     </div>
                 </div>
             </div>
-        </div>  </div>
+        </div>
+        </div>
         <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -660,7 +798,8 @@
                     </div>
                 </div>
             </div>
-        </div>  </div>
+        </div>
+        </div>
         <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -673,24 +812,12 @@
                     </div>
                 </div>
             </div>
-        </div>  </div>
+        </div>
+        </div>
 
     </section>
 
 
-    <!--    <aside>-->
-    <!--        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button>-->
-
-    <!--        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">-->
-    <!--            <div class="offcanvas-header">-->
-    <!--                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>-->
-    <!--                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>-->
-    <!--            </div>-->
-    <!--            <div class="offcanvas-body">-->
-    <!--                <p>Try scrolling the rest of the page to see this option in action.</p>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--        </aside>-->
 </main>
 
 <script src="assets/js/bootstrap.min.js"></script>
@@ -699,7 +826,25 @@
 
     <!--customer table show-->
     let baseURL = "http://localhost:8080/Back_End_war/";
+    $("#SaveCustomer").click(function () {
 
+        var formData = $("#customerForm").serialize();
+        console.log(formData);
+        $.ajax({
+            url: baseURL + "Customer",
+            method: "post",
+            data: formData,
+            dataType: "json",
+            success: function (res) {
+                alert(res.message);
+                getAll();
+            },
+            error: function (error) {
+                var jsObject = JSON.parse(error.responseText);
+                alert(jsObject.message);
+            }
+        });
+    });
 
     $("#BtnShowCustomer").click(function () {
         $("#tableDriverDetails").css('display', 'none');
