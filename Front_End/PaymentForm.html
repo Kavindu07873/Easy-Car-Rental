@@ -46,12 +46,109 @@
     </nav>
 </header>
 <main>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+         aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Payment Management Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+
+
+            <form id="PaymentForm6" class="was-validated">
+<!--                <h1 class="bg-success p-2 text-white bg-opacity-75">Payment Management Details</h1>-->
+
+
+                    <div class="col">
+                        <label for="txtUser2">P_Id</label>
+                        <input type="text" class="form-control is-invalid" id="txtUser2" placeholder=""
+                               name="user"
+                               aria-label="User" required>
+                    </div>
+
+
+                    <div class="col">
+                        <label for="txtType2">Type</label>
+                        <input type="text" class="form-control is-invalid" id="txtType2" placeholder=""
+                               name="type"
+                               aria-label="Type" required>
+                    </div>
+                    <div class="col">
+                        <label for="txtVersion2">Version</label>
+                        <input type="text" class="form-control is-invalid" id="txtVersion2" placeholder=""
+                               name="version"
+                               aria-label="Version" required>
+                    </div>
+
+                    <div class="col">
+                        <label for="txtRentFree2">Rent_Free</label>
+                        <input type="number" class="form-control is-invalid" id="txtRentFree2" placeholder=""
+                               name="rentFree"
+                               aria-label="RentFree" required>
+                    </div>
+
+
+                    <div class="col">
+                        <label for="txtTravelDistance2">Travel_Distance</label>
+                        <input type="number" id="txtTravelDistance2" class="is-invalid form-control d-inline-block"
+                               placeholder=""
+                               name="travelDistance"
+                               aria-label="TravelDistance" required>
+                    </div>
+
+                <br>
+
+                    <div class="col">
+                        <label for="txtLossDamage2">Loss_Damage</label>
+                        <input type="number" class="form-control is-invalid" id="txtLossDamage2" placeholder=""
+                               name="lossDamage"
+                               aria-label="LossDamage" required>
+                    </div>
+<!--                    <div class="col">-->
+<!--                        <label for="txtUnitPrice2">Unite_price</label>-->
+<!--                        <input type="text" class="form-control is-invalid" id="txtUnitPrice2" placeholder=""-->
+<!--                               name="unitPrice"-->
+<!--                               aria-label="UnitPrice" required>-->
+<!--                    </div>-->
+                    <div class="col">
+                        <label for="txtExtraKmPrice2">Extra_Km_Price</label>
+                        <input type="number" id="txtExtraKmPrice2" class="is-invalid form-control"
+                               placeholder=""
+                               name="extraKmPrice" aria-label="ExtraKmPrice" required>
+                    </div>
+
+                <br>
+                <br>
+
+                    <button type="button" id="SavePayment" class="btn btn-primary">Save</button>
+                    <button type="button" id="BtnUpdate" class="btn btn-success">Update</button>
+                    <button type="button" id="BtnDelete" class="btn btn-danger">Delete</button>
+                    <button type="button" id="btnLoadAll" class="btn btn-info">getall</button>
+                <br>
+            </form>
+
+
+
+
+        </div>
+    </div>
+
+
     <section>
         <h1 class="bg-success p-2 text-white bg-opacity-75">Payment Details</h1>
     </section>
     <br>
-    <section>
 
+    <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+            aria-controls="offcanvasWithBothOptions" type="button" class="btn btn-outline-warning btn-lg">Update Payment
+        Details
+    </button>
+
+    <br>
+    <br>
+    <section>
+        <h1 class="bg-success p-2 text-white bg-opacity-75">Order Details</h1>
         <form id="PaymentForm3" class="was-validated">
 
             <div class="row">
@@ -113,7 +210,6 @@
             </div>
         </form>
 
-
         <form id="PaymentForm2" class="was-validated">
 
             <div class="row">
@@ -157,18 +253,125 @@
             <br>
 
         </form>
+        <br>
+        <br>
+        <section>
+            <table style="width: 95%" border="2px solid red"
+                   class="col table table-bordered border-primary table-dark table-striped">
+                <thead class="bg-danger text-white">
+                <tr>
+                    <th>P_Id</th>
+                    <th>Type</th>
+                    <th>Version</th>
+                    <th>Rent_Free</th>
+                    <th>Travel_Distance</th>
+                    <th>Loss_Damage</th>
+                    <th>Extra_Km_Price</th>
+                </tr>
+                </thead>
+                <tbody id="tblPayment">
 
-        <form id="PaymentForm" class="was-validated">
+                </tbody>
+            </table>
+
+        </section>
+        <br>
+        <br>
+        <form id="PaymentForm6" class="was-validated">
+            <h1 class="bg-success p-2 text-white bg-opacity-75">Payment Management Details</h1>
 
             <div class="row">
 
                 <div class="col">
-                    <label for="txtUser">P_Id</label>
-                    <input type="text" class="form-control is-invalid" id="txtUser" placeholder=""
+                    <label for="txtUser2">P_Id</label>
+                    <input type="text" class="form-control is-invalid" id="txtUser2" placeholder=""
                            name="user"
                            aria-label="User" required>
                 </div>
 
+
+                <div class="col">
+                    <label for="txtType2">Type</label>
+                    <input type="text" class="form-control is-invalid" id="txtType2" placeholder=""
+                           name="type"
+                           aria-label="Type" required>
+                </div>
+                <div class="col">
+                    <label for="txtVersion2">Version</label>
+                    <input type="text" class="form-control is-invalid" id="txtVersion2" placeholder=""
+                           name="version"
+                           aria-label="Version" required>
+                </div>
+
+                <div class="col">
+                    <label for="txtRentFree2">Rent_Free</label>
+                    <input type="text" class="form-control is-invalid" id="txtRentFree2" placeholder=""
+                           name="rentFree"
+                           aria-label="RentFree" required>
+                </div>
+
+
+                <div class="col">
+                    <label for="txtTravelDistance2">Travel_Distance</label>
+                    <input type="text" id="txtTravelDistance2" class="is-invalid form-control d-inline-block"
+                           placeholder=""
+                           name="travelDistance"
+                           aria-label="TravelDistance" required>
+                </div>
+
+            </div>
+            <br>
+            <div class="row">
+
+                <div class="col">
+                    <label for="txtLossDamage2">Loss_Damage</label>
+                    <input type="text" class="form-control is-invalid" id="txtLossDamage2" placeholder=""
+                           name="lossDamage"
+                           aria-label="LossDamage" required>
+                </div>
+<!--                <div class="col">-->
+<!--                    <label for="txtUnitPrice2">Unite_price</label>-->
+<!--                    <input type="text" class="form-control is-invalid" id="txtUnitPrice2" placeholder=""-->
+<!--                           name="unitPrice"-->
+<!--                           aria-label="UnitPrice" required>-->
+<!--                </div>-->
+                <div class="col">
+                    <label for="txtExtraKmPrice2">Extra_Km_Price</label>
+                    <input type="text" id="txtExtraKmPrice2" class="is-invalid form-control"
+                           placeholder=""
+                           name="extraKmPrice" aria-label="ExtraKmPrice" required>
+                </div>
+            </div>
+            <br>
+        </form>
+        <br>
+        <br>
+        <!--        <button type="button" class="btn btn-secondary">Remove</button>-->
+        <form id="PaymentForm" class="was-validated">
+            <h1 class="bg-success p-2 text-white bg-opacity-75">Payment Finalize Details</h1>
+
+            <div class="row">
+
+                <!--                <div class="col">-->
+                <!--                    <label for="txtUser2">P_Id</label>-->
+                <!--                    <input type="text" class="form-control is-invalid" id="txtUser2" placeholder=""-->
+                <!--                           name="user"-->
+                <!--                           aria-label="User" required>-->
+                <!--                </div>-->
+
+
+                <div class="col">
+                    <label for="txtType2">Type</label>
+                    <input type="text" class="form-control is-invalid" id="txtType2" placeholder=""
+                           name="type"
+                           aria-label="Type" required>
+                </div>
+                <div class="col">
+                    <label for="txtVersion2">Version</label>
+                    <input type="text" class="form-control is-invalid" id="txtVersion2" placeholder=""
+                           name="version"
+                           aria-label="Version" required>
+                </div>
 
                 <div class="col">
                     <label for="txtVersion">Rent_Free</label>
@@ -176,12 +379,8 @@
                            name="rentFree"
                            aria-label="RentFree" required>
                 </div>
-                <div class="col">
-                    <label for="txtType">Driver_Free</label>
-                    <input type="text" class="form-control is-invalid" id="txtType" placeholder=""
-                           name="driverFree"
-                           aria-label="DriverFree" required>
-                </div>
+
+
                 <div class="col">
                     <label for="txtFuel">Travel_Distance</label>
                     <input type="text" id="txtFuel" class="is-invalid form-control d-inline-block"
@@ -201,10 +400,16 @@
                            aria-label="LossDamage" required>
                 </div>
                 <div class="col">
-                    <label for="txtTransmission">calc_LossDamage</label>
-                    <input type="text" class="form-control is-invalid" id="txtTransmission" placeholder=""
-                           name="calcLossDamage"
-                           aria-label="calcLossDamage" required>
+                    <label for="txtUnitPrice">Unite_price</label>
+                    <input type="text" class="form-control is-invalid" id="txtUnitPrice" placeholder=""
+                           name="unitPrice"
+                           aria-label="UnitPrice" required>
+                </div>
+                <div class="col">
+                    <label for="txtPrice">Extra_Km_Price</label>
+                    <input type="text" id="txtPrice" class="is-invalid form-control"
+                           placeholder=""
+                           name="extraKmPrice" aria-label="ExtraKmPrice" required>
                 </div>
                 <div class="col">
                     <label for="txtColour">Payment_Date</label>
@@ -240,41 +445,10 @@
 
             </div>
         </form>
-        <br><br>
-        <button type="button" id="SavePayment" class="btn btn-primary">Save</button>
-        <!--        <button type="button" class="btn btn-secondary">Remove</button>-->
-        <button type="button" id="BtnUpdate" class="btn btn-success">Update</button>
-        <button type="button" id="BtnDelete" class="btn btn-danger">Delete</button>
-        <button type="button" id="BtnClearAll" class="btn btn-warning">Clearall</button>
-        <button type="button" id="btnLoadAll" class="btn btn-info">getall</button>
 
 
     </section>
-    <br>
-    <br>
-    <section>
-        <table style="width: 95%" border="2px solid red"
-               class="col table table-bordered border-primary table-dark table-striped">
-            <thead class="bg-danger text-white">
-            <tr>
-                <th>P_Id</th>
-                <th>Rent_Free</th>
-                <th>Driver_Free</th>
-                <th>Travel_Distance</th>
-                <th>Loss_Damage</th>
-                <th>calc_LossDamage</th>
-                <th>Payment_Date</th>
-                <th>Extra_Km</th>
-                <th>Extra_Km_Price</th>
-                <th>Full_Payment</th>
-            </tr>
-            </thead>
-            <tbody id="tblPayment">
 
-            </tbody>
-        </table>
-
-    </section>
 </main>
 
 <script src="assets/js/bootstrap.min.js"></script>
@@ -296,7 +470,7 @@
     getAllOrdersDetails2();
     $("#SavePayment").click(function () {
 
-        var formData = $("#PaymentForm").serialize();
+        var formData = $("#PaymentForm6").serialize();
         console.log(formData);
         $.ajax({
             url: baseURL + "Payment",
@@ -323,45 +497,42 @@
     $("#BtnUpdate").click(function () {
 
         let P_Id = $("#txtUser").val();
-        let Rent_Free=$("#txtVersion").val();
-        let Driver_Free=$("#txtType").val();
-        let Travel_Distance=$("#txtFuel").val();
-        let Loss_Damage=$("#txtPassengers").val();
-        let calc_LossDamage=$("#txtTransmission").val();
-        let Payment_Date=$("#txtColour").val();
-        let Extra_Km=$("#txtRent_duration").val();
-        let Extra_Km_Price=$("#txtPrice").val();
-        let Full_Payment=$("#txtPrice_ExtraKm").val();
-
-
-
+        let Rent_Free = $("#txtVersion").val();
+        let Driver_Free = $("#txtType").val();
+        let Travel_Distance = $("#txtFuel").val();
+        let Loss_Damage = $("#txtPassengers").val();
+        let calc_LossDamage = $("#txtTransmission").val();
+        let Payment_Date = $("#txtColour").val();
+        let Extra_Km = $("#txtRent_duration").val();
+        let Extra_Km_Price = $("#txtPrice").val();
+        let Full_Payment = $("#txtPrice_ExtraKm").val();
 
 
         var Payment = {
-                user:P_Id,
-                rentFree :Rent_Free,
-                driverFree :Driver_Free,
-                travelDistance :Travel_Distance,
-                lossDamage :Loss_Damage,
-                calcLossDamage:calc_LossDamage,
-                paymentDate :Payment_Date,
-                extraKm :Extra_Km,
-                extraKmPrice: Extra_Km_Price,
-                fullPayment :Full_Payment
+            user: P_Id,
+            rentFree: Rent_Free,
+            driverFree: Driver_Free,
+            travelDistance: Travel_Distance,
+            lossDamage: Loss_Damage,
+            calcLossDamage: calc_LossDamage,
+            paymentDate: Payment_Date,
+            extraKm: Extra_Km,
+            extraKmPrice: Extra_Km_Price,
+            fullPayment: Full_Payment
         }
 
         $.ajax({
-            url: baseURL+'Payment',
+            url: baseURL + 'Payment',
             method: 'put',
-            contentType:"application/json",
-            data:JSON.stringify(Payment),
-            dataType:"json",
+            contentType: "application/json",
+            data: JSON.stringify(Payment),
+            dataType: "json",
             success: function (res) {
                 alert(res.message);
                 getAll();
             },
-            error:function (error){
-                let cause= JSON.parse(error.responseText).message;
+            error: function (error) {
+                let cause = JSON.parse(error.responseText).message;
                 alert(cause);
             }
 
@@ -394,34 +565,31 @@
             url: baseURL + "Payment",
             dataType: "json",
             success: function (resp) {
-                    console.log(resp);
+                console.log(resp);
 
                 for (let cus of resp.data) {
 
-                    var rows = '<tr><td>' + cus.user+
+                    var rows = '<tr><td>' + cus.user +
+                        '</td><td>' + cus.type +
+                        '</td><td>' + cus.version +
                         '</td><td>' + cus.rentFree +
-                        '</td><td>' + cus.driverFree +
                         '</td><td>' + cus.travelDistance +
                         '</td><td>' + cus.lossDamage +
-                        '</td><td>' + cus.calcLossDamage +
-                        '</td><td>' + cus.paymentDate +
-                        '</td><td>' + cus.extraKm +
                         '</td><td>' + cus.extraKmPrice +
-                        '</td><td>' + cus.fullPayment +
                         '</td></tr>';
                     // console.log(row);
-                 $("#tblPayment").append(rows);
+                    $("#tblPayment").append(rows);
 
                 }
                 EventBindingvalue();
-                setTextFieldValues("", "", "", "", "", "", "","", "", "");
-                $("#txtUser").focus();
+                setTextFieldValues("", "", "", "", "", "", "", "");
+                $("#txtUser2").focus();
             }
         });
     }
 
 
-    function setTextFieldValues(user, rentFree, driverFree, travelDistance, lossDamage, calcLossDamage, paymentDate,extraKm,extraKmPrice,fullPayment) {
+    function setTextFieldValues(user, rentFree, driverFree, travelDistance, lossDamage, calcLossDamage, paymentDate, extraKm, extraKmPrice, fullPayment) {
         $("#txtUser").val(user);
         $("#txtVersion").val(rentFree);
         $("#txtType").val(driverFree);
@@ -447,11 +615,13 @@
             let calcLossDamage = $(this).children(":eq(5)").text();
             let paymentDate = $(this).children(":eq(6)").text();
             let extraKm = $(this).children(":eq(7)").text();
-            let extraKmPrice = $(this).children(":eq(8)").text();
-            let fullPayment = $(this).children(":eq(9)").text();
+            // let extraKmPrice = $(this).children(":eq(8)").text();
+            // let fullPayment = $(this).children(":eq(9)").text();
 
             //  tble eke textfild walata data add karanawa
             $("#txtUser").val(user);
+            $("#txtUser2").val(user);
+
             $("#txtVersion").val(rentFree);
             $("#txtType").val(driverFree);
             $("#txtFuel").val(travelDistance);
@@ -572,8 +742,6 @@
     });
 
 
-
-
     function getAllOrdersDetails() {
         $("#OrderDetailsId").empty();
         $.ajax({
@@ -622,7 +790,6 @@
     });
 
 
-
     function getAllOrdersDetails2() {
         $("#OrderDetailsId2").empty();
         $.ajax({
@@ -667,7 +834,6 @@
             $("#txtCarVersion").val(res[0].version);
             $("#txtNeed").val(res[0].need);
             $("#txtTotalMoney").val(res[0].total);
-
 
 
         }

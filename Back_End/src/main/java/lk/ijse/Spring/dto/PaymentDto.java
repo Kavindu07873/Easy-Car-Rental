@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.persistence.Id;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -12,13 +14,11 @@ import lombok.ToString;
 
 public class PaymentDto {
     private String User;
+    private String Type;
+    private String Version;
     private String RentFree;
-    private String DriverFree;
     private String TravelDistance;
     private String LossDamage;
-    private String calcLossDamage;
-    private String PaymentDate;
-    private String ExtraKm;
     private String ExtraKmPrice;
-    private String FullPayment;
+
 }

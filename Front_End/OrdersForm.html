@@ -761,7 +761,7 @@
           });
 
           // }
-
+        doubleclick();
 
     });
     // function setTextFieldValues(id, name, address, salary,vehicle) {
@@ -786,6 +786,14 @@
     //     // $("#OrderId").val().remove();
     // }
 
+    function doubleclick(){
+        $("#orderTable2>tr").on('dblclick',function (){
+            $(this).remove();
+        });
+        // $("#tblCart>tr").on('dblclick',function (){
+        //     $(this).remove();
+        // });
+    }
 </script>
 </body>
 </html>

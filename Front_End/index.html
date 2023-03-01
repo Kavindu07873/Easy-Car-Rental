@@ -1,207 +1,146 @@
-<div class="container overflow-hidden text-center" style="z-index: 5" >
-    <div class="row gx-5" style="">
-        <div class="col">
-            <div class="p-3" style="z-index: 4">
+<body>
+<div class="container">
+    <div class="form">
+        <h1>Sign Up</h1>
 
-                <p style="z-index: 4" class="fw-bold fs-3 text-danger">Date: <span id="datetime1"></span></p>
+        <form action="user">
+            <div class="input-group">
+                <div class="input-field">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" placeholder="Name">
+                </div>
 
-                <script>
-                    var dt = new Date();
-                    document.getElementById("datetime1").innerHTML = dt.toLocaleDateString();
-                </script>
+                <div class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="E-mail">
+                </div>
 
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password">
+                </div>
+
+                <p>Forget password<a href=""> Click Here!</a></p>
             </div>
-        </div>
-        <div class="col">
-            <div class="p-3">
-                <p class="fw-bold fs-4 text-danger">Time: <span id="datetime"></span></p>
-
-                <script>
-                    var dt = new Date();
-                    document.getElementById("datetime").innerHTML = dt.toLocaleTimeString();
-                </script>
+            <div class="button-field">
+                <button type="button" class="disable">Sign up</button>
+                <button type="button">Sign in</button>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 
-<!--  <aside >-->
 
-<!--    <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Driver List</button>-->
-<!--    <br>-->
-<!--    <br>-->
+</body>
+Kushan
+Kushan De Silva
+.container{
+width: 100%;
+height: 99.4vh;
+background-image: url("../image/loginImage.jpg");
+background-position: bottom;
+background-size: cover;
+position: relative;
+overflow: hidden;
+}
 
-<!--    <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#RegisterNewCustomer">Order Details</button>-->
-<!--    <br>-->
-<!--    <br>-->
-<!--    <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#Driver">Car Details</button>-->
-<!--    <br>-->
-<!--    <br>-->
-<!--    <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#Driver">Payment Details</button>-->
-<!--    <br>-->
-<!--    <br>-->
-<!--    <br>-->
-<!--    <button type="button" class="btn  btn-danger btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#Driver">Place Order</button>-->
-<!--  </aside>-->
-<!--model tika-->
-<!--  <section>-->
-<!--    <section>-->
-<!--      &lt;!&ndash;         Button trigger modal&ndash;&gt;-->
-<!--      &lt;!&ndash;          <button  style="position: absolute" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">&ndash;&gt;-->
-<!--      &lt;!&ndash;            Launch demo modal&ndash;&gt;-->
-<!--      &lt;!&ndash;          </button>&ndash;&gt;-->
+.form{
+width: 90%;
+max-width: 450px;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%,-50%);
+background: #fff;
+padding: 50px 60px 70px;
+text-align: center;
+}
 
-<!--      &lt;!&ndash; Modal &ndash;&gt;-->
-<!--      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-<!--        <div class="modal-dialog">-->
-<!--          <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>-->
-<!--              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-<!--            </div>-->
-<!--            <div class="modal-body">-->
-<!--              <form>-->
-<!--                <div class="mb-3">-->
-<!--                  <label for="exampleInputEmail1" class="form-label">Email address</label>-->
-<!--                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">-->
-<!--                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
-<!--                </div>-->
-<!--                <div class="mb-3">-->
-<!--                  <label for="exampleInputPassword1" class="form-label">Password</label>-->
-<!--                  <input type="password" class="form-control" id="exampleInputPassword1">-->
-<!--                </div>-->
-<!--                <div class="mb-3 form-check">-->
-<!--                  <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
-<!--                  <label class="form-check-label" for="exampleCheck1">Check me out</label>-->
-<!--                </div>-->
-<!--                <button type="submit" class="btn btn-primary">Submit</button>-->
-<!--              </form>-->
-<!--            </div>-->
+.form h1{
+font-size: 30px;
+color: #fe5b3b;
+position: relative;
+margin-bottom: 60px;
+}
 
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </section>-->
-<!--    <section>-->
-<!--      &lt;!&ndash;         Button trigger modal&ndash;&gt;-->
-<!--      &lt;!&ndash;          <button  style="position: absolute" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">&ndash;&gt;-->
-<!--      &lt;!&ndash;            Launch demo modal&ndash;&gt;-->
-<!--      &lt;!&ndash;          </button>&ndash;&gt;-->
+.form h1::after{
+content: '';
+width: 40px;
+height: 3px;
+border-radius: 3px;
+background: #fe5b3b;
+position: absolute;
+bottom: -12px;
+left: 50%;
+transform: translateX(-50%);
+}
 
-<!--      &lt;!&ndash; Modal &ndash;&gt;-->
-<!--      <div class="modal fade" id="RegisterNewCustomer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-<!--        <div class="modal-dialog">-->
-<!--          <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--              <h1 class="modal-title fs-5" id="exampleModalLabel2">Modal title</h1>-->
-<!--              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-<!--            </div>-->
-<!--            <div class="modal-body">-->
-<!--              <div class="row">-->
-<!--                <div class="col">-->
-<!--                  <input type="text" class="form-control" placeholder="ID" aria-label="ID">-->
-<!--                </div>-->
-<!--                <div class="col">-->
-<!--                  <input type="text" class="form-control" placeholder="Name" aria-label="Name">-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <br>-->
-<!--              <br>-->
-<!--              <div class="row">-->
-<!--                <div class="col">-->
-<!--                  <input type="text" class="form-control" placeholder="ContNo" aria-label="ContNo">-->
-<!--                </div>-->
-<!--                <div class="col">-->
-<!--                  <input type="text" class="form-control" placeholder="Address" aria-label="Address">-->
-<!--                </div>-->
+.input-field{
+background: #eaeaea;
+margin: 15px 0;
+border-radius: 3px;
+display: flex;
+align-items: center;
+}
 
-<!--              </div>-->
-<!--              <br>                        </div>-->
-<!--            <div class="modal-footer">-->
-<!--              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-<!--              <button type="button" class="btn btn-primary">Save changes</button>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </section>-->
-<!--    <section>-->
+.input-field input{
+width: 100%;
+background: transparent;
+border: 0;
+outline: 0;
+padding: 18px 15px;
+}
 
-<!--      <div class="modal fade" id="Driver" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-<!--        <div class="modal-dialog">-->
-<!--          <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--              <h1 class="modal-title fs-5" id="exampleModalLabel3">Modal title</h1>-->
-<!--              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-<!--            </div>-->
-<!--            <div class="modal-body">-->
+.input-field i{
+margin-left: 15px;
+color: #999;
+}
 
+.input-group p{
+text-align: left;
+font-size: 13px;
+}
 
+.input-group p a{
+text-decoration: none;
+color: #fe5b3b;
+}
 
+.button-field{
+width: 100%;
+display: flex;
+justify-content: space-between;
+}
 
+.button-field button{
+flex-basis: 48%;
+background-color: #fe5b3b;
+color: white;
+height: 40px;
+border-radius: 20px;
+border: 0;
+outline: 0;
+cursor: pointer;
+transition: background-color 0.5s;
+}
 
+.button-field button:nth-child(2):hover{
+border: 2px solid #fe5b3b;
+background-color: white;
+color: #fe5b3b;
+}
 
-<!--            </div>-->
-<!--            <div class="modal-footer">-->
-<!--              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-<!--              <button type="button" class="btn btn-primary">Save changes</button>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </section>-->
+.button-field button.disable:hover{
+background-color: #999999;
+color: black;
 
-<!--  </section>-->
+}
 
+.input-group{
+height: 280px;
+}
 
-<!--  <section id="tableDetails">-->
-<!--    <table border="2px solid red"   class="col table table-bordered border-primary table-dark table-striped">-->
-<!--      <thead>-->
-<!--      <tr class="table-dark table-striped">-->
-<!--        <th scope="col">Id</th>-->
-<!--        <th scope="col">Name</th>-->
-<!--        <th scope="col">ContNo</th>-->
-<!--        <th scope="col">Address</th>-->
-<!--        <th scope="col">Salary</th>-->
-<!--        <th scope="col">Salary</th>-->
-<!--        <th scope="col">Salary</th>-->
-
-<!--      </tr>-->
-<!--      </thead>-->
-<!--      <tbody id="tblCustomer" >-->
-<!--      <tr >-->
-<!--        <td scope="row">1</td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-
-
-<!--      </tr>-->
-<!--      <tr>-->
-<!--        <td>2</td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-
-<!--      </tr>-->
-<!--      <tr>-->
-<!--        <td>3</td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-
-<!--      </tr>-->
-
-<!--      </tbody>-->
-<!--    </table>-->
-
-<!--  </section>-->
+.button-field .disable{
+background-color: #eaeaea;
+color: #555;
+}

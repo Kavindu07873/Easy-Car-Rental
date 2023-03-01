@@ -16,15 +16,13 @@ public class Payment {
 
     @Id
     private String User;
+    private String Type;
+    private String Version;
     private String RentFree;
-    private String DriverFree;
     private String TravelDistance;
     private String LossDamage;
-    private String calcLossDamage;
-    private String PaymentDate;
-    private String ExtraKm;
     private String ExtraKmPrice;
-    private String FullPayment;
+
 }
 
    // @GeneratedValue(strategy=GenerationType.AUTO)
