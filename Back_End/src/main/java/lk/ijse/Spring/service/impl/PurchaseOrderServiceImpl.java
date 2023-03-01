@@ -66,7 +66,8 @@ public class PurchaseOrderServiceImpl implements PurchaseOrderService {
     }
     @Override
     public ArrayList<OrderDetailsDTO> getAllOrdersDetails(){
-        return mapper.map(orderDetailsRepo.findAll(), new TypeToken<ArrayList<OrderDetailsDTO>>() {
+        return mapper.map(orderDetailsRepo.findAll(),
+                new TypeToken<ArrayList<OrderDetailsDTO>>() {
         }.getType());
     }
 }

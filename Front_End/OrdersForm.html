@@ -191,7 +191,7 @@
                         <br>
                         <div class="mb-3">
                             <label for="VehicleId" class="form-label text-black">Vehicle_Type_Id</label>
-                            <input type="number" class="form-control" name="vehicle" aria-label="Vehicle" id="VehicleId" placeholder="General">
+                            <input type="text" class="form-control" name="vehicle" aria-label="Vehicle" id="VehicleId" placeholder="General">
                         </div>
                         <div class="d-flex justify-content-evenly">
 
@@ -456,7 +456,7 @@
     getAllCar();
     searchCar();
     getAllDriver();
-    Autogenaraeorderid();
+    // Autogenaraeorderid();
 
 
     function getAllCustomer() {
@@ -764,27 +764,27 @@
 
 
     });
-    function setTextFieldValues(id, name, address, salary,vehicle) {
-        $("#selectCarType").val(id);
-        $("#selectCarID").val(name);
-        $("#Version").val(address);
-        $("#NeedNeed").val(salary);
-        $("#VehicleId").val(salary);
-
-    }
-    function Autogenaraeorderid(){
-        let id ="1";
-        let i = 0;
-        while(i<100){
-            id = (i)
-            i++;
-        }
-        if(i<100){
-
-        }
-        $("#VehicleId").val(id);
-        // $("#OrderId").val().remove();
-    }
+    // function setTextFieldValues(id, name, address, salary,vehicle) {
+    //     $("#selectCarType").val(id);
+    //     $("#selectCarID").val(name);
+    //     $("#Version").val(address);
+    //     $("#NeedNeed").val(salary);
+    //     $("#VehicleId").val(salary);
+    //
+    // }
+    // function Autogenaraeorderid(){
+    //     let id ="1";
+    //     let i = 0;
+    //     while(i<100){
+    //         id = (i)
+    //         i++;
+    //     }
+    //     if(i<100){
+    //
+    //     }
+    //     $("#VehicleId").val(id);
+    //     // $("#OrderId").val().remove();
+    // }
 
 </script>
 </body>

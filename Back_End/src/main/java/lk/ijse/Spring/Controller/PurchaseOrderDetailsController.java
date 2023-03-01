@@ -29,7 +29,7 @@ public class PurchaseOrderDetailsController {
     @GetMapping
     public ResponseUtil getAllOrderDetails(){
         ArrayList<OrderDetailsDTO> orderDetailsDTOS = service.getAllOrdersDetails();
-        System.out.println(orderDetailsDTOS);
+        System.out.println("mkd   "+orderDetailsDTOS);
         return new ResponseUtil("200"," Success",orderDetailsDTOS);
 
     }

@@ -67,7 +67,7 @@
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <label>Order Details :</label>
+                        <label>Order Schedule :</label>
                         <select class="form-control" id="OrderDetailsId">
                         </select>
                         <span class="control-error"
@@ -293,6 +293,7 @@
     getAll();
     getAllOrders();
     getAllOrdersDetails();
+    getAllOrdersDetails2();
     $("#SavePayment").click(function () {
 
         var formData = $("#PaymentForm").serialize();
@@ -619,6 +620,60 @@
         }
 
     });
+
+
+
+    function getAllOrdersDetails2() {
+        $("#OrderDetailsId2").empty();
+        $.ajax({
+            url: baseURL + "purchaseDetails",
+            dataType: "json",
+            success: function (resp) {
+                console.log(resp);
+                for (let cus of resp.data) {
+                    // console.log(cus.vehicle);
+
+                    $("#OrderDetailsId2").append(`<option value="${cus.vehicle}">${cus.vehicle}</option>`);
+
+                }
+            }
+        });
+    }
+
+    function searchOrdersDetails2(VehicleId) {
+        let response = "";
+        $.ajax({
+            url: baseURL + "purchaseDetails",
+            dataType: "json",
+            async: false,
+            success: function (resp) {
+                response = resp.data.filter((c) => {
+                    return c.vehicle == VehicleId;
+                });
+            }
+        });
+        console.log(response);
+        return response;
+    }
+
+    $("#OrderDetailsId2").change(function () {
+        let VehicleId = $("#OrderDetailsId2").val();
+        $("#OrderDetailsId2").val(VehicleId);
+        let res = searchOrdersDetails2(VehicleId);
+        if (res.length > 0) {
+
+            $("#txtCarId").val(res[0].cId);
+            $("#txtCarType").val(res[0].type);
+            $("#txtCarVersion").val(res[0].version);
+            $("#txtNeed").val(res[0].need);
+            $("#txtTotalMoney").val(res[0].total);
+
+
+
+        }
+
+    });
+
 </script>
 </body>
 </html>
