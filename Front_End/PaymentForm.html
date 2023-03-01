@@ -75,6 +75,15 @@
                     </div>
                 </div>
 
+                <div class="col">
+                    <div class="form-group">
+                        <label>Order Details :</label>
+                        <select class="form-control" id="OrderDetailsId2">
+                        </select>
+                        <span class="control-error"
+                              id="OrderDetailsId2-empty-error"></span>
+                    </div>
+                </div>
             </div>
 
             <br>
@@ -88,7 +97,7 @@
                 </div>
                 <div class="col">
                     <label for="txtDate">Date</label>
-                    <input type="date" class="is-invalid form-control" id="txtDate" placeholder=""
+                    <input type="text" class="is-invalid form-control" id="txtDate" placeholder=""
                            name="date"
                            aria-label="Date" required>
                 </div>
@@ -282,7 +291,8 @@
     let baseURL = "http://localhost:8080/Back_End_war/";
 
     getAll();
-
+    getAllOrders();
+    getAllOrdersDetails();
     $("#SavePayment").click(function () {
 
         var formData = $("#PaymentForm").serialize();
@@ -511,6 +521,104 @@
     // });
 
 
+    function getAllOrders() {
+        $("#OrderId").empty();
+        $.ajax({
+            url: baseURL + "purchase",
+            dataType: "json",
+            success: function (resp) {
+                // console.log(resp);
+                for (let cus of resp.data) {
+                    // console.log(cus.orderId);
+                    console.log(cus.oid);
+
+                    $("#OrderId").append(`<option value="${cus.oid}">${cus.oid}</option>`);
+
+                }
+            }
+        });
+    }
+
+    function searchOrders(OderId) {
+        let response = "";
+        $.ajax({
+            url: baseURL + "purchase",
+            dataType: "json",
+            async: false,
+            success: function (resp) {
+                response = resp.data.filter((c) => {
+                    return c.oid == OderId;
+                });
+            }
+        });
+        console.log(response);
+        return response;
+    }
+
+    $("#OrderId").change(function () {
+        let OderId = $("#OrderId").val();
+        $("#OrderId").val(OderId);
+        let res = searchOrders(OderId);
+        if (res.length > 0) {
+
+            $("#txtOrderId").val(res[0].oid);
+            $("#txtDate").val(res[0].date);
+            $("#txtCustomerId").val(res[0].cusID);
+
+
+        }
+
+    });
+
+
+
+
+    function getAllOrdersDetails() {
+        $("#OrderDetailsId").empty();
+        $.ajax({
+            url: baseURL + "purchase",
+            dataType: "json",
+            success: function (resp) {
+                console.log(resp);
+                for (let cus of resp.data) {
+
+                    $("#OrderDetailsId").append(`<option value="${cus.scheduleId}">${cus.scheduleId}</option>`);
+
+                }
+            }
+        });
+    }
+
+    function searchOrdersDetails(ScheduleIds) {
+        let response = "";
+        $.ajax({
+            url: baseURL + "purchase",
+            dataType: "json",
+            async: false,
+            success: function (resp) {
+                response = resp.data.filter((c) => {
+                    return c.scheduleId == ScheduleIds;
+                });
+            }
+        });
+        console.log(response);
+        return response;
+    }
+
+    $("#OrderDetailsId").change(function () {
+        let ScheduleIds = $("#OrderDetailsId").val();
+        $("#OrderDetailsId").val(ScheduleIds);
+        let res = searchOrdersDetails(ScheduleIds);
+        if (res.length > 0) {
+
+            // $("#txtOrderId").val(res[0].orderId);
+            // $("#txtDate").val(res[0].date);
+            // $("#txtCustomerId").val(res[0].customerId);
+
+
+        }
+
+    });
 </script>
 </body>
 </html>
