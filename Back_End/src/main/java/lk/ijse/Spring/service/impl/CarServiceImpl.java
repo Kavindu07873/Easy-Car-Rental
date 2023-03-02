@@ -1,7 +1,6 @@
 package lk.ijse.Spring.service.impl;
 
 import lk.ijse.Spring.dto.CarDto;
-import lk.ijse.Spring.dto.DriverDto;
 import lk.ijse.Spring.entity.Car;
 import lk.ijse.Spring.repo.CarRepo;
 import lk.ijse.Spring.service.CarService;

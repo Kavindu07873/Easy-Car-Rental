@@ -18,7 +18,7 @@ public class CarDto {
     private String Transmission;
     private String Colour;
     private String Rent_duration;
-    private String Amount;
+    private int Amount;
     private String Price;
     private String Price_ExtraKm;
 

@@ -265,9 +265,9 @@
 
     //update value
     $("#BtnUpdate").click(function () {
-        let car =$("#txtCarUserId").val();
+        let car =$("#txtUser").val();
         let Version =$("#txtVersion").val();
-        let Type =$("#txtCarType").val();
+        let Type =$("#txtType").val();
         let Fuel =$("#txtFuel").val();
         let Passengers =$("#txtPassengers").val();
         let Transmission =$("#txtTransmission").val();
@@ -278,8 +278,10 @@
         let Price_ExaraKm =$("#txtPrice_ExtraKm").val();
 
 
+        console.log(car)
+
         var cars = {
-            car: car,
+            carId: car,
             version: Version,
             type: Type,
             fuel: Fuel,
@@ -291,7 +293,9 @@
             price: Price,
             price_ExtraKm: Price_ExaraKm,
 
+
         }
+        console.log(cars)
 
         $.ajax({
             url: baseURL + 'Car',
