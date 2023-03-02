@@ -197,20 +197,20 @@
         }
 
         #availability {
-            width: 292px;
-            height: 360px;
+            width: 510px;
+            /*height: 20vh;*/
             /*border: 2px solid black;*/
             display: inline-block;
             position: absolute;
-            left: 62%;
-            top: 2%;
+            left: 52%;
+            top: 4%;
             z-index: 6;
 
         }
 
         #availability > div {
-            width: 20vw;
-            height: 10vh;
+            /*width: 20vw;*/
+            /*height: 10vh;*/
             border: 3px solid blue;
             z-index: 6;
         }
@@ -392,27 +392,75 @@
     </div>
     <br>
     <br>
-    <div id="availability">
-        <h1>Available</h1>
-        <div>
-            <label>Car</label>
-            <br>
-            <input>
-        </div>
-        <div>
-            <label>Drivers</label>
-            <br>
-            <input>
-        </div>
-        <div>
 
-            <label>Orders</label>
-            <br>
-            <input>
+    <div id="availability" class="container text-center">
+        <div class="row" >
+            <div class="col">
+                <h2>Available Car</h2>
+                <label id="lblCarTypeAvailable">Car</label>
+                <label id="lblCarVersionAvailable">Car</label>
+                <label id="lblCarAmountAvailable">Car</label>
+            </div>
+            <div class="col">
+                <h2>Available Driver</h2>
+
+                <label id="lblCarTypeAvailable">Car</label>
+                <label id="lblCarVersionAvailable">Car</label>
+                <label id="lblCarAmountAvailable">Car</label>
+            </div>
+<!--            <div class="col">-->
+<!--                <h2>Available Car</h2>-->
+
+<!--                <label id="lblCarTypeAvailable">Car</label>-->
+<!--                <label id="lblCarVersionAvailable">Car</label>-->
+<!--                <label id="lblCarAmountAvailable">Car</label>-->
+<!--            </div>-->
         </div>
-
-
     </div>
+<!--    <div class="row-cols-3"id="availability">-->
+
+
+<!--        <div class="col">-->
+<!--            <label id="lblCarTypeAvailable">Car</label>-->
+<!--            <label id="lblCarVersionAvailable">Car</label>-->
+<!--            <label id="lblCarAmountAvailable">Car</label>-->
+
+<!--        </div>-->
+
+
+<!--        <div class="col">-->
+<!--            <label>Drivers</label>-->
+<!--            <label id="lblCarTypeAvailable">Car</label>-->
+<!--            <label id="lblCarVersionAvailable">Car</label>-->
+<!--            <label id="lblCarAmountAvailable">Car</label>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--            <label>Orders</label>-->
+<!--            <label id="lblCarTypeAvailable">Car</label>-->
+<!--            <label id="lblCarVersionAvailable">Car</label>-->
+<!--            <label id="lblCarAmountAvailable">Car</label>        </div>-->
+<!--    </div>-->
+
+<!--    <div class="row" id="availability">-->
+<!--        <h1>Available</h1>-->
+<!--        <div class="col">-->
+<!--&lt;!&ndash;            <label id="lblCarTypeAvailable">Car</label>&ndash;&gt;-->
+<!--&lt;!&ndash;            <label id="lblCarVersionAvailable">Car</label>&ndash;&gt;-->
+<!--&lt;!&ndash;            <label id="lblCarAmountAvailable">Car</label>&ndash;&gt;-->
+<!--        </div>-->
+<!--       -->
+<!--        <div class="col">-->
+<!--            <label>Drivers</label>-->
+<!--            <br>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+
+<!--            <label>Orders</label>-->
+<!--            <br>-->
+<!--        </div>-->
+
+
+<!--    </div>-->
 
 
     <div id="placeOrder">
@@ -824,6 +872,8 @@
 <script src="assets/js/jquery-3.6.1.min.js"></script>
 <script>
 
+
+
     <!--customer table show-->
     let baseURL = "http://localhost:8080/Back_End_war/";
     $("#SaveCustomer").click(function () {
@@ -856,6 +906,8 @@
         $("#tableDriverDetails").css('display', 'block');
         getAllDriver();
     });
+
+
 
     function getAllCustomer() {
         $("#tblCustomer").empty();
@@ -895,6 +947,26 @@
             }
 
         });
+    }
+AvailableCar();
+    function AvailableCar(){
+        $("#lblCarTypeAvailable").empty();
+        $("#lblCarAmountAvailable").empty();
+        $("#lblCarVersionAvailable").empty();
+        $.ajax({
+            url: baseURL + "Car",
+            dataType: "json",
+            success: function (resp) {
+                console.log(resp);
+                for (let cus of resp.data) {
+                    $("#lblCarTypeAvailable").append(`<option value="${cus.type}">${cus.type}</option>`);
+                    $("#lblCarVersionAvailable").append(`<option value="${cus.version}">${cus.version}</option>`);
+                    $("#lblCarAmountAvailable").append(`<option value="${cus.amount}">${cus.amount}</option>`);
+
+                }
+            }
+        });
+
     }
 
 </script>
