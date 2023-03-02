@@ -10,4 +10,6 @@ public interface CarService {
     public  void addCar(CarDto dto);
     public  void  DeleteCar(String id);
     public ArrayList<CarDto> getAllCar();
-}
+//    public CarDto SearchCarByType(String type);
+
+    }

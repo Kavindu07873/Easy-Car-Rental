@@ -44,4 +44,11 @@ public class CustomerController {
         return new ResponseUtil("200"," Success",allCustomers);
 
     }
+//    @GetMapping(params = "Name")
+//    public ResponseUtil searchCustomerByName(String Name){
+//        CustomerDto customer = customerService.searchCustomerByName(Name);
+//        return new ResponseUtil("200"," Success.!",customer);
+//    }
+
+
 }

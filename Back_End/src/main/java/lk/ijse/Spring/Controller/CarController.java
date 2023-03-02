@@ -47,4 +47,10 @@ public class CarController {
         return new ResponseUtil("200"," Success",allCar);
 
     }
+
+//    @GetMapping(params = "type")
+//    public ResponseUtil SearchCarByType(String type){
+//        CarDto carDto = carService.SearchCarByType(type);
+//        return  new ResponseUtil("200","Success.!",carDto);
+//    }
 }

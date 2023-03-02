@@ -12,4 +12,5 @@ public interface CustomerService {
     public void deleteCustomer(String id);
     public ArrayList<CustomerDto> getAllCustomers();
 
+//    CustomerDto searchCustomerByName(String Name);
 }
