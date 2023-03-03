@@ -7,7 +7,7 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
-<body style="width: 1524px">
+<body style="width: 1450px">
 <header>
     <!--  //logo-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -410,12 +410,51 @@
                 </div>
 
             </div>
-        </form>
 
+        </form>
+        <br>
+
+        <section>
+            <table style="width: 95%" border="2px solid red"
+                   class="col table table-bordered border-primary table-dark table-striped">
+                <thead class="bg-danger text-white">
+                <tr>
+                    <th>VehicleId</th>
+                    <th>Type</th>
+                    <th>Version</th>
+                    <th>No Of Car</th>
+                    <th>FullPayment</th>
+
+                </tr>
+                </thead>
+                <tbody id="tblCartPayment">
+
+                </tbody>
+            </table>
+
+        </section>
+        <br>
+        <section>
+            <div class="col">
+                <label for="txtAllOrdersTotal">All Total</label>
+                <input type="number" class="is-invalid form-control" id="txtAllOrdersTotal" placeholder=""
+                       name="AllTotal"
+                       aria-label="AllTotal" required>
+            </div>
+        </section>
+
+
+        <br>
+
+
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary btn-danger btn-lg " type="button">Save All</button>
+        </div>
         <br>
         <br>
 
     </section>
+    <br>
 
 </main>
 
@@ -663,7 +702,6 @@
     //     }
     // });
 
-
     function getAllOrders() {
         $("#OrderId").empty();
         $.ajax({
@@ -811,6 +849,8 @@
     });
 
     $("#btnOk").click(function () {
+
+
         var extra = $("#txtExtraKm").val();//
         var last = $("#txtTravelDistanceLast").val();
         var disance = $("#txtTravelDistance").val();
@@ -829,7 +869,7 @@
         var finalTotalValue = $("#txtPrice").val();
 
 
-        console.log(unitPrice*1 + driverfree*1 )
+        console.log(unitPrice * 1 + driverfree * 1)
 
         if (last > disance) {
             console.log(extra, last, disance)
@@ -840,7 +880,7 @@
         }
 
         if (extra > 0) {
-            var finalExtra = (PriceExtra * extra)/needCar;
+            var finalExtra = (PriceExtra * extra) / needCar;
             console.log(finalExtra)
             $("#txtFinalExtraKm").val(finalExtra)
         } else {
@@ -849,17 +889,72 @@
             $("#txtFinalExtraKm").val(q)
         }
 
-      var   finallossdamage = (Calclossdamage - defaultlossdamage);
-            $("#txtFinalLostDamageValue").val(finallossdamage);
+        var finallossdamage = (Calclossdamage - defaultlossdamage);
+        $("#txtFinalLostDamageValue").val(finallossdamage);
 
 
-        var  finalTotalValue = ( carTotal*1 + driverfree*1+ finallossdamage*1 + finalExtra*1);
-            console.log(finalTotalValue)
+        var finalTotalValue = (carTotal * 1 + driverfree * 1 + finallossdamage * 1 + finalExtra * 1);
+        console.log(finalTotalValue)
         //finallossdamage ++ finalExtra
-        $("#txtPrice").val(finalTotalValue*1);
+        $("#txtPrice").val(finalTotalValue * 1);
+
+        loadAllData();
+
     });
 
+    function loadAllData() {
+        var PaymentAll = [];
 
+
+        let Vehicle = $("#OrderDetailsId2").val()
+        let Type = $("#txtCarType").val()
+        let Version = $("#txtCarVersion").val()
+        let Need = $("#txtNeed").val()
+        let Total = $("#txtPrice").val()
+        var CartObject = {
+            Code: Vehicle,
+            Name: Type,
+            Price: Version,
+            Qty: Need,
+            TotalPrice: Total
+        }
+
+        PaymentAll.push(CartObject);
+
+        for (var pay of PaymentAll) {
+            var raw = `<tr><td>${pay.Code}</td><td>${pay.Name}</td><td>${pay.Price}
+                        </td><td>${pay.Qty}
+                        </td><td>${pay.TotalPrice}</td></tr>`;
+
+            $("#tblCartPayment").append(raw);
+            CalculationTotal();
+        }
+        doubleclick();
+    }
+
+    function doubleclick() {
+        // $("#tblOrderDetails>tr").on('dblclick', function () {
+        //     $(this).remove();
+        // });
+        $("#tblCartPayment>tr").on('dblclick', function () {
+            $(this).remove();
+        });
+    }
+
+    function CalculationTotal(){
+
+        let length = $('#tblCartPayment>tr').length;
+        let total = 0;
+
+        for (let i=0;i<length;i++){
+            let oneitemTotal = $('#tblCartPayment>tr').eq(i).children().eq('4').text();
+            let NumberValue = parseFloat(oneitemTotal);
+
+            total = total + NumberValue
+            $("#txtAllOrdersTotal").val(total);
+        }
+
+    }
 </script>
 </body>
 </html>

@@ -26,7 +26,6 @@ public class Orders {
 
     private LocalDate date;
 
-//    boolean Approval;
 //
 //    //Inverse
 //    @OneToMany(mappedBy = "orders",cascade = CascadeType.ALL)
