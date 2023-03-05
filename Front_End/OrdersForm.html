@@ -519,20 +519,7 @@
                 for (let cus of resp.data) {
                     $("#selectCarType").append(`<option value="${cus.type}">${cus.type}</option>`);
 
-
-                    // if( cus.type ==$("#selecType")) {
-
                     $("#selectCarID").append(`<option value="${cus.carId}">${cus.carId}</option>`);
-                    // }
-                    // if( cus.type == "Premium" ){
-                    //     $("#selectCarID").append(`<option value="${cus.user}">${cus.user}</option>`);
-                    //     // $("#selectCarType").val().refresh();
-                    // }
-                    //
-                    // if( cus.type == "luxury" ){
-                    //     $("#selectCarID").append(`<option value="${cus.user}">${cus.user}</option>`);
-                    //     // $("#selectCarType").val().refresh();
-                    // }
 
 
                 }
@@ -563,18 +550,9 @@
         $("#selectCarType").val(carType);
         let res = searchCarType(carType);
         if (res.length > 0) {
-            // $("#selectCarID").val(res[0].user);
 
-            //
             $("#selecType").val(res[0].type);
-            // $("#Version").val(res[0].version);
-            // $("#Fuel").val(res[0].fuel);
-            // $("#Passengers").val(res[0].passengers);
-            // $("#Transmission").val(res[0].transmission);
-            // $("#Colour").val(res[0].colour);
-            // $("#Rent_duration").val(res[0].rent_duration);
-            // $("#Price_ExtraKm").val(res[0].price_ExtraKm);
-            // $("#Price").val(res[0].price);
+
 
         }
         searchCar();
