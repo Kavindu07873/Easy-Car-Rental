@@ -19,4 +19,5 @@ public class DriverDto {
     private String Availability;
     private String user;
 
+
 }

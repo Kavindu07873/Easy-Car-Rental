@@ -97,18 +97,10 @@
                                 <input type="text" class="form-control" id="CusId" name="cusId" aria-label="cusID">
                             </div>
 
-
-                            <!--                            <div class="mb-3">-->
-                            <!--                                <div class="form-group">-->
-                            <!--                                    <label for="orderCustomerID">Customer ID</label>-->
-                            <!--                                    <input class="form-control" id="orderCustomerID">-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
                             <div class="mb-3">
                                 <label for="CusName" class="form-label text-black">CustomerName</label>
                                 <input type="text" class="form-control" id="CusName" placeholder="amara">
                             </div>
-
 
                             <div class="mb-3">
                                 <label for="CusAddress" class="form-label text-black">CustomerAddress</label>
@@ -157,11 +149,6 @@
                                 </div>
 
                             </div>
-                            <!--                            <div class="mb-3">-->
-                            <!--                                <label for="Did" class="form-label text-black">Id</label>-->
-                            <!--                                <input type="text" class="form-control" id="Did" placeholder="D01">-->
-                            <!--                            </div>-->
-
 
                             <div class="mb-3">
                                 <label for="Dname" class="form-label text-black">Name</label>
@@ -172,6 +159,25 @@
                                 <label for="LicNo" class="form-label text-black">LicNo</label>
                                 <input type="number" class="form-control" id="LicNo" placeholder="20211">
                             </div>
+                        </div>
+                        <div class="d-flex justify-content-evenly">
+                            <div class="mb-3">
+                                <label for="Availability" class="form-label text-black">Availability</label>
+                                <input type="text" class="form-control" id="Availability" placeholder="20211">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Address" class="form-label text-black">Address</label>
+                                <input type="text" class="form-control" id="Address" placeholder="20211">
+                            </div>
+<!--                            <div>-->
+
+<!--                                <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>-->
+<!--                                <label class="btn btn-outline-success" for="success-outlined">Checked success radio</label>-->
+
+<!--                                <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">-->
+<!--                                <label class="btn btn-outline-danger" for="danger-outlined">Danger radio</label>-->
+<!--                            </div>-->
+
                         </div>
 
 
@@ -517,9 +523,12 @@
                 console.log(resp);
 
                 for (let cus of resp.data) {
+
+
+
                     $("#selectCarType").append(`<option value="${cus.type}">${cus.type}</option>`);
 
-                    $("#selectCarID").append(`<option value="${cus.carId}">${cus.carId}</option>`);
+                                $("#selectCarID").append(`<option value="${cus.carId}">${cus.carId}</option>`);
 
 
                 }
@@ -608,8 +617,10 @@
             success: function (resp) {
                 console.log(resp);
                 for (let cus of resp.data) {
-                    $("#selectDriID").append(`<option value="${cus.user}">${cus.user}</option>`);
+                    if (cus.availability === "yes") {
 
+                        $("#selectDriID").append(`<option value="${cus.user}">${cus.user}</option>`);
+                    }
                 }
             }
         });
@@ -623,7 +634,12 @@
             async: false,
             success: function (resp) {
                 response = resp.data.filter((c) => {
-                    return c.user == cusID;
+
+                    // if (c.availability === "yes"){
+                        return c.user == cusID;
+                    // }
+
+
                 });
             }
         });
@@ -639,6 +655,8 @@
 
             $("#Dname").val(res[0].name);
             $("#LicNo").val(res[0].licNo);
+            $("#Address").val(res[0].address);
+            $("#Availability").val(res[0].availability);
 
 
         }
@@ -738,6 +756,7 @@
               }
           });
 
+          UpdateDriver();
           // }
         doubleclick();
 
@@ -763,6 +782,45 @@
     //     $("#VehicleId").val(id);
     //     // $("#OrderId").val().remove();
     // }
+
+
+    function UpdateDriver(){
+
+            let User = $("#txtDriverUser").val();
+            let Name = $("#txtDriverName").val();
+            let Address = $("#txtDriverAddress").val();
+            let Lic = $("#txtDriverLicNo").val();
+            let Available = $("#txtDriverAvailable").val();
+
+
+
+            var driver = {
+                user: User,
+                name: Name,
+                address: Address,
+                licNo : Lic,
+                availability:Available,
+            }
+
+            $.ajax({
+                url: baseURL+'Driver',
+                method: 'put',
+                contentType:"application/json",
+                data:JSON.stringify(driver),
+                dataType:"json",
+                success: function (res) {
+                    alert(res.message);
+                    getAll();
+                },
+                error:function (error){
+                    let cause= JSON.parse(error.responseText).message;
+                    alert(cause);
+                }
+
+            });
+
+
+    }
 
     function doubleclick(){
         $("#orderTable2>tr").on('dblclick',function (){
