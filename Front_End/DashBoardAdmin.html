@@ -129,17 +129,11 @@
     <aside>
 
         <div style="position: relative">
-            <!--            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"-->
-            <!--                    data-bs-target="#exampleModal">Driver Manage-->
-            <!--            </button>-->
             <a href="DriverForm.html" class="btn btn-dark btn-primary btn-lg">Driver Manage</a>
 
             <br>
             <br>
 
-            <!--            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"-->
-            <!--                    data-bs-target="#exampleModal">Driver Manage-->
-            <!--            </button>-->
             <a href="CustomerForm.html" class="btn btn-dark btn-primary btn-lg">Customer Manage</a>
 
             <br>
@@ -150,16 +144,21 @@
             </button>
             <br>
             <br>
-            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"
-                    data-bs-target="#Driver">
-                Car Details Manage
-            </button>
+            <a href="Car.html" class="btn btn-dark btn-primary btn-lg">Car Details Manage</a>
+
+            <!--            <br>-->
+<!--            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"-->
+<!--                    data-bs-target="#Driver">-->
+<!--                Car Details Manage-->
+<!--            </button>-->
             <br>
             <br>
-            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"
-                    data-bs-target="#Driver">
-                Payment Details Manage
-            </button>
+            <a href="PaymentForm.html" class="btn btn-dark btn-primary btn-lg">Payment Details Manage</a>
+
+            <!--            <button href="#PaymentForm.html" type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle=""-->
+<!--                    data-bs-target="">-->
+<!--                Payment Details Manage-->
+<!--            </button>-->
             <br>
             <br>
             <br>
@@ -172,10 +171,6 @@
     <!--model tika-->
     <section>
         <section>
-            <!--         Button trigger modal-->
-            <!--          <button  style="position: absolute" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">-->
-            <!--            Launch demo modal-->
-            <!--          </button>-->
 
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -285,8 +280,8 @@
         <div>
             <button type="button" id="BtnShowCustomer" class="btn btn-success">Customer Details</button>
             <button type="button" id="BtnShowDriver" class="btn btn-primary">Drivers Details</button>
-            <button type="button" class="btn btn-danger">Car Details</button>
-            <button type="button" class="btn btn-warning">Payment Details</button>
+            <button type="button" id="BtnShowCar" class="btn btn-danger">Car Details</button>
+            <button type="button" id="BtnShowPayment" class="btn btn-warning">Payment Details</button>
 
         </div>
 
@@ -326,7 +321,47 @@
 
                 </tbody>
             </table>
+            <table style="display:none" id="tablePaymentDetails"
+                   class="col table table-bordered border-primary table-dark table-striped">
+                <thead>
+                <tr class="table-dark table-striped">
+                    <th>User</th>
+                    <th>Type</th>
+                    <th>Version</th>
+                    <th>RentFree</th>
+                    <th>TravelDistance</th>
+                    <th>LossDamage</th>
+                    <th>ExtraKmPrice</th>
 
+
+                </tr>
+                </thead>
+                <tbody id="tblPayment">
+
+                </tbody>
+            </table>
+            <table style="display:none" id="tableCarDetails"
+                   class="col table table-bordered border-primary table-dark table-striped">
+                <thead>
+                <tr class="table-dark table-striped">
+                    <th>carId</th>
+                    <th>Version</th>
+                    <th>Type</th>
+                    <th>Fuel</th>
+                    <th>Transmission</th>
+                    <th>Passengers</th>
+                    <th>Colour</th>
+                    <th>Amount</th>
+                    <th>Rent_duration</th>
+                    <th>Price</th>
+                    <th>Price_ExtraKm</th>
+
+                </tr>
+                </thead>
+                <tbody id="tblCar">
+
+                </tbody>
+            </table>
         </section>
 
     </section>
@@ -356,13 +391,83 @@
     $("#BtnShowCustomer").click(function () {
         $("#tableDriverDetails").css('display', 'none');
         $("#tableDetails").css('display', 'block');
+        $("#tableCarDetails").css('display', 'none');
+
+        $("#tablePaymentDetails").css('display', 'none');
         getAllCustomer();
+
     });
     $("#BtnShowDriver").click(function () {
         $("#tableDetails").css('display', 'none');
         $("#tableDriverDetails").css('display', 'block');
+        $("#tableCarDetails").css('display', 'none');
+
+        $("#tablePaymentDetails").css('display', 'none');
         getAllDriver();
     });
+    $("#BtnShowCar").click(function () {
+        $("#tableDetails").css('display', 'none');
+        $("#tableDriverDetails").css('display', 'none');
+        $("#tableCarDetails").css('display', 'block');
+        $("#tablePaymentDetails").css('display', 'none');
+        getAllCar();
+    });
+
+    $("#BtnShowPayment").click(function () {
+        $("#tableDetails").css('display', 'none');
+        $("#tableDriverDetails").css('display', 'none');
+        $("#tableCarDetails").css('display', 'none');
+        $("#tablePaymentDetails").css('display', 'block');
+
+
+        getAllPayment();
+    });
+
+
+    function getAllCar() {
+        $("#tblCar").empty();
+
+        $.ajax({
+            url: baseURL + "Car",
+            dataType: "json",
+            success: function (resp) {
+                for (let cus of resp.data) {
+                    var row = '<tr><td>' + cus.carId + '</td><td>' + cus.version +
+                        '</td><td>' + cus.type + '</td><td>' +
+                        cus.fuel + '</td><td>' + cus.transmission
+                        + '</td><td>' + cus.passengers
+                        + '</td><td>' + cus.colour
+                        + '</td><td>' + cus.amount + '</td><td>' + cus.rent_duration + '</td><td>'
+                        + cus.price + '</td><td>' + cus.price_ExtraKm + '</td></tr>';
+
+                    $("#tblCar").append(row);
+                }
+                setTextFieldValues("", "", "", "", "", "", "","","");
+            }
+        });
+    }
+
+    function getAllPayment() {
+        $("#tblPayment").empty();
+
+        $.ajax({
+            url: baseURL + "Payment",
+            dataType: "json",
+            success: function (resp) {
+                for (let cus of resp.data) {
+                    var row = '<tr><td>' + cus.user + '</td><td>' + cus.version +
+                        '</td><td>' + cus.type + '</td><td>' +
+                        cus.travelDistance + '</td><td>' + cus.rentFree
+                        + '</td><td>' + cus.lossDamage
+                        + '</td><td>'+ cus.extraKmPrice + '</td></tr>';
+
+                    $("#tblPayment").append(row);
+                }
+                setTextFieldValues("", "", "", "", "", "", "");
+            }
+        });
+    }
+
 
     function getAllCustomer() {
         $("#tblCustomer").empty();
