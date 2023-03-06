@@ -636,7 +636,6 @@
             total: Total,
         }
 
-
         console.log(ob2);
         $.ajax({
             url: baseURL + "purchaseDetails",
@@ -652,7 +651,7 @@
             }
         });
 
-        // BtnUdate();          // }
+        BtnUdate();          // }
         doubleclick();
 
     });
@@ -684,8 +683,7 @@
         let Name = $("#Dname").val();
         let Address = $("#Address").val();
         let Lic = $("#LicNo").val();
-        let Available = $("#Availability").val("no");
-
+        let Available = "no"
 
         var driver = {
             user: User,
