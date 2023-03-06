@@ -12,13 +12,13 @@ import java.math.BigDecimal;
 @Data
 @ToString
 public class OrderDetailsDTO {
-
     private String Vehicle;
-    private String DriId;
-    private String cId;
+    private String user;
+    private String carId;
     private String scheduleId;
     private String Type;
     private String Version;
     private int Need;
     private double Total;
+
 }

@@ -220,6 +220,12 @@
                            aria-label="carType" required>
                 </div>
                 <div class="col">
+                    <label for="txtDriverId">DriverId</label>
+                    <input type="text" class="form-control is-invalid" id="txtDriverId" placeholder=""
+                           name="driId"
+                           aria-label="driId" required>
+                </div>
+                <div class="col">
                     <label for="txtCarVersion">Version</label>
                     <input type="text" class="form-control is-invalid" id="txtCarVersion" placeholder=""
                            name="carVersion"
@@ -474,7 +480,7 @@
     getAll();
     getAllOrders();
     getAllOrdersDetails();
-    getAllOrdersDetails2();
+    getOrderDetails();
     $("#SavePayment").click(function () {
 
         var formData = $("#PaymentForm6").serialize();
@@ -745,7 +751,7 @@
             $("#txtOrderId").val(res[0].oid);
             $("#txtDate").val(res[0].date);
             $("#txtCustomerId").val(res[0].cusID);
-
+            $("#OrderDetailsId").val(res[0].scheduleId);
 
         }
 
@@ -779,36 +785,36 @@
                 });
             }
         });
-        console.log(response);
+        // console.log(response);
         return response;
     }
 
-    $("#OrderDetailsId").change(function () {
-        let ScheduleIds = $("#OrderDetailsId").val();
-        $("#OrderDetailsId").val(ScheduleIds);
-        let res = searchOrdersDetails(ScheduleIds);
-        if (res.length > 0) {
+    // $("#OrderDetailsId").change(function () {
+    //     let ScheduleIds = $("#OrderDetailsId").val();
+    //     $("#OrderDetailsId").val(ScheduleIds);
+    //     let res = searchOrdersDetails(ScheduleIds);
+    //     if (res.length > 0) {
+    //
+    //         // $("#txtOrderId").val(res[0].orderId);
+    //         // $("#txtDate").val(res[0].date);
+    //         // $("#txtCustomerId").val(res[0].customerId);
+    //
+    //
+    //     }
+    //
+    // });
 
-            // $("#txtOrderId").val(res[0].orderId);
-            // $("#txtDate").val(res[0].date);
-            // $("#txtCustomerId").val(res[0].customerId);
 
-
-        }
-
-    });
-
-    function getAllOrdersDetails2() {
-        $("#OrderDetailsId2").empty();
+    function getOrderDetails(){
+            $("#OrderDetailsId2").empty();
         $.ajax({
             url: baseURL + "purchaseDetails",
             dataType: "json",
             success: function (resp) {
-                console.log(resp);
-                for (let cus of resp.data) {
-                    // console.log(cus.vehicle);
+                // console.log(resp);
+                for (let ord of resp.data) {
 
-                    $("#OrderDetailsId2").append(`<option value="${cus.vehicle}">${cus.vehicle}</option>`);
+                    $("#OrderDetailsId2").append(`<option value="${ord.vehicle}">${ord.vehicle}</option>`);
 
                 }
             }
@@ -836,8 +842,8 @@
         $("#OrderDetailsId2").val(VehicleId);
         let res = searchOrdersDetails2(VehicleId);
         if (res.length > 0) {
-
-            $("#txtCarId").val(res[0].cId);
+            $("#txtCarId").val(res[0].carId);
+            $("#txtDriverId").val(res[0].user);
             $("#txtCarType").val(res[0].type);
             $("#txtCarVersion").val(res[0].version);
             $("#txtNeed").val(res[0].need);
