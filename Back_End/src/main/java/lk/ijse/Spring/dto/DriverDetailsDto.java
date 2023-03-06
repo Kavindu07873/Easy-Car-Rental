@@ -12,8 +12,9 @@ import java.time.LocalDate;
 @Data
 @ToString
 public class DriverDetailsDto {
-    private  String OId;
-    private  String DrId;
-    private  String DriverName;
+//    private String num;
+    private  String oid;
+    private  String user;
+    private  String name;
     private LocalDate date;
 }

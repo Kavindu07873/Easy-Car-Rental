@@ -1,209 +1,209 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>User Board</title>
-    <meta content="width=device-width initial-scale=1" name="viewport">
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/styles.css" rel="stylesheet">
-    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
-    <style>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>User Board</title>-->
+<!--    <meta content="width=device-width initial-scale=1" name="viewport">-->
+<!--    <link href="assets/css/bootstrap.min.css" rel="stylesheet">-->
+<!--    <link href="assets/css/styles.css" rel="stylesheet">-->
+<!--    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"-->
+<!--          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">-->
+<!--    <style>-->
 
 
-        body{
-            background:linear-gradient(100deg,black,gray,black);
+<!--        body{-->
+<!--            background:linear-gradient(100deg,black,gray,black);-->
 
-        }
-        ul > li {
-            cursor: pointer;
-        }
+<!--        }-->
+<!--        ul > li {-->
+<!--            cursor: pointer;-->
+<!--        }-->
 
-        main > div > img {
-            position: absolute;
-            left: 0px;
-            bottom: 0;
-            right: 0;
-            top: 89px;
-            width: 100%;
-            height: 100vh;
+<!--        main > div > img {-->
+<!--            position: absolute;-->
+<!--            left: 0px;-->
+<!--            bottom: 0;-->
+<!--            right: 0;-->
+<!--            top: 89px;-->
+<!--            width: 100%;-->
+<!--            height: 100vh;-->
 
-        }
-        /*      main >div> div >  img{*/
-        /*    position: relative;*/
-        /*    left: 0px;*/
-        /*    bottom: 0;*/
-        /*    right: 0;*/
-        /*    top: 100vh;*/
-        /*    width: 100%;*/
-        /*    !*height: 87%;*!*/
+<!--        }-->
+<!--        /*      main >div> div >  img{*/-->
+<!--        /*    position: relative;*/-->
+<!--        /*    left: 0px;*/-->
+<!--        /*    bottom: 0;*/-->
+<!--        /*    right: 0;*/-->
+<!--        /*    top: 100vh;*/-->
+<!--        /*    width: 100%;*/-->
+<!--        /*    !*height: 87%;*!*/-->
 
-        /*}*/
-        main > aside {
-            /*display: inline-block;*/
-            position: absolute;
-            display: inline-block;
-            left: 2%;
-            bottom: 0;
-            right: 0;
-            top: 58%;
-            width: 96%;
-            height: 36%;
-        }
+<!--        /*}*/-->
+<!--        main > aside {-->
+<!--            /*display: inline-block;*/-->
+<!--            position: absolute;-->
+<!--            display: inline-block;-->
+<!--            left: 2%;-->
+<!--            bottom: 0;-->
+<!--            right: 0;-->
+<!--            top: 58%;-->
+<!--            width: 96%;-->
+<!--            height: 36%;-->
+<!--        }-->
 
-        #realTime {
-            width: 100px;
-            height: 200px;
-            border: 2px solid red;
-        }
+<!--        #realTime {-->
+<!--            width: 100px;-->
+<!--            height: 200px;-->
+<!--            border: 2px solid red;-->
+<!--        }-->
 
 
-    </style>
-</head>
-<body>
-<header class="jumbotron bg-primary text-white p-3">
-    <!--  //logo-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="assets/img/images%20(5).jpeg" alt="Logo" width="30" height="24"
-                     class="d-inline-block align-text-top">
-                Easy Car Rental Pvt Ltd </a>
-        </div>
-
-        <!--/links-->
-        <div class="container-fluid">
-            <!--            <a class="navbar-brand" href="#">Easy Car Rental Pvt Ltd</a>-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!--            <ul class="list-group list-group-horizontal text-danger justify-content-end font-weight-bold">-->
-            <!--                <li class="list-group-item bg-white" id="lnkHome"><a href="index.html">Car</a></li>-->
-            <!--                <li class="list-group-item bg-danger text-white" id="lnkCustomer"><a class="text-white" href="customer.html">Customer</a></li>-->
-            <!--                <li class="list-group-item bg-white" id="lnkItem"><a href="item.html">Item</a></li>-->
-            <!--                <li class="list-group-item bg-white" id="lnkOrders"><a href="purchase-order.html">Orders</a></li>-->
-            <!--            </ul>-->
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a id="HomeButton" class="nav-link active" href="#">Home</a>
-                    <a id="OrdersButton" class="nav-link active" aria-current="page" href="#">Customer</a>
-                    <a id="ItemButton" class="nav-link active" aria-current="page" href="#">Driver</a>
-                    <a id="CustomerButton" class="nav-link active" aria-current="page" href="#">Customers</a>
-
-                </div>
-            </div>
-            Search
-        </div>
-
-        <div class="container-fluid">
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
-
-</header>
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
 <!--<header class="jumbotron bg-primary text-white p-3">-->
-<!--    <h1 class="position-absolute" id="nav"></h1>-->
-<!--    <ul class="list-group list-group-horizontal text-danger justify-content-end font-weight-bold">-->
-<!--        <li class="list-group-item bg-white" id="lnkHome"><a href="index.html">Home</a></li>-->
-<!--        <li class="list-group-item bg-danger text-white" id="lnkCustomer"><a class="text-white" href="customer.html">Customer</a>-->
-<!--        </li>-->
-<!--        <li class="list-group-item bg-white" id="lnkItem"><a href="item.html">Item</a></li>-->
-<!--        <li class="list-group-item bg-white" id="lnkOrders"><a href="purchase-order.html">Orders</a></li>-->
-<!--    </ul>-->
+<!--    &lt;!&ndash;  //logo&ndash;&gt;-->
+<!--    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
+<!--        <div class="container-fluid">-->
+<!--            <a class="navbar-brand" href="#">-->
+<!--                <img src="assets/img/images%20(5).jpeg" alt="Logo" width="30" height="24"-->
+<!--                     class="d-inline-block align-text-top">-->
+<!--                Easy Car Rental Pvt Ltd </a>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash;/links&ndash;&gt;-->
+<!--        <div class="container-fluid">-->
+<!--            &lt;!&ndash;            <a class="navbar-brand" href="#">Easy Car Rental Pvt Ltd</a>&ndash;&gt;-->
+<!--            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"-->
+<!--                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                <span class="navbar-toggler-icon"></span>-->
+<!--            </button>-->
+
+<!--            &lt;!&ndash;            <ul class="list-group list-group-horizontal text-danger justify-content-end font-weight-bold">&ndash;&gt;-->
+<!--            &lt;!&ndash;                <li class="list-group-item bg-white" id="lnkHome"><a href="index.html">Car</a></li>&ndash;&gt;-->
+<!--            &lt;!&ndash;                <li class="list-group-item bg-danger text-white" id="lnkCustomer"><a class="text-white" href="customer.html">Customer</a></li>&ndash;&gt;-->
+<!--            &lt;!&ndash;                <li class="list-group-item bg-white" id="lnkItem"><a href="item.html">Item</a></li>&ndash;&gt;-->
+<!--            &lt;!&ndash;                <li class="list-group-item bg-white" id="lnkOrders"><a href="purchase-order.html">Orders</a></li>&ndash;&gt;-->
+<!--            &lt;!&ndash;            </ul>&ndash;&gt;-->
+<!--            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">-->
+<!--                <div class="navbar-nav">-->
+<!--                    <a id="HomeButton" class="nav-link active" href="#">Home</a>-->
+<!--                    <a id="OrdersButton" class="nav-link active" aria-current="page" href="#">Customer</a>-->
+<!--                    <a id="ItemButton" class="nav-link active" aria-current="page" href="#">Driver</a>-->
+<!--                    <a id="CustomerButton" class="nav-link active" aria-current="page" href="#">Customers</a>-->
+
+<!--                </div>-->
+<!--            </div>-->
+<!--            Search-->
+<!--        </div>-->
+
+<!--        <div class="container-fluid">-->
+<!--            <form class="d-flex" role="search">-->
+<!--                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--                <button class="btn btn-outline-success" type="submit">Search</button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </nav>-->
+
 <!--</header>-->
+<!--&lt;!&ndash;<header class="jumbotron bg-primary text-white p-3">&ndash;&gt;-->
+<!--&lt;!&ndash;    <h1 class="position-absolute" id="nav"></h1>&ndash;&gt;-->
+<!--&lt;!&ndash;    <ul class="list-group list-group-horizontal text-danger justify-content-end font-weight-bold">&ndash;&gt;-->
+<!--&lt;!&ndash;        <li class="list-group-item bg-white" id="lnkHome"><a href="index.html">Home</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li class="list-group-item bg-danger text-white" id="lnkCustomer"><a class="text-white" href="customer.html">Customer</a>&ndash;&gt;-->
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li class="list-group-item bg-white" id="lnkItem"><a href="item.html">Item</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li class="list-group-item bg-white" id="lnkOrders"><a href="purchase-order.html">Orders</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;    </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;</header>&ndash;&gt;-->
 
-<main class="container-fluid" id="customerContent">
+<!--<main class="container-fluid" id="customerContent">-->
 
-    <div class="container overflow-hidden text-center"  style="z-index: 6;position: absolute">
-        <div class="row gx-5" style="z-index: 4">
-            <div class="col">
-                <div class="p-3" style="z-index: 4">
+<!--    <div class="container overflow-hidden text-center"  style="z-index: 6;position: absolute">-->
+<!--        <div class="row gx-5" style="z-index: 4">-->
+<!--            <div class="col">-->
+<!--                <div class="p-3" style="z-index: 4">-->
 
-                    <p style="z-index: 4" class="fw-bold fs-3 text-danger">Date: <span id="datetime1"></span></p>
+<!--                    <p style="z-index: 4" class="fw-bold fs-3 text-danger">Date: <span id="datetime1"></span></p>-->
 
-                    <script>
-                        var dt = new Date();
-                        document.getElementById("datetime1").innerHTML = dt.toLocaleDateString();
-                    </script>
+<!--                    <script>-->
+<!--                        var dt = new Date();-->
+<!--                        document.getElementById("datetime1").innerHTML = dt.toLocaleDateString();-->
+<!--                    </script>-->
 
-                </div>
-            </div>
-            <div class="col">
-                <div class="p-3">
-                    <p class="fw-bold fs-4 text-danger">Time: <span id="datetime"></span></p>
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col">-->
+<!--                <div class="p-3">-->
+<!--                    <p class="fw-bold fs-4 text-danger">Time: <span id="datetime"></span></p>-->
 
-                    <script>
-                        var dt = new Date();
-                        document.getElementById("datetime").innerHTML = dt.toLocaleTimeString();
-                    </script>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div>
-        <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
-    </div>
-    <aside style="position: absolute">
-
-
-        <li style="width: 20%;height: 15%;cursor: pointer  ; display: inline-block" class="list-group-item bg-dark">
-            <a class="list-group-item text-bg-dark" href="DashBoardAdmin.html">Admin Login</a>
-        </li>
-
-        <br>
-        <br>
-        <li style="width: 20%;height: 15%;cursor: pointer ; display: inline-block" class="list-group-item bg-dark">
-            <a class="list-group-item text-bg-dark " href="DashBoardUser.html">User Login</a>
-        </li>
-
-        <!--        <button type="submit" class="btn btn-dark btn-primary btn-lg" href="DashBoardAdmin.html">Admin Login</button>-->
-        <!--        <br>-->
-        <!--        <br>-->
-        <!--        <button type="button" class="btn btn-dark btn-primary btn-lg">User Login</button>-->
-    </aside>
-
-    <section>
-        <!-- Button trigger modal -->
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <h1>Hello World</h1>
-                    </div>
-                    <div class="modal-footer">
-
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!--                    <script>-->
+<!--                        var dt = new Date();-->
+<!--                        document.getElementById("datetime").innerHTML = dt.toLocaleTimeString();-->
+<!--                    </script>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
 
 
+<!--    <div>-->
+<!--        <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">-->
+<!--    </div>-->
+<!--    <aside style="position: absolute">-->
+
+
+<!--        <li style="width: 20%;height: 15%;cursor: pointer  ; display: inline-block" class="list-group-item bg-dark">-->
+<!--            <a class="list-group-item text-bg-dark" href="DashBoardAdmin.html">Admin Login</a>-->
+<!--        </li>-->
+
+<!--        <br>-->
+<!--        <br>-->
+<!--        <li style="width: 20%;height: 15%;cursor: pointer ; display: inline-block" class="list-group-item bg-dark">-->
+<!--            <a class="list-group-item text-bg-dark " href="DashBoardUser.html">User Login</a>-->
+<!--        </li>-->
+
+<!--        &lt;!&ndash;        <button type="submit" class="btn btn-dark btn-primary btn-lg" href="DashBoardAdmin.html">Admin Login</button>&ndash;&gt;-->
+<!--        &lt;!&ndash;        <br>&ndash;&gt;-->
+<!--        &lt;!&ndash;        <br>&ndash;&gt;-->
+<!--        &lt;!&ndash;        <button type="button" class="btn btn-dark btn-primary btn-lg">User Login</button>&ndash;&gt;-->
+<!--    </aside>-->
+
+<!--    <section>-->
+<!--        &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+
+
+<!--        &lt;!&ndash; Modal &ndash;&gt;-->
+<!--        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--            <div class="modal-dialog">-->
+<!--                <div class="modal-content">-->
+<!--                    <div class="modal-header">-->
+<!--                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>-->
+<!--                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--                    </div>-->
+<!--                    <div class="modal-body">-->
+<!--                        <h1>Hello World</h1>-->
+<!--                    </div>-->
+<!--                    <div class="modal-footer">-->
+
+<!--                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+<!--                        <button type="button" class="btn btn-primary">Save changes</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
 
 
 
-</main>
-
-<script src="assets/js/bootstrap.js"></script>
 
 
-</body>
-</html>
+
+<!--</main>-->
+
+<!--<script src="assets/js/bootstrap.js"></script>-->
+
+
+<!--</body>-->
+<!--</html>-->

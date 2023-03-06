@@ -17,10 +17,11 @@ import java.time.LocalDate;
 @Entity
 public class DriverDetails {
 
+//    private String num;
     @Id
-    private  String OId;
-    private  String DrId;
-    private  String DriverName;
+    private  String oid;
+    private  String user;
+    private  String name;
     private LocalDate date;
 
 }

@@ -24,16 +24,17 @@ public class DriverDetailsServiceImpl implements DriverDetailsService {
     @Autowired
     ModelMapper modelMapper;
     @Override
-    public void addDriver(DriverDetailsDto driverDetailsDto) {
-//        Driver driver = new Driver(dto.getName(),dto.getLicNo(),dto.getAddress(), dto.getAvailability(),dto.getUser());
-        DriverDetails driverDetail = modelMapper.map(driverDetailsDto, DriverDetails.class);
+    public void saveDriverDetails(DriverDetails driverDetails ) {
+
+        DriverDetails driverDetail = modelMapper.map(driverDetails, DriverDetails.class);
         driverDetailsRepo.save(driverDetail);
 
 
     }
     @Override
-    public ArrayList<DriverDetailsDto> getAllDriver() {
-        return modelMapper.map(driverDetailsRepo.findAll(), new TypeToken<ArrayList<DriverDto>>() {
+    public ArrayList<DriverDetailsDto> getAllDriverDetails() {
+        return modelMapper.map(driverDetailsRepo.findAll(),
+                new TypeToken<ArrayList<DriverDetailsDto>>() {
         }.getType());
     }
 }

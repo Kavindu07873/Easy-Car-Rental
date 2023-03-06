@@ -651,7 +651,9 @@
             }
         });
 
-        BtnUdate();          // }
+        // BtnUdate();
+        DriverDetails();
+        // }
         doubleclick();
 
     });
@@ -715,10 +717,51 @@
         $("#orderTable2>tr").on('dblclick', function () {
             $(this).remove();
         });
-        // $("#tblCart>tr").on('dblclick',function (){
-        //     $(this).remove();
-        // });
+
     }
+
+
+
+
+    function  DriverDetails() {
+
+        // private  String OId;
+        // private  String DrId;
+        // private  String DriverName;
+        // private LocalDate date;
+
+
+        let User = $("#selectDriID").val();
+        let Name = $("#Dname").val();
+        let Order = $("#OrderId").val();
+        let orderDate = $("#Date").val();
+
+        let orderDetail = {
+            // num:"12",
+            user: User,
+            name: Name,
+            oid: Order,
+            date: orderDate,
+        }
+
+
+        $.ajax({
+            url: baseURL + "DriverDetails",
+            method: "post",
+            dataType: "json",
+            data: JSON.stringify(orderDetail),
+            contentType: "application/json",
+            success: function (resp) {
+                alert(resp.message);
+            },
+            error: function (error) {
+                alert(JSON.parse(error.responseText).message);
+            }
+        });
+    }
+
+
+
 </script>
 </body>
 </html>
