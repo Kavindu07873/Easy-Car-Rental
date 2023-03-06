@@ -400,9 +400,9 @@
             <div class="col">
                 <h2>Available Driver</h2>
 
-                <!--                <label id="lblCarTypeAvailable">Car</label>-->
-                <!--                <label id="lblCarVersionAvailable">Car</label>-->
-                <!--                <label id="lblCarAmountAvailable">Car</label>-->
+                                <label id="lblDriverIdAvailable">Car</label>
+                                <label id="lblDriverorderAvailable">Car</label>
+                                <label id="lblCarAmountAvailable2">Car</label>
             </div>
         </div>
     </div>
@@ -1067,7 +1067,7 @@ loadCustomerlogin();
     }
 
     AvailableCar();
-
+    AvailableDriver();
     function AvailableCar() {
         $("#lblCarTypeAvailable").empty();
         $("#lblCarAmountAvailable").empty();
@@ -1085,6 +1085,36 @@ loadCustomerlogin();
                 }
             }
         });
+
+    }
+
+    function AvailableDriver() {
+        $("#lblDriverIdAvailable").empty();
+        $("#lblDriverorderAvailable").empty();
+        $("#lblCarVersionAvailable").empty();
+        $.ajax({
+            url: baseURL + "Driver",
+            dataType: "json",
+            success: function (resp) {
+                console.log(resp);
+                for (let cus of resp.data) {
+                    $("#lblDriverIdAvailable").append(`<option value="${cus.user}">${cus.user}</option>`);
+
+                }
+            }
+        });
+        // $.ajax({
+        //     url: baseURL + "purchase",
+        //     dataType: "json",
+        //     success: function (resp) {
+        //         console.log(resp);
+        //         for (let cus of resp.data) {
+        //             $("#lblDriverorderAvailable").append(`<option value="${cus.oid}">${cus.oid}</option>`);
+        //             // $("#lblCarVersionAvailable").append(`<option value="${cus.amount}">${cus.amount}</option>`);
+        //
+        //         }
+        //     }
+        // });
 
     }
 

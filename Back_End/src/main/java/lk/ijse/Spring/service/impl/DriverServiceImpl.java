@@ -28,11 +28,15 @@ public class DriverServiceImpl implements DriverService {
 //        Driver driver = new Driver(dto.getName(),dto.getLicNo(),dto.getAddress(), dto.getAvailability(),dto.getUser());
         Driver driver = modelMapper.map(dto, Driver.class);
         Drepo.save(driver);
+
+
     }
 
     @Override
     public void UpdateDriver(DriverDto dto) {
         Driver driver = modelMapper.map(dto, Driver.class);
+
+        driver.setAvailability("no");
         Drepo.save(driver);
     }
 

@@ -54,321 +54,263 @@
 
     <section>
         <form id="OrderForm">
-        <div class="container-fluid text-start ">
-            <div class="row ">
+            <div class="container-fluid text-start ">
+                <div class="row ">
 
-                <div style="border: 2px solid red" class="col ">
+                    <div style="border: 2px solid red" class="col ">
 
-                    <div class="row">
-                        <h1 class="bg-success p-2 text-black bg-opacity-75">Customer Details</h1>
-                        <div class="d-flex justify-content-around">
+                        <div class="row">
+                            <h1 class="bg-success p-2 text-black bg-opacity-75">Customer Details</h1>
+                            <div class="d-flex justify-content-around">
 
-                            <div class="mb-3">
-                                <label for="OrderId" class="form-label text-black">OrderID</label>
-                                <input type="text" class="form-control" name="orderId" aria-label="oid" id="OrderId" placeholder="D001">
+                                <div class="mb-3">
+                                    <label for="OrderId" class="form-label text-black">OrderID</label>
+                                    <input type="text" class="form-control" name="orderId" aria-label="oid" id="OrderId"
+                                           placeholder="D001">
 
-                            </div>
-                            <div class="mb-3">
-                                <label for="scheduleId" class="form-label text-black">SheduleId</label>
-                                <input type="text" class="form-control" name="scheduleId" aria-label="scheduleId" id="scheduleId" placeholder="D001">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="scheduleId" class="form-label text-black">SheduleId</label>
+                                    <input type="text" class="form-control" name="scheduleId" aria-label="scheduleId"
+                                           id="scheduleId" placeholder="D001">
 
-                            </div>
+                                </div>
 
-                            <div class="mb-3">
-                                <label for="Date" class="form-label text-black">Date</label>
-                                <input type="date" class="form-control" id="Date" name="date" aria-label="date">
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-evenly">
-
-                            <div class="mb-3">
-                                <div class="form-group">
-                                    <label>Customer :</label>
-                                    <select class="form-control" id="selectCusID">
-                                    </select>
-                                    <span class="control-error"
-                                          id="cus-empty-error"></span>
+                                <div class="mb-3">
+                                    <label for="Date" class="form-label text-black">Date</label>
+                                    <input type="date" class="form-control" id="Date" name="date" aria-label="date">
                                 </div>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="CusId" class="form-label text-black">Cus Id</label>
-                                <input type="text" class="form-control" id="CusId" name="cusId" aria-label="cusID">
+                            <div class="d-flex justify-content-evenly">
+
+                                <div class="mb-3">
+                                    <div class="form-group">
+                                        <label>Customer :</label>
+                                        <select class="form-control" id="selectCusID">
+                                        </select>
+                                        <span class="control-error"
+                                              id="cus-empty-error"></span>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="CusId" class="form-label text-black">Cus Id</label>
+                                    <input type="text" class="form-control" id="CusId" name="cusId" aria-label="cusID">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="CusName" class="form-label text-black">CustomerName</label>
+                                    <input type="text" class="form-control" id="CusName" placeholder="amara">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="CusAddress" class="form-label text-black">CustomerAddress</label>
+                                    <input type="text" class="form-control" id="CusAddress" placeholder="Galle">
+                                </div>
                             </div>
+                            <div class="d-flex justify-content-evenly">
 
-                            <div class="mb-3">
-                                <label for="CusName" class="form-label text-black">CustomerName</label>
-                                <input type="text" class="form-control" id="CusName" placeholder="amara">
+                                <div class="mb-3">
+                                    <label for="CusEmail" class="form-label text-black">CustomerEmail</label>
+                                    <input type="text" class="form-control" id="CusEmail" placeholder="@gmail.com">
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="ContNo" class="form-label text-black">ContNo</label>
+                                    <input type="number" class="form-control" id="ContNo" placeholder="+9477153032">
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="CusNic" class="form-label text-black">Nic</label>
+                                    <input type="text" class="form-control" id="CusNic" placeholder="2..0v">
+                                </div>
+                                <!--                            <div class="mb-3">-->
+                                <!--                                <label for="ItemCode2" class="form-label text-black col-form-label-lg">ItemCode</label>-->
+                                <!--                                <select class="form-label" id="ItemCode2" aria-label="Default select example">-->
+                                <!--                                    <option value="1">I001</option>-->
+                                <!--                                    <option value="2">I002</option>-->
+                                <!--                                    <option value="3">I003</option>-->
+                                <!--                                </select>-->
+                                <!--                            </div>-->
                             </div>
+                            <div>
+                                <h1 class="bg-success p-2 text-black bg-opacity-75">Driver Details</h1>
 
-                            <div class="mb-3">
-                                <label for="CusAddress" class="form-label text-black">CustomerAddress</label>
-                                <input type="text" class="form-control" id="CusAddress" placeholder="Galle">
                             </div>
-                        </div>
-                        <div class="d-flex justify-content-evenly">
+                            <div class="d-flex justify-content-evenly">
+                                <div class="mb-3">
+                                    <div class="form-group">
+                                        <label>Driver :</label>
+                                        <select class="form-control" id="selectDriID">
+                                        </select>
+                                        <span class="control-error"
+                                              id="Dri-empty-error"></span>
+                                    </div>
 
-                            <div class="mb-3">
-                                <label for="CusEmail" class="form-label text-black">CustomerEmail</label>
-                                <input type="text" class="form-control" id="CusEmail" placeholder="@gmail.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Dname" class="form-label text-black">Name</label>
+                                    <input type="text" class="form-control" id="Dname" name="name"
+                                           aria-label="Dname" placeholder="Lal">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="LicNo" class="form-label text-black">LicNo</label>
+                                    <input type="number" class="form-control" id="LicNo" name="licNo"
+                                           placeholder="20211">
+                                </div>
                             </div>
-
-
-                            <div class="mb-3">
-                                <label for="ContNo" class="form-label text-black">ContNo</label>
-                                <input type="number" class="form-control" id="ContNo" placeholder="+9477153032">
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label for="CusNic" class="form-label text-black">Nic</label>
-                                <input type="text" class="form-control" id="CusNic" placeholder="2..0v">
-                            </div>
-                            <!--                            <div class="mb-3">-->
-                            <!--                                <label for="ItemCode2" class="form-label text-black col-form-label-lg">ItemCode</label>-->
-                            <!--                                <select class="form-label" id="ItemCode2" aria-label="Default select example">-->
-                            <!--                                    <option value="1">I001</option>-->
-                            <!--                                    <option value="2">I002</option>-->
-                            <!--                                    <option value="3">I003</option>-->
-                            <!--                                </select>-->
-                            <!--                            </div>-->
-                        </div>
-                        <div>
-                            <h1 class="bg-success p-2 text-black bg-opacity-75">Driver Details</h1>
-
-                        </div>
-                        <div class="d-flex justify-content-evenly">
-                            <div class="mb-3">
-                                <div class="form-group">
-                                    <label>Driver :</label>
-                                    <select class="form-control" id="selectDriID">
-                                    </select>
-                                    <span class="control-error"
-                                          id="Dri-empty-error"></span>
+                            <div class="d-flex justify-content-evenly">
+                                <div class="mb-3">
+                                    <label for="Availability" class="form-label text-black">Availability</label>
+                                    <input type="text" class="form-control" id="Availability" name="availability"
+                                           placeholder="20211">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Address" class="form-label text-black">Address</label>
+                                    <input type="text" class="form-control" name="address" id="Address"
+                                           placeholder="20211">
                                 </div>
 
                             </div>
-
-                            <div class="mb-3">
-                                <label for="Dname" class="form-label text-black">Name</label>
-                                <input type="text" class="form-control" id="Dname" placeholder="Lal">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="LicNo" class="form-label text-black">LicNo</label>
-                                <input type="number" class="form-control" id="LicNo" placeholder="20211">
-                            </div>
                         </div>
-                        <div class="d-flex justify-content-evenly">
-                            <div class="mb-3">
-                                <label for="Availability" class="form-label text-black">Availability</label>
-                                <input type="text" class="form-control" id="Availability" placeholder="20211">
-                            </div>
-                            <div class="mb-3">
-                                <label for="Address" class="form-label text-black">Address</label>
-                                <input type="text" class="form-control" id="Address" placeholder="20211">
-                            </div>
-<!--                            <div>-->
-
-<!--                                <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>-->
-<!--                                <label class="btn btn-outline-success" for="success-outlined">Checked success radio</label>-->
-
-<!--                                <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">-->
-<!--                                <label class="btn btn-outline-danger" for="danger-outlined">Danger radio</label>-->
-<!--                            </div>-->
-
-                        </div>
-
-
                     </div>
+                    <div style="border: 2px solid red" class="col">
+                        <div class="row">
+                            <div>
+                                <h1 class="bg-success p-2 text-black bg-opacity-75">Car Details</h1>
 
-                </div>
-
-
-                <div style="border: 2px solid red" class="col">
-                    <div class="row">
-
-
-                        <div>
-                            <h1 class="bg-success p-2 text-black bg-opacity-75">Car Details</h1>
-
-                        </div>
-                        <br>
-                        <div class="mb-3">
-                            <label for="VehicleId" class="form-label text-black">Vehicle_Type_Id</label>
-                            <input type="text" class="form-control" name="vehicle" aria-label="Vehicle" id="VehicleId" placeholder="General">
-                        </div>
-                        <div class="d-flex justify-content-evenly">
-
-
-
-
-                            <div class="mb-3">
-                                <div class="form-group">
-                                    <label>Type :</label>
-                                    <select class="form-control" id="selectCarType">
-                                    </select>
-                                    <span class="control-error"
-                                          id="Cars-empty-error"></span>
-                                </div>
-
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="selecType" class="form-label text-black">Car Type</label>
-                                <input type="text" class="form-control" id="selecType" placeholder="General">
-                            </div>
-
-                            <div class="mb-3">
-                                <div class="form-group">
-                                    <label>Car :</label>
-                                    <select class="form-control" id="selectCarID">
-                                    </select>
-                                    <span class="control-error"
-                                          id="Car-empty-error"></span>
-                                </div>
-
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label for="Version" class="form-label text-black">Car Version</label>
-                                <input type="text" class="form-control" id="Version" placeholder="BMW">
-                            </div>
-                        </div>
-
-                        <br>
-                        <div class="d-flex justify-content-evenly">
-
-                            <div class="mb-3">
-                                <label for="Fuel" class="form-label text-black">Car Fuel</label>
-                                <input type="text" class="form-control" id="Fuel" placeholder="Petral">
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label for="Passengers" class="form-label text-black">Passengers</label>
-                                <input type="text" class="form-control" id="Passengers" placeholder="5">
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label for="Transmission" class="form-label text-black">Transmission</label>
-                                <input type="text" class="form-control" id="Transmission" placeholder="Auto">
-                            </div>
-                        </div>
-
-                        <br>
-                        <div class="d-flex justify-content-evenly">
-
-                            <div class="mb-3">
-                                <label for="Colour" class="form-label text-black">Colour</label>
-                                <input type="text" class="form-control" id="Colour" placeholder="Black">
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label for="Rent_duration" class="form-label text-black">Rent_duration</label>
-                                <input type="text" class="form-control" id="Rent_duration" placeholder="Daily">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="Price_ExtraKm" class="form-label text-black">Price_ExtraKm</label>
-                                <input type="number" class="form-control" id="Price_ExtraKm" placeholder="200">
-                            </div>
-                        </div>
-
-
-                        <br>
-
-                        <div class="d-flex justify-content-evenly">
-                            <div class=" mb-3">
-                                <label for="NoOfCar" class="form-label text-black">No Of Car</label>
-                                <input type="number" class="form-control" id="NoOfCar">
                             </div>
                             <br>
+                            <div class="mb-3">
+                                <label for="VehicleId" class="form-label text-black">Vehicle_Type_Id</label>
+                                <input type="text" class="form-control" name="vehicle" aria-label="Vehicle"
+                                       id="VehicleId" placeholder="General">
+                            </div>
+                            <div class="d-flex justify-content-evenly">
+                                <div class="mb-3">
+                                    <div class="form-group">
+                                        <label>Type :</label>
+                                        <select class="form-control" id="selectCarType">
+                                        </select>
+                                        <span class="control-error"
+                                              id="Cars-empty-error"></span>
+                                    </div>
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="selecType" class="form-label text-black">Car Type</label>
+                                    <input type="text" class="form-control" id="selecType" placeholder="General">
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-group">
+                                        <label>Car :</label>
+                                        <select class="form-control" id="selectCarID">
+                                        </select>
+                                        <span class="control-error"
+                                              id="Car-empty-error"></span>
+                                    </div>
+
+                                </div>
 
 
-                            <div class=" mb-3">
-                                <label for="Price" class="form-label text-black">Price per car</label>
-                                <input type="number" class="form-control" id="Price">
+                                <div class="mb-3">
+                                    <label for="Version" class="form-label text-black">Car Version</label>
+                                    <input type="text" class="form-control" id="Version" placeholder="BMW">
+                                </div>
                             </div>
 
-                            <div class=" mb-3">
-                                <label for="need" class="form-label text-black">Need Cars</label>
-                                <input type="number" class="form-control"
-                                       name="need"
-                                       aria-label="Need"   id="Need">
-                            </div>
-                        </div>
+                            <br>
+                            <div class="d-flex justify-content-evenly">
 
-                        <div class="d-flex justify-content-evenly">
+                                <div class="mb-3">
+                                    <label for="Fuel" class="form-label text-black">Car Fuel</label>
+                                    <input type="text" class="form-control" id="Fuel" placeholder="Petral">
+                                </div>
 
-                            <div class=" mb-3">
-                                <label for="Total" class="form-label text-black">TOTAL</label>
-                                <input type="number" class="form-control"  name="total"
-                                       aria-label="Total" id="Total">
+
+                                <div class="mb-3">
+                                    <label for="Passengers" class="form-label text-black">Passengers</label>
+                                    <input type="text" class="form-control" id="Passengers" placeholder="5">
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="Transmission" class="form-label text-black">Transmission</label>
+                                    <input type="text" class="form-control" id="Transmission" placeholder="Auto">
+                                </div>
                             </div>
+
+                            <br>
+                            <div class="d-flex justify-content-evenly">
+
+                                <div class="mb-3">
+                                    <label for="Colour" class="form-label text-black">Colour</label>
+                                    <input type="text" class="form-control" id="Colour" placeholder="Black">
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="Rent_duration" class="form-label text-black">Rent_duration</label>
+                                    <input type="text" class="form-control" id="Rent_duration" placeholder="Daily">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="Price_ExtraKm" class="form-label text-black">Price_ExtraKm</label>
+                                    <input type="number" class="form-control" id="Price_ExtraKm" placeholder="200">
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="d-flex justify-content-evenly">
+                                <div class=" mb-3">
+                                    <label for="NoOfCar" class="form-label text-black">No Of Car</label>
+                                    <input type="number" class="form-control" id="NoOfCar">
+                                </div>
                                 <br>
-                            <div class="text-end">
-                                <button id="btnAddToTable" type="button" class="btn btn-danger  btn-lg">Add Item</button>
+
+
+                                <div class=" mb-3">
+                                    <label for="Price" class="form-label text-black">Price per car</label>
+                                    <input type="number" class="form-control" id="Price">
+                                </div>
+
+                                <div class=" mb-3">
+                                    <label for="need" class="form-label text-black">Need Cars</label>
+                                    <input type="number" class="form-control"
+                                           name="need"
+                                           aria-label="Need" id="Need">
+                                </div>
                             </div>
+
+                            <div class="d-flex justify-content-evenly">
+
+                                <div class=" mb-3">
+                                    <label for="Total" class="form-label text-black">TOTAL</label>
+                                    <input type="number" class="form-control" name="total"
+                                           aria-label="Total" id="Total">
+                                </div>
+                                <br>
+                                <div class="text-end">
+                                    <button id="btnAddToTable" type="button" class="btn btn-danger  btn-lg">Add Item
+                                    </button>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+
                         </div>
                         <br>
-                        <br>
-
                     </div>
-                    <br>
+
+
                 </div>
 
 
             </div>
-            <div style="border: 2px solid red" class="col">
-
-                <!--                <div class="form-floating">-->
-                <!--                    <h1 class="bg-dark p-2 text-white ">Total</h1>-->
-                <!--                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"-->
-                <!--                              style="height: 100px"></textarea>-->
-                <!--                </div>-->
-
-                <!--                <div class="d-flex justify-content-evenly">-->
-
-                <!--                    <div class="mb-3">-->
-                <!--                        <label for="Cash" class="form-label text-black">Cash</label>-->
-                <!--                        <input type="number" class="form-control" id="Cash" placeholder="1000.00">-->
-                <!--                    </div>-->
-                <!--                    <div class="mb-3">-->
-                <!--                        <label for="Cash" class="form-label text-black">Cash</label>-->
-                <!--                        <input type="number" class="form-control" id="Cash" placeholder="1000.00">-->
-                <!--                    </div>-->
-                <!--                    <div class="mb-3">-->
-                <!--                        <label for="Cash" class="form-label text-black">Cash</label>-->
-                <!--                        <input type="number" class="form-control" id="Cash" placeholder="1000.00">-->
-                <!--                    </div>-->
-
-                <!--                    <div class="mb-3">-->
-                <!--                        <label for="Discount" class="form-label text-black">Discount</label>-->
-                <!--                        <input type="number" class="form-control" id="Discount" placeholder="10%">-->
-                <!--                    </div>-->
-
-                <!--                </div>-->
-
-
-                <!--                <div class="mb-3 col-5 ">-->
-                <!--                    <label for="Balance" class="form-label text-black">Balance</label>-->
-                <!--                    <input type="number" class="form-control " id="Balance">-->
-                <!--                </div>-->
-
-                <!--                <div class="text-end">-->
-                <!--                    <button type="button" class="btn btn-success  btn-lg">Purchase</button>-->
-
-                <!--                </div>-->
-
-
-            </div>
-
-        </div>
         </form>
     </section>
     <br>
@@ -378,9 +320,9 @@
             <thead>
             <tr class="table-dark table-striped">
                 <th scope="col">Order</th>
-<!--                <th scope="col">Date</th>-->
-<!--                <th scope="col">CusID</th>-->
-<!--                <th scope="col">ContNo</th>-->
+                <!--                <th scope="col">Date</th>-->
+                <!--                <th scope="col">CusID</th>-->
+                <!--                <th scope="col">ContNo</th>-->
                 <th scope="col">DriID</th>
                 <th scope="col">CarType</th>
                 <th scope="col">CarID</th>
@@ -404,52 +346,6 @@
 
     </section>
     <br>
-    <section style="display:none">
-        <div style="border: 2px solid red" class="col">
-
-            <div class="form-floating">
-                <h1 class="bg-dark p-2 text-white ">Total</h1>
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-                          style="height: 100px"></textarea>
-            </div>
-
-            <div class="d-flex justify-content-evenly">
-
-                <div class="mb-3">
-                    <label for="Cash" class="form-label text-black">Cash</label>
-                    <input type="number" class="form-control" id="Cash" placeholder="1000.00">
-                </div>
-                <div class="mb-3">
-                    <label for="Cash" class="form-label text-black">Cash</label>
-                    <input type="number" class="form-control" id="Cash1" placeholder="1000.00">
-                </div>
-                <div class="mb-3">
-                    <label for="Cash" class="form-label text-black">Cash</label>
-                    <input type="number" class="form-control" id="Cash2" placeholder="1000.00">
-                </div>
-
-                <div class="mb-3">
-                    <label for="Discount" class="form-label text-black">Discount</label>
-                    <input type="number" class="form-control" id="Discount" placeholder="10%">
-                </div>
-
-            </div>
-
-
-            <div class="mb-3 col-5 ">
-                <label for="Balance" class="form-label text-black">Balance</label>
-                <input type="number" class="form-control " id="Balance">
-            </div>
-
-            <div class="text-end">
-                <button type="button" class="btn btn-success  btn-lg">Purchase</button>
-
-            </div>
-
-
-        </div>
-
-    </section>
 
 </main>
 
@@ -462,6 +358,7 @@
     getAllCar();
     searchCar();
     getAllDriver();
+
     // Autogenaraeorderid();
 
 
@@ -525,10 +422,9 @@
                 for (let cus of resp.data) {
 
 
-
                     $("#selectCarType").append(`<option value="${cus.type}">${cus.type}</option>`);
 
-                                $("#selectCarID").append(`<option value="${cus.carId}">${cus.carId}</option>`);
+                    $("#selectCarID").append(`<option value="${cus.carId}">${cus.carId}</option>`);
 
 
                 }
@@ -636,7 +532,7 @@
                 response = resp.data.filter((c) => {
 
                     // if (c.availability === "yes"){
-                        return c.user == cusID;
+                    return c.user == cusID;
                     // }
 
 
@@ -666,98 +562,97 @@
     ////////////////////////////////////////////////////////
 
     $("#btnAddToTable").click(function () {
+        let OrderId = $("#OrderId").val();
         let DriID = $("#selectDriID").val();
         let CarType = $("#selectCarType").val();
         let CarID = $("#selectCarID").val();
         let Version = $("#Version").val();
         let need = $("#Need").val();
-        let Price = $("#Price").val() *  $("#Need").val();
+        let Price = $("#Price").val() * $("#Need").val();
 
         $("#orderTable2").append(`<tr><td>${OrderId}</td><td>${DriID}</td><td>${CarType}</td><td>${CarID}</td><td>${Version}</td><td>${need}</td><td>${Price}</td></tr>`);
 
-        setTextFieldValues("","","","","")
+        setTextFieldValues("", "", "", "", "")
     });
 
     $("#PlaceOrder").click(function () {
 
         let Order = $("#OrderId").val();
         let customerID = $("#CusId").val();
-        let  scheduleId = $("#scheduleId").val();
+        let scheduleId = $("#scheduleId").val();
         let orderDate = $("#Date").val();
         // let orderD = getOrdersDetails();
 
         // console.log(orderD)
 
-        let ob={
-            oid:Order,
-            date:orderDate,
-            scheduleId:scheduleId,
-            cusID:customerID,
+        let ob = {
+            oid: Order,
+            date: orderDate,
+            scheduleId: scheduleId,
+            cusID: customerID,
             // orderDetails:orderD
         }
         console.log(ob)
         //send request
         $.ajax({
             url: baseURL + "purchase",
-            method:"post",
+            method: "post",
             dataType: "json",
-            data:JSON.stringify(ob),
-            contentType:"application/json",
+            data: JSON.stringify(ob),
+            contentType: "application/json",
             success: function (resp) {
                 alert(resp.message);
             },
-            error:function (error){
+            error: function (error) {
                 alert(JSON.parse(error.responseText).message);
             }
         });
 
-      // let rows = $("#orderTable2").children().length;
+        // let rows = $("#orderTable2").children().length;
 
-      // for (let i = 0; i < rows; i++) {
-          // let scheduleId = $("#scheduleId").val();
+        // for (let i = 0; i < rows; i++) {
+        // let scheduleId = $("#scheduleId").val();
         let Vehicle = $("#VehicleId").val();
+        let DriveID = $("#orderTable2").children().eq(0).children(":eq(1)").text();
+        let CarType = $("#orderTable2").children().eq(0).children(":eq(2)").text();
+        let carId = $("#orderTable2").children().eq(0).children(":eq(3)").text();
+        let Version = $("#orderTable2").children().eq(0).children(":eq(4)").text();
+        let Need = $("#orderTable2").children().eq(0).children(":eq(5)").text();
+        let Total = $("#orderTable2").children().eq(0).children(":eq(6)").text();
 
-        let DriID = $("#orderTable2").children().eq(0).children(":eq(1)").text();
-          let CarType = $("#orderTable2").children().eq(0).children(":eq(2)").text();
-          let carId = $("#orderTable2").children().eq(0).children(":eq(3)").text();
-          let Version = $("#orderTable2").children().eq(0).children(":eq(4)").text();
-          let Need = $("#orderTable2").children().eq(0).children(":eq(5)").text();
-          let Total = $("#orderTable2").children().eq(0).children(":eq(6)").text();
+        // console.log(i);
 
-          // console.log(i);
-
-          console.log(CarType,Version)
-
-
-          let ob2={
-              scheduleId:scheduleId,
-              vehicle:Vehicle,
-              type:CarType,
-              carId: carId,
-              version:Version,
-              need: Need,
-              total: Total,
-          }
+        console.log(CarType, Version, DriveID)
 
 
+        let ob2 = {
+            scheduleId: scheduleId,
+            user: DriveID,
+            vehicle: Vehicle,
+            type: CarType,
+            carId: carId,
+            version: Version,
+            need: Need,
+            total: Total,
+        }
 
-          console.log(ob2);
-          $.ajax({
-              url: baseURL + "purchaseDetails",
-              method:"post",
-              dataType: "json",
-              data:JSON.stringify(ob2),
-              contentType:"application/json",
-              success: function (resp) {
-                  alert(resp.message);
-              },
-              error:function (error){
-                  alert(JSON.parse(error.responseText).message);
-              }
-          });
 
-          UpdateDriver();
-          // }
+        console.log(ob2);
+        $.ajax({
+            url: baseURL + "purchaseDetails",
+            method: "post",
+            dataType: "json",
+            data: JSON.stringify(ob2),
+            contentType: "application/json",
+            success: function (resp) {
+                alert(resp.message);
+            },
+            error: function (error) {
+                alert(JSON.parse(error.responseText).message);
+            }
+        });
+
+        // BtnUdate();          // }
         doubleclick();
 
     });
@@ -784,46 +679,42 @@
     // }
 
 
-    function UpdateDriver(){
-
-            let User = $("#txtDriverUser").val();
-            let Name = $("#txtDriverName").val();
-            let Address = $("#txtDriverAddress").val();
-            let Lic = $("#txtDriverLicNo").val();
-            let Available = $("#txtDriverAvailable").val();
-
+    function BtnUdate() {
+        let User = $("#selectDriID").val();
+        let Name = $("#Dname").val();
+        let Address = $("#Address").val();
+        let Lic = $("#LicNo").val();
+        let Available = $("#Availability").val("no");
 
 
-            var driver = {
-                user: User,
-                name: Name,
-                address: Address,
-                licNo : Lic,
-                availability:Available,
+        var driver = {
+            user: User,
+            name: Name,
+            address: Address,
+            licNo: Lic,
+            availability: Available,
+        }
+
+        $.ajax({
+            url: baseURL + 'Driver',
+            method: 'put',
+            contentType: "application/json",
+            data: JSON.stringify(driver),
+            dataType: "json",
+            success: function (res) {
+                alert(res.message);
+                // getAll();
+            },
+            error: function (error) {
+                let cause = JSON.parse(error.responseText).message;
+                alert(cause);
             }
 
-            $.ajax({
-                url: baseURL+'Driver',
-                method: 'put',
-                contentType:"application/json",
-                data:JSON.stringify(driver),
-                dataType:"json",
-                success: function (res) {
-                    alert(res.message);
-                    getAll();
-                },
-                error:function (error){
-                    let cause= JSON.parse(error.responseText).message;
-                    alert(cause);
-                }
+        });
+    };
 
-            });
-
-
-    }
-
-    function doubleclick(){
-        $("#orderTable2>tr").on('dblclick',function (){
+    function doubleclick() {
+        $("#orderTable2>tr").on('dblclick', function () {
             $(this).remove();
         });
         // $("#tblCart>tr").on('dblclick',function (){

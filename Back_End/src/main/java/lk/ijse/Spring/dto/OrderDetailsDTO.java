@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 public class OrderDetailsDTO {
 
     private String Vehicle;
-//    private Long id;
+    private String DriId;
     private String cId;
     private String scheduleId;
     private String Type;

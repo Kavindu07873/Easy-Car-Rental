@@ -24,6 +24,7 @@ public class OrderDetails {
 //    @Id
     @Id
     private String Vehicle;
+    private String user;
     private String carId;
     private String scheduleId;
     private String Type;
