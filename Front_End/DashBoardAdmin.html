@@ -139,8 +139,7 @@
             <br>
             <br>
 
-            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"
-                    data-bs-target="#RegisterNewCustomer">Order Details
+            <button type="button" id="BtnShowOrders" class="btn btn-dark btn-primary btn-lg">Order Details
             </button>
             <br>
             <br>
@@ -272,6 +271,7 @@
             <button type="button" id="BtnShowDriver" class="btn btn-primary">Drivers Details</button>
             <button type="button" id="BtnShowCar" class="btn btn-danger">Car Details</button>
             <button type="button" id="BtnShowPayment" class="btn btn-warning">Payment Details</button>
+            <button type="button" id="BtnShowOrdersDetails" class="btn btn-warning">Order Details</button>
 
         </div>
 
@@ -369,7 +369,39 @@
 
                 </tbody>
             </table>
+            <table style="display:none" id="tableOrder"
+                   class="col table table-bordered border-primary table-dark table-striped">
+                <thead>
+                <tr class="table-dark table-striped">
+                    <th>oid</th>
+                    <th>cusID</th>
+                    <th>scheduleId</th>
+                    <th>date</th>
+                </tr>
+                </thead>
+                <tbody id="tblOrder">
 
+                </tbody>
+            </table>
+            <table style="display:none" id="tableOrderDetails"
+                   class="col table table-bordered border-primary table-dark table-striped">
+                <thead>
+                <tr class="table-dark table-striped">
+                    <th>Vehicle</th>
+                    <th>user</th>
+                    <th>carId</th>
+                    <th>scheduleId</th>
+                    <th>Type</th>
+                    <th>Version</th>
+                    <th>Need</th>
+                    <th>Total</th>
+
+                </tr>
+                </thead>
+                <tbody id="tblOrderDetails">
+
+                </tbody>
+            </table>
         </section>
 
     </section>
@@ -400,8 +432,10 @@
         $("#tableDriverDetails").css('display', 'none');
         $("#tableDetails").css('display', 'block');
         $("#tableCarDetails").css('display', 'none');
-
         $("#tablePaymentDetails").css('display', 'none');
+        $("#tableIncomeDetails").css('display', 'none');
+        $("#tableOrder").css('display', 'none');
+        $("#tableOrderDetails").css('display', 'none');
         getAllCustomer();
 
     });
@@ -409,7 +443,9 @@
         $("#tableDetails").css('display', 'none');
         $("#tableDriverDetails").css('display', 'block');
         $("#tableCarDetails").css('display', 'none');
-
+        $("#tableIncomeDetails").css('display', 'none');
+        $("#tableOrder").css('display', 'none');
+        $("#tableOrderDetails").css('display', 'none');
         $("#tablePaymentDetails").css('display', 'none');
         getAllDriver();
     });
@@ -418,6 +454,9 @@
         $("#tableDriverDetails").css('display', 'none');
         $("#tableCarDetails").css('display', 'block');
         $("#tablePaymentDetails").css('display', 'none');
+        $("#tableIncomeDetails").css('display', 'none');
+        $("#tableOrder").css('display', 'none');
+        $("#tableOrderDetails").css('display', 'none');
         getAllCar();
     });
 
@@ -440,6 +479,76 @@
 
         getAllIncome();
     });
+    $("#BtnShowOrders").click(function () {
+        $("#tableDetails").css('display', 'none');
+        $("#tableDriverDetails").css('display', 'none');
+        $("#tableCarDetails").css('display', 'none');
+        $("#tablePaymentDetails").css('display', 'none');
+        $("#tableIncomeDetails").css('display', 'none');
+        $("#tableOrder").css('display', 'block');
+        $("#tableOrderDetails").css('display', 'none');
+        getAllOrders();
+    });
+
+    $("#BtnShowOrdersDetails").click(function () {
+        $("#tableDetails").css('display', 'none');
+        $("#tableDriverDetails").css('display', 'none');
+        $("#tableCarDetails").css('display', 'none');
+        $("#tablePaymentDetails").css('display', 'none');
+        $("#tableIncomeDetails").css('display', 'none');
+        $("#tableOrder").css('display', 'none');
+        $("#tableOrderDetails").css('display', 'block');
+
+
+        getAllOrderDetails();
+    });
+
+
+
+
+    function getAllOrderDetails(){
+        $("#tblOrderDetails").empty();
+
+        $.ajax({
+            url: baseURL + "purchaseDetails",
+            dataType: "json",
+            success: function (resp) {
+                for (let cus of resp.data) {
+                    var row =   '<tr><td>' + cus.vehicle +
+                        '</td><td>' + cus.user +
+                        '</td><td>' + cus.carId +
+                        '</td><td>' + cus.scheduleId +
+                        '</td><td>' + cus.type +
+                        '</td><td>' + cus.version +
+                        '</td><td>' + cus.need +
+                        '</td><td>' + cus.total +
+                        '</td></tr>';
+                    $("#tblOrderDetails").append(row);
+                }
+                setTextFieldValues("", "", "", "", "", "", "","","");
+            }
+        });
+    }
+
+    function getAllOrders(){
+        $("#tblOrder").empty();
+
+        $.ajax({
+            url: baseURL + "purchase",
+            dataType: "json",
+            success: function (resp) {
+                for (let cus of resp.data) {
+                    var row =   '<tr><td>' + cus.oid +
+                        '</td><td>' + cus.cusID +
+                        '</td><td>' + cus.scheduleId +
+                        '</td><td>' + cus.date +
+                        '</td></tr>';
+                    $("#tblOrder").append(row);
+                }
+                setTextFieldValues("", "", "", "", "", "", "","","");
+            }
+        });
+    }
     function getAllIncome(){
         $("#tblIncome").empty();
 

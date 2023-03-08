@@ -13,15 +13,9 @@ import java.math.BigDecimal;
 @Data
 @Entity
 @ToString
-//@IdClass(OrderItem_PK.class)
-public class OrderDetails {
-//    @Id
-//    private String oid;
 
-//    @Id
-//    @GeneratedValue
-//    private Long id;
-//    @Id
+public class OrderDetails {
+
     @Id
     private String Vehicle;
     private String user;
