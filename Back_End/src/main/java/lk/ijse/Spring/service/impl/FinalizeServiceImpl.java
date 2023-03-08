@@ -1,5 +1,6 @@
 package lk.ijse.Spring.service.impl;
 
+import lk.ijse.Spring.dto.DriverDetailsDto;
 import lk.ijse.Spring.dto.Finalizedto;
 import lk.ijse.Spring.dto.OrdersDTO;
 import lk.ijse.Spring.entity.Finalize;
@@ -7,10 +8,12 @@ import lk.ijse.Spring.entity.Orders;
 import lk.ijse.Spring.repo.FinalizeRepo;
 import lk.ijse.Spring.service.FinalizeService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 
 @Service
 @Transactional
@@ -30,6 +33,14 @@ public class FinalizeServiceImpl implements FinalizeService {
         }
         finalizeRepo.save(finalize);
 
+    }
+
+
+    @Override
+    public ArrayList<Finalizedto> getAllFinalizeDetails() {
+        return mapper.map(finalizeRepo.findAll(),
+                new TypeToken<ArrayList<Finalizedto>>() {
+                }.getType());
     }
 
 }

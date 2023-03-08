@@ -146,24 +146,14 @@
             <br>
             <a href="Car.html" class="btn btn-dark btn-primary btn-lg">Car Details Manage</a>
 
-            <!--            <br>-->
-<!--            <button type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle="modal"-->
-<!--                    data-bs-target="#Driver">-->
-<!--                Car Details Manage-->
-<!--            </button>-->
             <br>
             <br>
             <a href="PaymentForm.html" class="btn btn-dark btn-primary btn-lg">Payment Details Manage</a>
 
-            <!--            <button href="#PaymentForm.html" type="button" class="btn btn-dark btn-primary btn-lg" data-bs-toggle=""-->
-<!--                    data-bs-target="">-->
-<!--                Payment Details Manage-->
-<!--            </button>-->
             <br>
             <br>
             <br>
-            <button type="button" class="btn  btn-danger btn-primary btn-lg" data-bs-toggle="modal"
-                    data-bs-target="#Driver">Income
+            <button type="button" id="BtnShowIncome" class="btn  btn-danger btn-primary btn-lg" >Income
             </button>
         </div>
 
@@ -362,6 +352,24 @@
 
                 </tbody>
             </table>
+            <table style="display:none" id="tableIncomeDetails"
+                   class="col table table-bordered border-primary table-dark table-striped">
+                <thead>
+                <tr class="table-dark table-striped">
+                    <th>oid</th>
+                    <th>customerId</th>
+                    <th>driId</th>
+                    <th>date</th>
+                    <th>receiveDate</th>
+                    <th>totalAll</th>
+
+                </tr>
+                </thead>
+                <tbody id="tblIncome">
+
+                </tbody>
+            </table>
+
         </section>
 
     </section>
@@ -422,8 +430,38 @@
 
         getAllPayment();
     });
+    $("#BtnShowIncome").click(function () {
+        $("#tableDetails").css('display', 'none');
+        $("#tableDriverDetails").css('display', 'none');
+        $("#tableCarDetails").css('display', 'none');
+        $("#tablePaymentDetails").css('display', 'none');
+        $("#tableIncomeDetails").css('display', 'block');
 
 
+        getAllIncome();
+    });
+    function getAllIncome(){
+        $("#tblIncome").empty();
+
+        $.ajax({
+            url: baseURL + "Finalize",
+            dataType: "json",
+            success: function (resp) {
+                for (let cus of resp.data) {
+                    var row =   '<tr><td>' + cus.oid +
+                                '</td><td>' + cus.customerId +
+                                '</td><td>' + cus.driId +
+                                '</td><td>' + cus.date +
+                                '</td><td>' + cus.receiveDate +
+                                '</td><td>' + cus.totalAll +
+                                '</td></tr>';
+
+                    $("#tblIncome").append(row);
+                }
+                setTextFieldValues("", "", "", "", "", "", "","","");
+            }
+        });
+    }
     function getAllCar() {
         $("#tblCar").empty();
 
@@ -446,7 +484,6 @@
             }
         });
     }
-
     function getAllPayment() {
         $("#tblPayment").empty();
 
@@ -467,8 +504,6 @@
             }
         });
     }
-
-
     function getAllCustomer() {
         $("#tblCustomer").empty();
 
@@ -485,7 +520,6 @@
             }
         });
     }
-
     function getAllDriver() {
         $("#tblDriver").empty();
 

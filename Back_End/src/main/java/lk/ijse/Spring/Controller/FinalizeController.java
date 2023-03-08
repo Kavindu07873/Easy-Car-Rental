@@ -1,5 +1,6 @@
 package lk.ijse.Spring.Controller;
 
+import lk.ijse.Spring.dto.DriverDetailsDto;
 import lk.ijse.Spring.dto.Finalizedto;
 import lk.ijse.Spring.dto.OrdersDTO;
 import lk.ijse.Spring.service.FinalizeService;
@@ -7,6 +8,8 @@ import lk.ijse.Spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/Finalize")
@@ -27,6 +30,11 @@ public class FinalizeController {
 
     }
 
+    @GetMapping
+    public ResponseUtil getAllFinalizeDetails(){
+        ArrayList<Finalizedto> finalizedtos = finalizeService.getAllFinalizeDetails();
+        return new ResponseUtil("200"," Success",finalizedtos);
 
+    }
 
 }
