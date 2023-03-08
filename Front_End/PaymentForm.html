@@ -441,11 +441,11 @@
         </section>
         <br>
         <section>
-            <div class="col">
-                <label for="txtAllOrdersTotal">All Total</label>
+            <div >
+                <label for="txtAllOrdersTotal">TotalAll</label>
                 <input type="number" class="is-invalid form-control" id="txtAllOrdersTotal" placeholder=""
-                       name="AllTotal"
-                       aria-label="AllTotal" required>
+                       name="totalAll"
+                       aria-label="totalAll" required>
             </div>
         </section>
 
@@ -454,7 +454,9 @@
 
 
         <div class="d-grid gap-2">
-            <button id="SaveAllData " class="btn btn-primary btn-danger btn-lg " type="button">Save All</button>
+<!--            <button id="SaveAllData " class="btn btn-primary btn-danger btn-lg " type="button">Save All</button>-->
+            <button type="button" id="SaveAllData" class="btn btn-primary btn-lg">Ok</button>
+
         </div>
         <br>
         <br>
@@ -481,6 +483,7 @@
     getAllOrders();
     getAllOrdersDetails();
     getOrderDetails();
+
     $("#SavePayment").click(function () {
 
         var formData = $("#PaymentForm6").serialize();
@@ -961,6 +964,46 @@
         }
 
     }
+
+    $("#SaveAllData").click(function () {
+
+        let OrderId = $("#txtOrderId").val();
+        let CustomerId = $("#txtCustomerId").val();
+        let DriverId = $("#txtDriverId").val();
+        let date = $("#txtDate").val();
+        let receiveDate = $("#txtReceiveDate").val();
+        let finalTotalValue = $("#txtAllOrdersTotal").val();
+
+        console.log("Add0-"+CustomerId + DriverId + finalTotalValue+finalTotalValue);
+
+        let ob = {
+            oid: OrderId,
+            customerId:CustomerId,
+            driId:DriverId,
+            date: date,
+            receiveDate:receiveDate,
+            totalAll:finalTotalValue,
+
+        }
+        console.log(ob)
+        //send request
+        $.ajax({
+            url: baseURL + "Finalize",
+            method: "post",
+            dataType: "json",
+            data: JSON.stringify(ob),
+            contentType: "application/json",
+            success: function (resp) {
+                alert(resp.message);
+            },
+            error: function (error) {
+                alert(JSON.parse(error.responseText).message);
+            }
+        });
+
+    });
+
+
 </script>
 </body>
 </html>

@@ -304,6 +304,37 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="exampleModalc2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <form id="loginFormCustomer2">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail" class="form-label">UserId</label>
+                            <input type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1c" class="form-label">licNo</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1c2">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <label for="exampleInputPassword1c" class="form-label">Only Drivers Can</label>
+                            <label for="exampleInputPassword1c" class="form-label">Access</label>
+                            <label for="exampleInputPassword1c" class="form-label" id="oks"></label>
+
+                        </div>
+                        <button id="SingInCustomerlogin2"  type="button" class="btn btn-primary">Submit</button>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <br>
 
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
@@ -445,12 +476,31 @@
                 <button type="button" id="BtnShowDriver" class="btn btn-primary">Drivers Details</button>
                 <button type="button" id="BtnShowCar" class="btn btn-danger">Car Details</button>
                 <button type="button" id="BtnShowPayment" class="btn btn-warning">Payment Details</button>
+                <button type="button" id="BtnShowDriverSchedule"  data-bs-toggle="modal" data-bs-target="#exampleModalc2" class="btn btn-success">Driver Shedule</button>
+<!--                <button  data-bs-toggle="modal"-->
+<!--                        data-bs-target="#exampleModalc">-->
+<!--                    Customer Login-->
+<!--                </button>-->
 
             </div>
 
             <br>
             <br>
             <section>
+                <table style="display:none" id="tableDriverDetailsShedule"
+                       class="col table table-bordered border-primary table-dark table-striped">
+                    <thead>
+                    <tr class="table-dark table-striped">
+                        <th>oid</th>
+                        <th>user</th>
+                        <th>name</th>
+                        <th>date</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tblDriverDetails">
+
+                    </tbody>
+                </table>
 
                 <table style="display:none" id="tablePaymentDetails"
                        class="col table table-bordered border-primary table-dark table-striped">
@@ -870,7 +920,7 @@
 <script src="assets/js/jquery-3.6.1.min.js"></script>
 
 
-//Admin Login
+<!--//Admin Login-->
     <script>
         const loginForm = document.getElementById("login-form");
         const loginButton = document.getElementById("login-form-submit");
@@ -891,7 +941,7 @@
     })
 
 </script>
-//Customer Login
+<!--//Customer Login-->
 <script>
     $("#SingInCustomerlogin").click(function () {
 loadCustomerlogin();
@@ -916,7 +966,6 @@ loadCustomerlogin();
           }
       });
   }
-
 
 </script>
 
@@ -949,6 +998,7 @@ loadCustomerlogin();
         $("#tableDriverDetails").css('display', 'none');
         $("#tableDetails").css('display', 'none');
         $("#tableCarDetails").css('display', 'none');
+        $("#tableDriverDetailsShedule").css('display', 'none');
 
         $("#tablePaymentDetails").css('display', 'none');
         getAllCustomer();
@@ -958,6 +1008,7 @@ loadCustomerlogin();
         $("#tableDetails").css('display', 'none');
         $("#tableDriverDetails").css('display', 'block');
         $("#tableCarDetails").css('display', 'none');
+        $("#tableDriverDetailsShedule").css('display', 'none');
 
         $("#tablePaymentDetails").css('display', 'none');
         getAllDriver();
@@ -966,6 +1017,7 @@ loadCustomerlogin();
         $("#tableDetails").css('display', 'none');
         $("#tableDriverDetails").css('display', 'none');
         $("#tableCarDetails").css('display', 'block');
+        $("#tableDriverDetailsShedule").css('display', 'none');
 
         $("#tablePaymentDetails").css('display', 'none');
         getAllCar();
@@ -976,27 +1028,59 @@ loadCustomerlogin();
         $("#tableDriverDetails").css('display', 'none');
         $("#tableCarDetails").css('display', 'none');
         $("#tablePaymentDetails").css('display', 'block');
-
+        $("#tableDriverDetailsShedule").css('display', 'none');
 
         getAllPayment();
     });
-    function getAllCustomer() {
-        $("#tblCustomer").empty();
+
+
+        $("#SingInCustomerlogin2").click(function () {
+
+            $("#tableDriverDetails").css('display', 'none');
+            $("#tableDetails").css('display', 'none');
+            $("#tableCarDetails").css('display', 'none');
+            $("#tableDriverDetailsShedule").css('display', 'block');
+            $("#tablePaymentDetails").css('display', 'none');
+
+
+            let userEmail = $("#exampleInputEmail").val();
+            let userPassword = $("#exampleInputPassword1c").val();
+            $.ajax({
+                url: baseURL + "Driver",
+                dataType: "json",
+                success: function (resp) {
+                    for (let cus of resp.data) {
+                        console.log(cus.user + cus.licNo);
+
+                        if(userEmail == cus.user && userPassword == cus.licNo){
+
+
+                        }
+
+                    }
+                }
+            });
+       getAllDriverDetails();
+        });
+
+
+    function getAllDriverDetails() {
+
+        $("#tblDriverDetails").empty();
 
         $.ajax({
-            url: baseURL + "Customer",
+            url: baseURL + "DriverDetails",
             dataType: "json",
             success: function (resp) {
                 for (let cus of resp.data) {
-                    var row = '<tr><td>' + cus.id + '</td><td>' + cus.name + '</td><td>' + cus.address + '</td><td>' + cus.email + '</td><td>' + cus.conNo + '</td><td>' + cus.nic + '</td><td>' + cus.password + '</td></tr>';
+                    var row = '<tr><td>' + cus.oid + '</td><td>' + cus.user + '</td><td>' + cus.name + '</td><td>' + cus.date + '</td></tr>';
 
-                    $("#tblCustomer").append(row);
+                    $("#tblDriverDetails").append(row);
                 }
-                setTextFieldValues("", "", "", "", "", "", "");
+                // setTextFieldValues("", "", "", "");
             }
         });
     }
-
     function getAllCar() {
         $("#tblCar").empty();
 
@@ -1019,7 +1103,22 @@ loadCustomerlogin();
             }
         });
     }
+    function getAllCustomer() {
+        $("#tblCustomer").empty();
 
+        $.ajax({
+            url: baseURL + "Customer",
+            dataType: "json",
+            success: function (resp) {
+                for (let cus of resp.data) {
+                    var row = '<tr><td>' + cus.id + '</td><td>' + cus.name + '</td><td>' + cus.address + '</td><td>' + cus.email + '</td><td>' + cus.conNo + '</td><td>' + cus.nic + '</td><td>' + cus.password + '</td></tr>';
+
+                    $("#tblCustomer").append(row);
+                }
+                setTextFieldValues("", "", "", "", "", "", "");
+            }
+        });
+    }
     function getAllPayment() {
         $("#tblPayment").empty();
 
@@ -1040,9 +1139,6 @@ loadCustomerlogin();
             }
         });
     }
-
-
-
     function getAllDriver() {
         $("#tblDriver").empty();
 
@@ -1091,14 +1187,17 @@ loadCustomerlogin();
     function AvailableDriver() {
         $("#lblDriverIdAvailable").empty();
         $("#lblDriverorderAvailable").empty();
-        $("#lblCarVersionAvailable").empty();
+        // $("#lblCarVersionAvailable").empty();
         $.ajax({
             url: baseURL + "Driver",
             dataType: "json",
             success: function (resp) {
                 console.log(resp);
                 for (let cus of resp.data) {
-                    $("#lblDriverIdAvailable").append(`<option value="${cus.user}">${cus.user}</option>`);
+                    // if(cus.availability === "yse"){
+                        $("#lblDriverIdAvailable").append(`<option value="${cus.user}">${cus.user}</option>`);
+                    // }
+                    $("#lblDriverorderAvailable").append(`<option value="${cus.availability}">${cus.availability}</option>`);
 
                 }
             }
