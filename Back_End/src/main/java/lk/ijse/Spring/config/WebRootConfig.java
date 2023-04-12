@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @Import({JPAConfig.class})
-@ComponentScan(basePackageClasses = {CustomerServiceImpl.class})
+@ComponentScan(basePackageClasses = {CustomerServiceImpl.class})//mein thama component khd thiyenne kiyala kiyanne
 public class WebRootConfig {
 
     @Bean

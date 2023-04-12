@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 @Service
+//declrative programin serama dewal karala denawa
 @Transactional
 public class CarServiceImpl implements CarService {
 
