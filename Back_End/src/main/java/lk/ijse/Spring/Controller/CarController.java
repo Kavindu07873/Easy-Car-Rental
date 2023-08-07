@@ -25,7 +25,7 @@ public class CarController {
         return new ResponseUtil("200",dto.toString()+ " Added",null);
 
     }
-//json value ekak font - back walata ewanakota requestbody anotation eka awashya ve
+
     @PutMapping
     public ResponseUtil updateCar(@RequestBody CarDto dto){
 

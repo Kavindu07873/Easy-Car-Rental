@@ -14,15 +14,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 @Service
-//declrative programin serama dewal karala denawa
+
 @Transactional
 public class CarServiceImpl implements CarService {
+
+
 
     @Autowired
     CarRepo CarRepo;
 
     @Autowired
-    ModelMapper mapper;
+     ModelMapper mapper;
 
     public void UpdateCar(CarDto dto) {
         Car car = mapper.map(dto, Car.class);

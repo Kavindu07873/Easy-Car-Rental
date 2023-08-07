@@ -12,10 +12,10 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
 @Configuration
-//Spring bean container ekata watenna ona khmd kiyala thiyena thana
+
 @EnableWebMvc
 @ComponentScan(basePackageClasses = {CustomerController.class, AppWideExceptionHandler.class})
-//Configuration cls eka athule witharai
+
 public class WebAppConfig {
 
     /*

@@ -427,7 +427,6 @@
     <!--customer table show-->
     let baseURL = "http://localhost:8080/Back_End_war/";
 
-
     $("#BtnShowCustomer").click(function () {
         $("#tableDriverDetails").css('display', 'none');
         $("#tableDetails").css('display', 'block');
@@ -459,7 +458,6 @@
         $("#tableOrderDetails").css('display', 'none');
         getAllCar();
     });
-
     $("#BtnShowPayment").click(function () {
         $("#tableDetails").css('display', 'none');
         $("#tableDriverDetails").css('display', 'none');
@@ -475,7 +473,7 @@
         $("#tableCarDetails").css('display', 'none');
         $("#tablePaymentDetails").css('display', 'none');
         $("#tableIncomeDetails").css('display', 'block');
-
+        $("#tblIncome").css('display', 'block');
 
         getAllIncome();
     });
@@ -489,7 +487,6 @@
         $("#tableOrderDetails").css('display', 'none');
         getAllOrders();
     });
-
     $("#BtnShowOrdersDetails").click(function () {
         $("#tableDetails").css('display', 'none');
         $("#tableDriverDetails").css('display', 'none');
@@ -502,8 +499,6 @@
 
         getAllOrderDetails();
     });
-
-
 
 
     function getAllOrderDetails(){
